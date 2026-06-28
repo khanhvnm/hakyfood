@@ -8,7 +8,7 @@ import org.springframework.http.HttpStatus;
 @RequiredArgsConstructor
 public enum ErrorCode {
 
-
+    VALIDATION_FAILED(HttpStatus.BAD_REQUEST, "validation.failed")
 
     ;
 
