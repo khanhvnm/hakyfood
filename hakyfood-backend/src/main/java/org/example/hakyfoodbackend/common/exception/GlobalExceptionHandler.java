@@ -1,7 +1,7 @@
 package org.example.hakyfoodbackend.common.exception;
 
 import jakarta.servlet.http.HttpServletRequest;
-import org.example.hakyfoodbackend.common.responses.ApiResponse;
+import org.example.hakyfoodbackend.common.response.ApiResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;

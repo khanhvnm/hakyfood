@@ -1,4 +1,4 @@
-package org.example.hakyfoodbackend.common.responses;
+package org.example.hakyfoodbackend.common.response;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.servlet.http.HttpServletRequest;
