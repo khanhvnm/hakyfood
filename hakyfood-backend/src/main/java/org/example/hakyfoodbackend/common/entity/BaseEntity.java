@@ -1,4 +1,4 @@
-package org.example.hakyfoodbackend.common.entities;
+package org.example.hakyfoodbackend.common.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
