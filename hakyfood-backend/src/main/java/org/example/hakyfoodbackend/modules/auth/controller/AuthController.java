@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.example.hakyfoodbackend.common.response.ApiResponse;
 import org.example.hakyfoodbackend.modules.auth.dto.AuthFlowResponse;
 import org.example.hakyfoodbackend.modules.auth.dto.RegisterRequest;
+import org.example.hakyfoodbackend.modules.auth.dto.VerifyOtpRequest;
 import org.example.hakyfoodbackend.modules.auth.service.AuthService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,6 +31,18 @@ public class AuthController {
 
         return ResponseEntity
                 .status(HttpStatus.CREATED)
+                .body(ApiResponse.success(response, httpRequest));
+    }
+
+    @PostMapping("/verify-otp")
+    public ResponseEntity<ApiResponse<AuthFlowResponse>> verifyOtp(
+            @RequestBody @Valid VerifyOtpRequest request,
+            HttpServletRequest httpRequest
+    ) {
+        AuthFlowResponse response = authService.verifyOtp(request);
+
+        return ResponseEntity
+                .status(HttpStatus.OK)
                 .body(ApiResponse.success(response, httpRequest));
     }
 

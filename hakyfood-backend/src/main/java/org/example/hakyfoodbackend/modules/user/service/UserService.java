@@ -38,7 +38,7 @@ public class UserService {
             Role customerRole = roleRepository.findByCode("CUSTOMER")
                     .orElseThrow(() -> {
                         log.error("Register failed: Customer role not found");
-                        return new AppException(ErrorCode.REGISTER_FAILED);
+                        return new AppException(ErrorCode.ROLE_NOT_FOUND);
                     });
 
             user.getRoles().add(customerRole);
@@ -53,6 +53,19 @@ public class UserService {
             } else {
                 throw new AppException(ErrorCode.ACCOUNT_EXISTS);
             }
+        }
+    }
+
+    @Transactional
+    public void activateAccount(UUID userId) {
+        User user = userRepository.findById(userId).orElse(null);
+
+        if (user != null) {
+            user.activateAccount();
+            userRepository.save(user);
+        } else {
+            log.error("User not found for activation: {}", userId);
+            throw new AppException(ErrorCode.USER_NOT_FOUND);
         }
     }
 

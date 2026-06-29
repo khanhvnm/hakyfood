@@ -3,6 +3,8 @@ package org.example.hakyfoodbackend.modules.user.entity;
 import jakarta.persistence.*;
 import lombok.*;
 import org.example.hakyfoodbackend.common.entity.BaseEntity;
+import org.example.hakyfoodbackend.common.exception.AppException;
+import org.example.hakyfoodbackend.common.exception.ErrorCode;
 import org.example.hakyfoodbackend.modules.user.enums.AccountStatus;
 
 import java.util.HashSet;
@@ -44,6 +46,13 @@ public class User extends BaseEntity {
 
     public void updatePassword(String newHashedPassword) {
         this.hashedPassword = newHashedPassword;
+    }
+
+    public void activateAccount() {
+        if (this.accountStatus != AccountStatus.PENDING_VERIFY) {
+            throw new AppException(ErrorCode.ACCOUNT_NOT_PENDING_VERIFY);
+        }
+        this.accountStatus = AccountStatus.ACTIVE;
     }
 
 }

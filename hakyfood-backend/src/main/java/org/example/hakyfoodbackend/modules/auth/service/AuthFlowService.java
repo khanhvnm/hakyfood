@@ -1,6 +1,10 @@
 package org.example.hakyfoodbackend.modules.auth.service;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.example.hakyfoodbackend.common.exception.AppException;
+import org.example.hakyfoodbackend.common.exception.ErrorCode;
+import org.example.hakyfoodbackend.modules.auth.dto.AuthSessionData;
 import org.example.hakyfoodbackend.modules.auth.enums.AuthFlowState;
 import org.example.hakyfoodbackend.modules.auth.enums.VerificationPurpose;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -10,6 +14,7 @@ import java.time.Duration;
 import java.util.Map;
 import java.util.UUID;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class AuthFlowService {
@@ -35,6 +40,24 @@ public class AuthFlowService {
         stringRedisTemplate.expire(redisKey, Duration.ofSeconds(SESSION_TTL_SECONDS));
 
         return flowId;
+    }
+
+    public AuthSessionData getSession(String flowId) {
+        String redisKey = KEY_PREFIX + flowId;
+
+        Map<Object, Object> flowData = stringRedisTemplate.opsForHash().entries(redisKey);
+        if (flowData == null || flowData.isEmpty()) {
+            throw new AppException(ErrorCode.AUTH_FLOW_SESSION_EXPIRED);
+        }
+
+        UUID userId = UUID.fromString((String) flowData.get(HASH_KEY_USER_ID));
+        VerificationPurpose purpose = VerificationPurpose.fromString((String) flowData.get(HASH_KEY_PURPOSE));
+
+        return new AuthSessionData(userId, purpose);
+    }
+
+    public void deleteSession(String flowId) {
+        stringRedisTemplate.delete(KEY_PREFIX + flowId);
     }
 
 }
