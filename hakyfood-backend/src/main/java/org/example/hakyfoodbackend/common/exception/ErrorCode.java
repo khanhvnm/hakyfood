@@ -8,6 +8,10 @@ import org.springframework.http.HttpStatus;
 @RequiredArgsConstructor
 public enum ErrorCode {
 
+    REGISTER_FAILED(HttpStatus.BAD_REQUEST, "register.failed"),
+
+    ACCOUNT_EXISTS(HttpStatus.BAD_REQUEST, "account.exists"),
+
     VALIDATION_FAILED(HttpStatus.BAD_REQUEST, "validation.failed")
 
     ;

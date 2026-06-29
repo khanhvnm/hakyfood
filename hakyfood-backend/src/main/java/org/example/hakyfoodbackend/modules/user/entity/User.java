@@ -42,5 +42,9 @@ public class User extends BaseEntity {
     @Builder.Default
     private Set<Role> roles = new HashSet<>();
 
+    public void updatePassword(String newHashedPassword) {
+        this.hashedPassword = newHashedPassword;
+    }
+
 }
 
