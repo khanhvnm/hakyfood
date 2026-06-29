@@ -12,6 +12,11 @@ public enum ErrorCode {
 
     ACCOUNT_EXISTS(HttpStatus.BAD_REQUEST, "account.exists"),
 
+    OTP_RESEND_TOO_FREQUENTLY(HttpStatus.BAD_REQUEST, "otp.resend_too_frequently"),
+    OTP_NOT_FOUND(HttpStatus.BAD_REQUEST, "otp.not_found"),
+    OTP_MAX_ATTEMPTS(HttpStatus.BAD_REQUEST, "otp.max_attempts"),
+    OTP_INCORRECT(HttpStatus.BAD_REQUEST, "otp.incorrect"),
+
     VALIDATION_FAILED(HttpStatus.BAD_REQUEST, "validation.failed")
 
     ;
