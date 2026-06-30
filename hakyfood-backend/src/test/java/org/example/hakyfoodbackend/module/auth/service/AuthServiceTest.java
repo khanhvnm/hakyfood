@@ -2,16 +2,19 @@ package org.example.hakyfoodbackend.module.auth.service;
 
 import org.example.hakyfoodbackend.common.exception.AppException;
 import org.example.hakyfoodbackend.common.exception.ErrorCode;
+import org.example.hakyfoodbackend.infrastructure.jwt.JwtService;
 import org.example.hakyfoodbackend.modules.auth.dto.AuthFlowResponse;
 import org.example.hakyfoodbackend.modules.auth.dto.AuthSessionData;
 import org.example.hakyfoodbackend.modules.auth.dto.RegisterRequest;
 import org.example.hakyfoodbackend.modules.auth.dto.VerifyOtpRequest;
+import org.example.hakyfoodbackend.modules.auth.dto.VerifyOtpResult;
 import org.example.hakyfoodbackend.modules.auth.enums.AuthFlowState;
 import org.example.hakyfoodbackend.modules.auth.enums.VerificationPurpose;
 import org.example.hakyfoodbackend.modules.auth.service.AuthFlowService;
 import org.example.hakyfoodbackend.modules.auth.service.AuthMailService;
 import org.example.hakyfoodbackend.modules.auth.service.AuthService;
 import org.example.hakyfoodbackend.modules.auth.service.OtpService;
+import org.example.hakyfoodbackend.modules.user.entity.User;
 import org.example.hakyfoodbackend.modules.user.service.UserService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -19,6 +22,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.HashSet;
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -38,6 +42,9 @@ public class AuthServiceTest {
 
     @Mock
     private AuthMailService authMailService;
+
+    @Mock
+    private JwtService jwtService;
 
     @InjectMocks
     private AuthService authService;
@@ -71,23 +78,32 @@ public class AuthServiceTest {
         VerifyOtpRequest request = new VerifyOtpRequest("some-flow-id", "123456");
         UUID userId = UUID.randomUUID();
         AuthSessionData sessionData = new AuthSessionData(userId, VerificationPurpose.REGISTER);
+        User user = User.builder().email("user@test.com").roles(new HashSet<>()).build();
 
         when(authFlowService.getSession(request.flowId())).thenReturn(sessionData);
         doNothing().when(otpService).verifyOtp(userId, VerificationPurpose.REGISTER, request.code());
         doNothing().when(userService).activateAccount(userId);
         doNothing().when(authFlowService).deleteSession(request.flowId());
+        when(userService.getUserById(userId)).thenReturn(user);
+        when(jwtService.generateAccessToken(user)).thenReturn("accessToken");
+        when(jwtService.generateRefreshToken(user)).thenReturn("refreshToken");
 
         // Act
-        AuthFlowResponse response = authService.verifyOtp(request);
+        VerifyOtpResult result = authService.verifyOtp(request);
 
         // Assert
-        assertNull(response.flowId());
-        assertEquals(AuthFlowState.SUCCESS, response.nextState());
+        assertNull(result.flowId());
+        assertEquals(AuthFlowState.SUCCESS, result.nextState());
+        assertEquals("accessToken", result.accessToken());
+        assertEquals("refreshToken", result.refreshToken());
 
         verify(authFlowService).getSession(request.flowId());
         verify(otpService).verifyOtp(userId, VerificationPurpose.REGISTER, request.code());
         verify(userService).activateAccount(userId);
         verify(authFlowService).deleteSession(request.flowId());
+        verify(userService).getUserById(userId);
+        verify(jwtService).generateAccessToken(user);
+        verify(jwtService).generateRefreshToken(user);
     }
 
     @Test
