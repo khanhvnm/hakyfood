@@ -24,7 +24,10 @@ public enum ErrorCode {
     USER_NOT_FOUND(HttpStatus.NOT_FOUND, "user.not_found"),
     ROLE_NOT_FOUND(HttpStatus.NOT_FOUND, "role.not_found"),
 
-    VALIDATION_FAILED(HttpStatus.BAD_REQUEST, "validation.failed")
+    VALIDATION_FAILED(HttpStatus.BAD_REQUEST, "validation.failed"),
+
+    UNAUTHORIZED(HttpStatus.UNAUTHORIZED, "Unauthorized"),
+    FORBIDDEN(HttpStatus.FORBIDDEN, "Forbidden")
 
     ;
 
