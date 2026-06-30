@@ -3,12 +3,18 @@ package org.example.hakyfoodbackend.common.response;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
 import org.example.hakyfoodbackend.common.exception.ErrorCode;
 
 import java.time.Instant;
 import java.util.Map;
 
 @Builder
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ApiResponse <T> {
 
