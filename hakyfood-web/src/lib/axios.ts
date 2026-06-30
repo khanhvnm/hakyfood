@@ -7,6 +7,7 @@ export const api = axios.create({
         'Content-Type': 'application/json',
     },
     timeout: 10000, // Tự động ngắt nếu request quá 10 giây
+    withCredentials: true, // Hỗ trợ gửi/nhận cookie (e.g. refreshToken)
 });
 
 // 2. Request Interceptor: Tự động đính kèm token khi gửi request
