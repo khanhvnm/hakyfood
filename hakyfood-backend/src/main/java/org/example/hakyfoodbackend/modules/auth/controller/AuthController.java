@@ -1,14 +1,20 @@
 package org.example.hakyfoodbackend.modules.auth.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.example.hakyfoodbackend.common.response.ApiResponse;
 import org.example.hakyfoodbackend.modules.auth.dto.AuthFlowResponse;
 import org.example.hakyfoodbackend.modules.auth.dto.RegisterRequest;
 import org.example.hakyfoodbackend.modules.auth.dto.VerifyOtpRequest;
+import org.example.hakyfoodbackend.modules.auth.dto.VerifyOtpResponse;
+import org.example.hakyfoodbackend.modules.auth.dto.VerifyOtpResult;
+import org.example.hakyfoodbackend.modules.auth.helper.AuthCookieHelper;
 import org.example.hakyfoodbackend.modules.auth.service.AuthService;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseCookie;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,6 +27,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class AuthController {
 
     private final AuthService authService;
+    private final AuthCookieHelper authCookieHelper;
 
     @PostMapping("/register")
     public ResponseEntity<ApiResponse<AuthFlowResponse>> register(
@@ -35,11 +42,23 @@ public class AuthController {
     }
 
     @PostMapping("/verify-otp")
-    public ResponseEntity<ApiResponse<AuthFlowResponse>> verifyOtp(
+    public ResponseEntity<ApiResponse<VerifyOtpResponse>> verifyOtp(
             @RequestBody @Valid VerifyOtpRequest request,
-            HttpServletRequest httpRequest
+            HttpServletRequest httpRequest,
+            HttpServletResponse httpResponse
     ) {
-        AuthFlowResponse response = authService.verifyOtp(request);
+        VerifyOtpResult result = authService.verifyOtp(request);
+
+        if (result.refreshToken() != null) {
+            ResponseCookie cookie = authCookieHelper.createRefreshTokenCookie(result.refreshToken());
+            httpResponse.addHeader(HttpHeaders.SET_COOKIE, cookie.toString());
+        }
+
+        VerifyOtpResponse response = new VerifyOtpResponse(
+                result.flowId(),
+                result.nextState(),
+                result.accessToken()
+        );
 
         return ResponseEntity
                 .status(HttpStatus.OK)
