@@ -7,6 +7,7 @@ import org.example.hakyfoodbackend.common.exception.ErrorCode;
 import org.example.hakyfoodbackend.modules.user.entity.Role;
 import org.example.hakyfoodbackend.modules.user.entity.User;
 import org.example.hakyfoodbackend.modules.user.enums.AccountStatus;
+import org.example.hakyfoodbackend.modules.user.enums.AuthProvider;
 import org.example.hakyfoodbackend.modules.user.repository.RoleRepository;
 import org.example.hakyfoodbackend.modules.user.repository.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -72,6 +73,39 @@ public class UserService {
     public User getUserById(UUID id) {
         return userRepository.findById(id)
                 .orElseThrow(() -> new AppException(ErrorCode.USER_NOT_FOUND));
+    }
+
+    @Transactional
+    public User getOrCreateGoogleUser(String email, String fullName, String avatarUrl) {
+        User user = userRepository.findByEmail(email).orElse(null);
+
+        if (user == null) {
+            log.info("Creating new Google user: {}", email);
+            User newUser = User.builder()
+                    .email(email)
+                    .fullName(fullName)
+                    .avatarUrl(avatarUrl)
+                    .authProvider(AuthProvider.GOOGLE)
+                    .accountStatus(AccountStatus.ACTIVE)
+                    .hashedPassword(passwordEncoder.encode(java.util.UUID.randomUUID().toString()))
+                    .build();
+
+            Role customerRole = roleRepository.findByCode("CUSTOMER")
+                    .orElseThrow(() -> {
+                        log.error("Register failed: Customer role not found");
+                        return new AppException(ErrorCode.ROLE_NOT_FOUND);
+                    });
+
+            newUser.getRoles().add(customerRole);
+            return userRepository.save(newUser);
+        } else {
+            log.info("Google user login: {}", email);
+            if (user.getAccountStatus() == AccountStatus.PENDING_VERIFY) {
+                user.activateAccount();
+                userRepository.save(user);
+            }
+            return user;
+        }
     }
 
 }

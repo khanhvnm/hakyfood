@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { registerApi } from '../api/auth';
 import type { RegisterRequest } from '../types';
 import { toast } from 'sonner';
+import { GoogleButton } from './GoogleButton';
 
 interface RegisterFormProps {
   onSuccess: (flowId: string, email: string) => void;
@@ -181,6 +182,19 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({ onSuccess, onSwitchT
           )}
         </button>
       </form>
+
+      {/* Đường chia cách (Divider) */}
+      <div className="relative my-5">
+        <div className="absolute inset-0 flex items-center">
+          <div className="w-full border-t border-white/10"></div>
+        </div>
+        <div className="relative flex justify-center text-xs uppercase">
+          <span className="bg-hk-bg-dark px-3 text-hk-text-muted">Hoặc tiếp tục với</span>
+        </div>
+      </div>
+
+      {/* Nút đăng nhập Google */}
+      <GoogleButton onSuccess={() => onSuccess("", "")} />
 
       {/* Switch to Login */}
       <div className="text-center mt-6 text-sm text-hk-text-secondary">

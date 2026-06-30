@@ -9,6 +9,11 @@ function RegisterPage() {
   const navigate = useNavigate();
 
   const handleRegisterSuccess = (flowId: string, email: string) => {
+    if (!flowId) {
+      // Đăng nhập thành công bằng Google -> Chuyển về trang chủ
+      navigate({ to: '/' });
+      return;
+    }
     // Chuyển hướng sang trang verify-otp kèm theo query params
     navigate({
       to: '/verify-otp',

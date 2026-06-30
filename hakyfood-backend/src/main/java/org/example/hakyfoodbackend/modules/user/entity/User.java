@@ -6,6 +6,7 @@ import org.example.hakyfoodbackend.common.entity.BaseEntity;
 import org.example.hakyfoodbackend.common.exception.AppException;
 import org.example.hakyfoodbackend.common.exception.ErrorCode;
 import org.example.hakyfoodbackend.modules.user.enums.AccountStatus;
+import org.example.hakyfoodbackend.modules.user.enums.AuthProvider;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -21,7 +22,7 @@ public class User extends BaseEntity {
     @Column(nullable = false, unique = true)
     private String email;
 
-    @Column(name = "hashed_password", nullable = false)
+    @Column(name = "hashed_password", nullable = true)
     private String hashedPassword;
 
     @Column(unique = true)
@@ -29,6 +30,14 @@ public class User extends BaseEntity {
 
     @Column(name = "full_name")
     private String fullName;
+
+    @Column(name = "avatar_url")
+    private String avatarUrl;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "auth_provider", nullable = false)
+    @Builder.Default
+    private AuthProvider authProvider = AuthProvider.LOCAL;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "account_status", nullable = false)

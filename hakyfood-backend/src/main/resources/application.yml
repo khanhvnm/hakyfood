@@ -56,6 +56,9 @@ app:
     access-expiration: 900000   # 15 minutes
     refresh-expiration: 604800000   # 7 days
 
+  google:
+    client-id: ${GOOGLE_CLIENT_ID:dummy-client-id}
+
   cloudinary:
     cloud-name: ${CLOUDINARY_CLOUD_NAME}
     api-key: ${CLOUDINARY_API_KEY}

@@ -6,6 +6,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.example.hakyfoodbackend.common.response.ApiResponse;
 import org.example.hakyfoodbackend.modules.auth.dto.AuthFlowResponse;
+import org.example.hakyfoodbackend.modules.auth.dto.GoogleLoginRequest;
 import org.example.hakyfoodbackend.modules.auth.dto.RegisterRequest;
 import org.example.hakyfoodbackend.modules.auth.dto.VerifyOtpRequest;
 import org.example.hakyfoodbackend.modules.auth.dto.VerifyOtpResponse;
@@ -48,6 +49,30 @@ public class AuthController {
             HttpServletResponse httpResponse
     ) {
         VerifyOtpResult result = authService.verifyOtp(request);
+
+        if (result.refreshToken() != null) {
+            ResponseCookie cookie = authCookieHelper.createRefreshTokenCookie(result.refreshToken());
+            httpResponse.addHeader(HttpHeaders.SET_COOKIE, cookie.toString());
+        }
+
+        VerifyOtpResponse response = new VerifyOtpResponse(
+                result.flowId(),
+                result.nextState(),
+                result.accessToken()
+        );
+
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(ApiResponse.success(response, httpRequest));
+    }
+
+    @PostMapping("/google")
+    public ResponseEntity<ApiResponse<VerifyOtpResponse>> googleLogin(
+            @RequestBody @Valid GoogleLoginRequest request,
+            HttpServletRequest httpRequest,
+            HttpServletResponse httpResponse
+    ) {
+        VerifyOtpResult result = authService.verifyGoogleTokenAndLogin(request);
 
         if (result.refreshToken() != null) {
             ResponseCookie cookie = authCookieHelper.createRefreshTokenCookie(result.refreshToken());

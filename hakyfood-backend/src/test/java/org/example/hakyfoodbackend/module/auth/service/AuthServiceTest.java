@@ -14,6 +14,8 @@ import org.example.hakyfoodbackend.modules.auth.service.AuthFlowService;
 import org.example.hakyfoodbackend.modules.auth.service.AuthMailService;
 import org.example.hakyfoodbackend.modules.auth.service.AuthService;
 import org.example.hakyfoodbackend.modules.auth.service.OtpService;
+import org.example.hakyfoodbackend.infrastructure.google.GoogleTokenVerifierService;
+import org.example.hakyfoodbackend.modules.auth.dto.GoogleLoginRequest;
 import org.example.hakyfoodbackend.modules.user.entity.User;
 import org.example.hakyfoodbackend.modules.user.service.UserService;
 import org.junit.jupiter.api.Test;
@@ -45,6 +47,9 @@ public class AuthServiceTest {
 
     @Mock
     private JwtService jwtService;
+
+    @Mock
+    private GoogleTokenVerifierService googleTokenVerifierService;
 
     @InjectMocks
     private AuthService authService;
@@ -169,6 +174,38 @@ public class AuthServiceTest {
         verify(otpService).verifyOtp(userId, VerificationPurpose.FORGOT_PASSWORD, request.code());
         verify(userService, never()).activateAccount(any());
         verify(authFlowService, never()).deleteSession(anyString());
+    }
+
+    @Test
+    void shouldLoginSuccessfullyWithGoogle() {
+        // Arrange
+        GoogleLoginRequest request = new GoogleLoginRequest("google-id-token");
+        com.google.api.client.googleapis.auth.oauth2.GoogleIdToken.Payload payload =
+                new com.google.api.client.googleapis.auth.oauth2.GoogleIdToken.Payload();
+        payload.setEmail("google-user@test.com");
+        payload.set("name", "Google User");
+        payload.set("picture", "http://avatar.url");
+
+        User user = User.builder().email("google-user@test.com").roles(new HashSet<>()).build();
+
+        when(googleTokenVerifierService.verify("google-id-token")).thenReturn(payload);
+        when(userService.getOrCreateGoogleUser("google-user@test.com", "Google User", "http://avatar.url")).thenReturn(user);
+        when(jwtService.generateAccessToken(user)).thenReturn("accessToken");
+        when(jwtService.generateRefreshToken(user)).thenReturn("refreshToken");
+
+        // Act
+        VerifyOtpResult result = authService.verifyGoogleTokenAndLogin(request);
+
+        // Assert
+        assertNull(result.flowId());
+        assertEquals(AuthFlowState.SUCCESS, result.nextState());
+        assertEquals("accessToken", result.accessToken());
+        assertEquals("refreshToken", result.refreshToken());
+
+        verify(googleTokenVerifierService).verify("google-id-token");
+        verify(userService).getOrCreateGoogleUser("google-user@test.com", "Google User", "http://avatar.url");
+        verify(jwtService).generateAccessToken(user);
+        verify(jwtService).generateRefreshToken(user);
     }
 
 }

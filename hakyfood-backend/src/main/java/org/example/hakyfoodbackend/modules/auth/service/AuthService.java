@@ -12,6 +12,8 @@ import org.example.hakyfoodbackend.modules.auth.dto.VerifyOtpRequest;
 import org.example.hakyfoodbackend.modules.auth.dto.VerifyOtpResult;
 import org.example.hakyfoodbackend.modules.auth.enums.AuthFlowState;
 import org.example.hakyfoodbackend.modules.auth.enums.VerificationPurpose;
+import org.example.hakyfoodbackend.modules.auth.dto.GoogleLoginRequest;
+import org.example.hakyfoodbackend.infrastructure.google.GoogleTokenVerifierService;
 import org.example.hakyfoodbackend.modules.user.entity.User;
 import org.example.hakyfoodbackend.modules.user.service.UserService;
 import org.springframework.stereotype.Service;
@@ -29,6 +31,7 @@ public class AuthService {
     private final OtpService otpService;
     private final AuthMailService authMailService;
     private final JwtService jwtService;
+    private final GoogleTokenVerifierService googleTokenVerifierService;
 
     public AuthFlowResponse register(RegisterRequest request) {
         UUID userId = userService.createLocalUser(request.email(), request.password());
@@ -65,6 +68,23 @@ public class AuthService {
                 log.error("Unknown verification purpose: {}", purpose);
                 throw new AppException(ErrorCode.OTP_VERIFICATION_FAILED);
         }
+    }
+
+    @Transactional
+    public VerifyOtpResult verifyGoogleTokenAndLogin(GoogleLoginRequest request) {
+        com.google.api.client.googleapis.auth.oauth2.GoogleIdToken.Payload payload =
+                googleTokenVerifierService.verify(request.idToken());
+
+        String email = payload.getEmail();
+        String name = (String) payload.get("name");
+        String picture = (String) payload.get("picture");
+
+        User user = userService.getOrCreateGoogleUser(email, name, picture);
+
+        String accessToken = jwtService.generateAccessToken(user);
+        String refreshToken = jwtService.generateRefreshToken(user);
+
+        return new VerifyOtpResult(null, AuthFlowState.SUCCESS, accessToken, refreshToken);
     }
 
 }

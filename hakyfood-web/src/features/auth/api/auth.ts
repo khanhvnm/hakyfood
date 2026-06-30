@@ -19,3 +19,12 @@ export const verifyOtpApi = async (data: VerifyOtpRequest): Promise<ApiResponse<
   const response = await api.post<ApiResponse<VerifyOtpResponse>>('/auth/verify-otp', data);
   return response.data;
 };
+
+/**
+ * API đăng nhập/đăng ký bằng tài khoản Google
+ * Trả về accessToken nếu xác thực thành công
+ */
+export const googleLoginApi = async (data: { idToken: string }): Promise<ApiResponse<VerifyOtpResponse>> => {
+  const response = await api.post<ApiResponse<VerifyOtpResponse>>('/auth/google', data);
+  return response.data;
+};

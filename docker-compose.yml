@@ -40,6 +40,7 @@ services:
       - JWT_SIGNER_KEY=${JWT_SIGNER_KEY:-3cfa76a3b860cb7019f02d8b2f57932b9057e3a3b860cb7019f02d8b2f57932b9057e3a3b860cb7}
       - MAIL_USERNAME=${MAIL_USERNAME}
       - MAIL_PASSWORD=${MAIL_PASSWORD}
+      - GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID:-dummy-client-id}
     depends_on:
       postgres:
         condition: service_healthy
@@ -52,6 +53,7 @@ services:
       dockerfile: Dockerfile
       args:
         - VITE_API_BASE_URL=http://localhost:8080/api/v1
+        - VITE_GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID:-dummy-client-id}
     container_name: hakyfood-web
     ports:
       - "80:80"
