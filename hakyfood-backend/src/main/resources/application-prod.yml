@@ -1,0 +1,8 @@
+spring:
+  jpa:
+    show-sql: false # Turn off logging of SQL queries in production
+    hibernate:
+      ddl-auto: validate  # Validate the database schema
+
+  thymeleaf:
+    cache: true

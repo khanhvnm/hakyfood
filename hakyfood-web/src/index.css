@@ -1,68 +1,44 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import "tailwindcss";
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+@import "./variables.css";
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@theme {
+  --color-hk-primary: var(--hk-color-brand-primary);
+  --color-hk-primary-hover: var(--hk-color-brand-primary-hover);
+  --color-hk-primary-active: var(--hk-color-brand-primary-active);
+  --color-hk-primary-subtle: var(--hk-color-brand-primary-subtle);
+  
+  --color-hk-secondary: var(--hk-color-brand-secondary);
+  --color-hk-secondary-hover: var(--hk-color-brand-secondary-hover);
+  --color-hk-secondary-subtle: var(--hk-color-brand-secondary-subtle);
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
+  --color-hk-bg-page: var(--hk-color-bg-page);
+  --color-hk-bg-warm: var(--hk-color-bg-page-warm);
+  --color-hk-bg-admin: var(--hk-color-bg-page-admin);
+  --color-hk-bg-surface: var(--hk-color-bg-surface);
+  --color-hk-bg-surface-raised: var(--hk-color-bg-surface-raised);
+  --color-hk-bg-surface-sunken: var(--hk-color-bg-surface-sunken);
+  --color-hk-bg-dark: var(--hk-color-bg-dark);
+  --color-hk-bg-dark-raised: var(--hk-color-bg-dark-raised);
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
+  --color-hk-text-primary: var(--hk-color-text-primary);
+  --color-hk-text-secondary: var(--hk-color-text-secondary);
+  --color-hk-text-muted: var(--hk-color-text-muted);
+  --color-hk-text-disabled: var(--hk-color-text-disabled);
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
+  --color-hk-border: var(--hk-color-border-default);
+  --color-hk-border-subtle: var(--hk-color-border-subtle);
+  --color-hk-border-strong: var(--hk-color-border-strong);
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  --font-hk-display: var(--hk-font-display);
+  --font-hk-body: var(--hk-font-body);
+  --font-hk-logo: var(--hk-font-logo);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+@layer base {
+  body {
+    background-color: var(--hk-color-bg-page);
+    color: var(--hk-color-text-primary);
+    font-family: var(--hk-font-body);
   }
 }

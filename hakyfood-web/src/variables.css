@@ -1,0 +1,545 @@
+:root {
+  /* ==========================================================================
+     1. COLOR PALETTE PRIMITIVES
+     ========================================================================== */
+  /* Brand Orange-Red */
+  --hk-palette-orange-50:   #FAEEE8;
+  --hk-palette-orange-100:  #F5C9B0;
+  --hk-palette-orange-200:  #E8906A;
+  --hk-palette-orange-300:  #D96E42;
+  --hk-palette-orange-400:  #C44B20; /* Primary brand */
+  --hk-palette-orange-500:  #A03515;
+  --hk-palette-orange-600:  #9E3A18;
+  --hk-palette-orange-700:  #7A240C;
+  --hk-palette-orange-800:  #4E1306;
+  --hk-palette-orange-900:  #2E0A03;
+
+  /* Brand Amber-Gold */
+  --hk-palette-amber-50:    #FEF6E8;
+  --hk-palette-amber-100:   #FADE9A;
+  --hk-palette-amber-200:   #F4C044;
+  --hk-palette-amber-300:   #F4A124; /* Secondary brand */
+  --hk-palette-amber-400:   #C47E10;
+  --hk-palette-amber-500:   #92400E;
+  --hk-palette-amber-600:   #7A4A06;
+
+  /* Brand Crimson-Red */
+  --hk-palette-crimson-50:  #FFF0F2;
+  --hk-palette-crimson-100: #FBCCD2;
+  --hk-palette-crimson-400: #8B1A2B; /* Accent */
+  --hk-palette-crimson-600: #6B1220;
+
+  /* Neutral Warm-Brown */
+  --hk-palette-brown-0:     #FFFFFF;
+  --hk-palette-brown-50:    #FBF8F4; /* Page background */
+  --hk-palette-brown-100:   #F5EFE6; /* Warm background */
+  --hk-palette-brown-150:   #F4F0EB; /* Admin background */
+  --hk-palette-brown-200:   #FAF7F4; /* Surface 2 */
+  --hk-palette-brown-250:   #F0E8DC;
+  --hk-palette-brown-300:   #E8D9C4; /* Border / divider */
+  --hk-palette-brown-400:   #BCA899; /* Disabled text */
+  --hk-palette-brown-500:   #8B6B54; /* Muted text */
+  --hk-palette-brown-600:   #6B4226; /* Brown text / icon */
+  --hk-palette-brown-700:   #4A2C18; /* Mid text */
+  --hk-palette-brown-800:   #3D1A0C;
+  --hk-palette-brown-900:   #2E1208; /* Dark bg 2 */
+  --hk-palette-brown-950:   #1A0A04; /* Darkest / ink */
+
+  /* Status Colors */
+  --hk-palette-green-50:    #DCFCE7;
+  --hk-palette-green-400:   #4ADE80;
+  --hk-palette-green-500:   #16A34A;
+  --hk-palette-green-900:   #14532D;
+
+  --hk-palette-yellow-50:   #FEF3C7;
+  --hk-palette-yellow-400:  #FCD34D;
+  --hk-palette-yellow-500:  #D97706;
+
+  --hk-palette-red-50:      #FEF2F2;
+  --hk-palette-red-400:     #F87171;
+  --hk-palette-red-500:     #DC2626;
+
+  --hk-palette-blue-50:     #EFF6FF;
+  --hk-palette-blue-400:    #60A5FA;
+  --hk-palette-blue-500:     #2563EB;
+
+  --hk-palette-purple-50:   #EDE9FE;
+  --hk-palette-purple-500:  #7C3AED;
+
+  --hk-palette-white:       #FFFFFF;
+  --hk-palette-black:       #000000;
+  --hk-palette-transparent: transparent;
+
+  /* ==========================================================================
+     2. COLOR SEMANTIC TOKENS
+     ========================================================================== */
+  /* Brand colors */
+  --hk-color-brand-primary:          var(--hk-palette-orange-400);
+  --hk-color-brand-primary-hover:    var(--hk-palette-orange-600);
+  --hk-color-brand-primary-active:   var(--hk-palette-orange-700);
+  --hk-color-brand-primary-subtle:   var(--hk-palette-orange-50);
+  --hk-color-brand-primary-glow:     rgba(196, 75, 32, 0.35);
+  --hk-color-brand-secondary:        var(--hk-palette-amber-300);
+  --hk-color-brand-secondary-hover:  var(--hk-palette-amber-400);
+  --hk-color-brand-secondary-subtle: var(--hk-palette-amber-50);
+  --hk-color-brand-accent:           var(--hk-palette-crimson-400);
+
+  /* Background surfaces */
+  --hk-color-bg-page:                var(--hk-palette-brown-50);
+  --hk-color-bg-page-warm:           var(--hk-palette-brown-100);
+  --hk-color-bg-page-admin:          var(--hk-palette-brown-150);
+  --hk-color-bg-surface:             var(--hk-palette-brown-0);
+  --hk-color-bg-surface-raised:      var(--hk-palette-brown-200);
+  --hk-color-bg-surface-sunken:      var(--hk-palette-brown-100);
+  --hk-color-bg-dark:                var(--hk-palette-brown-950);
+  --hk-color-bg-dark-raised:         var(--hk-palette-brown-900);
+  --hk-color-bg-dark-subtle:         var(--hk-palette-brown-800);
+  --hk-color-bg-overlay:             rgba(26, 10, 4, 0.65);
+  --hk-color-bg-overlay-heavy:       rgba(26, 10, 4, 0.85);
+
+  /* Text colors */
+  --hk-color-text-primary:           var(--hk-palette-brown-950);
+  --hk-color-text-secondary:         var(--hk-palette-brown-700);
+  --hk-color-text-muted:             var(--hk-palette-brown-500);
+  --hk-color-text-disabled:          var(--hk-palette-brown-400);
+  --hk-color-text-inverse:           var(--hk-palette-white);
+  --hk-color-text-inverse-muted:     rgba(255, 255, 255, 0.55);
+  --hk-color-text-inverse-disabled:  rgba(255, 255, 255, 0.25);
+  --hk-color-text-brand:             var(--hk-color-brand-primary);
+  --hk-color-text-link:              var(--hk-color-brand-secondary);
+  --hk-color-text-link-hover:        var(--hk-palette-amber-400);
+
+  /* Border colors */
+  --hk-color-border-default:         var(--hk-palette-brown-300);
+  --hk-color-border-subtle:          rgba(232, 217, 196, 0.50);
+  --hk-color-border-strong:          var(--hk-palette-brown-500);
+  --hk-color-border-focus:           rgba(196, 75, 32, 0.50);
+  --hk-color-border-brand:           var(--hk-color-brand-primary);
+  --hk-color-border-dark:            rgba(244, 161, 36, 0.10);
+
+  /* Feedback colors */
+  --hk-color-status-success:         var(--hk-palette-green-500);
+  --hk-color-status-success-subtle:  var(--hk-palette-green-50);
+  --hk-color-status-success-strong:  var(--hk-palette-green-900);
+  --hk-color-status-success-text:    var(--hk-palette-green-400);
+
+  --hk-color-status-warning:         var(--hk-palette-yellow-500);
+  --hk-color-status-warning-subtle:  var(--hk-palette-yellow-50);
+  --hk-color-status-warning-text:    var(--hk-palette-yellow-400);
+
+  --hk-color-status-error:           var(--hk-palette-red-500);
+  --hk-color-status-error-subtle:    var(--hk-palette-red-50);
+  --hk-color-status-error-text:      var(--hk-palette-red-400);
+
+  --hk-color-status-info:            var(--hk-palette-blue-500);
+  --hk-color-status-info-subtle:     var(--hk-palette-blue-50);
+  --hk-color-status-info-text:       var(--hk-palette-blue-400);
+
+  /* Accents & Tints */
+  --hk-color-accent-purple:          var(--hk-palette-purple-500);
+  --hk-color-accent-purple-subtle:   var(--hk-palette-purple-50);
+  --hk-color-dark-tint-subtle:       rgba(255, 255, 255, 0.05);
+  --hk-color-dark-tint-mild:         rgba(255, 255, 255, 0.08);
+  --hk-color-dark-tint-strong:       rgba(255, 255, 255, 0.12);
+  --hk-color-dark-border-subtle:     rgba(255, 255, 255, 0.07);
+  --hk-color-dark-border-mild:       rgba(255, 255, 255, 0.12);
+  --hk-color-shadow-warm:            rgba(100, 40, 10, 1);
+
+  /* ==========================================================================
+     3. TYPOGRAPHY
+     ========================================================================== */
+  /* Fonts */
+  --hk-font-display: 'Baloo 2', system-ui, sans-serif;
+  --hk-font-body:    'Be Vietnam Pro', system-ui, sans-serif;
+  --hk-font-logo:    'Pacifico', cursive;
+  --hk-font-mono:    'SF Mono', 'Fira Code', 'Fira Mono', monospace;
+
+  /* Font size scale */
+  --hk-text-2xs:   0.625rem;  /* 10px */
+  --hk-text-xs:    0.6875rem; /* 11px */
+  --hk-text-sm:    0.75rem;   /* 12px */
+  --hk-text-base:  0.8125rem; /* 13px */
+  --hk-text-md:    0.875rem;  /* 14px */
+  --hk-text-lg:    1rem;      /* 16px */
+  --hk-text-xl:    1.125rem;  /* 18px */
+  --hk-text-2xl:   1.25rem;   /* 20px */
+  --hk-text-3xl:   1.5rem;    /* 24px */
+  --hk-text-4xl:   1.875rem;  /* 30px */
+  --hk-text-5xl:   2.25rem;   /* 36px */
+  --hk-text-6xl:   3rem;      /* 48px */
+  --hk-text-7xl:   3.75rem;   /* 60px */
+
+  /* Font weight */
+  --hk-weight-regular:    400;
+  --hk-weight-medium:     500;
+  --hk-weight-semibold:   600;
+  --hk-weight-bold:       700;
+  --hk-weight-extrabold:  800;
+  --hk-weight-black:      900;
+
+  /* Line height */
+  --hk-leading-none:      1;
+  --hk-leading-tight:     1.1;
+  --hk-leading-snug:      1.25;
+  --hk-leading-normal:    1.5;
+  --hk-leading-relaxed:   1.625;
+  --hk-leading-loose:     1.75;
+
+  /* Letter spacing */
+  --hk-tracking-tight:    -0.025em;
+  --hk-tracking-normal:    0em;
+  --hk-tracking-wide:      0.04em;
+  --hk-tracking-wider:     0.07em;
+  --hk-tracking-widest:    0.1em;
+
+  --hk-text-paragraph-spacing: 1em;
+
+  /* ==========================================================================
+     4. SPACING & GRID
+     ========================================================================== */
+  --hk-space-0:    0px;
+  --hk-space-px:   1px;
+  --hk-space-0-5:  2px;
+  --hk-space-1:    4px;
+  --hk-space-1-5:  6px;
+  --hk-space-2:    8px;
+  --hk-space-2-5:  10px;
+  --hk-space-3:    12px;
+  --hk-space-3-5:  14px;
+  --hk-space-4:    16px;
+  --hk-space-5:    20px;
+  --hk-space-6:    24px;
+  --hk-space-7:    28px;
+  --hk-space-8:    32px;
+  --hk-space-9:    36px;
+  --hk-space-10:   40px;
+  --hk-space-11:   44px;
+  --hk-space-12:   48px;
+  --hk-space-14:   56px;
+  --hk-space-16:   64px;
+  --hk-space-18:   72px;
+  --hk-space-20:   80px;
+  --hk-space-24:   96px;
+  --hk-space-28:   112px;
+  --hk-space-32:   128px;
+
+  /* Semantic spacing */
+  --hk-space-component-xs:      var(--hk-space-1);
+  --hk-space-component-sm:      var(--hk-space-2);
+  --hk-space-component-md:      var(--hk-space-3);
+  --hk-space-component-lg:      var(--hk-space-4);
+  --hk-space-component-xl:      var(--hk-space-6);
+  --hk-space-section-sm:        var(--hk-space-12);
+  --hk-space-section-md:        var(--hk-space-16);
+  --hk-space-section-lg:        var(--hk-space-24);
+
+  /* Inset padding presets */
+  --hk-inset-squish-sm:         var(--hk-space-1-5) var(--hk-space-3);
+  --hk-inset-squish-md:         var(--hk-space-2)   var(--hk-space-4);
+  --hk-inset-squish-lg:         var(--hk-space-3)   var(--hk-space-6);
+  --hk-inset-uniform-sm:        var(--hk-space-3);
+  --hk-inset-uniform-md:        var(--hk-space-4);
+  --hk-inset-uniform-lg:        var(--hk-space-6);
+
+  /* Grid columns and margins */
+  --hk-grid-columns-mobile:    4;
+  --hk-grid-columns-tablet:    8;
+  --hk-grid-columns-desktop:  12;
+  --hk-grid-gutter-mobile:    var(--hk-space-4);
+  --hk-grid-gutter-tablet:    var(--hk-space-6);
+  --hk-grid-gutter-desktop:   var(--hk-space-6);
+  --hk-grid-margin-mobile:    var(--hk-space-4);
+  --hk-grid-margin-tablet:    var(--hk-space-6);
+  --hk-grid-margin-desktop:   var(--hk-space-12);
+
+  /* Responsive breakpoints */
+  --hk-bp-xs:  375px;
+  --hk-bp-sm:  640px;
+  --hk-bp-md:  768px;
+  --hk-bp-lg:  1024px;
+  --hk-bp-xl:  1280px;
+  --hk-bp-2xl: 1536px;
+
+  /* ==========================================================================
+     5. BORDERS & RADIUS
+     ========================================================================== */
+  --hk-radius-none:   0px;
+  --hk-radius-xs:     4px;
+  --hk-radius-sm:     6px;
+  --hk-radius-md:     10px;
+  --hk-radius-lg:     14px;
+  --hk-radius-xl:     20px;
+  --hk-radius-2xl:    28px;
+  --hk-radius-3xl:    36px;
+  --hk-radius-pill:   9999px;
+  --hk-radius-circle: 50%;
+
+  --hk-border-width-hairline: 0.5px;
+  --hk-border-width-thin:     1px;
+  --hk-border-width-base:     1.5px;
+  --hk-border-width-thick:    2px;
+
+  --hk-border-default:   var(--hk-border-width-thin)  solid var(--hk-color-border-default);
+  --hk-border-base:      var(--hk-border-width-base)  solid var(--hk-color-border-default);
+  --hk-border-strong:    var(--hk-border-width-thick) solid var(--hk-color-border-strong);
+  --hk-border-brand:     var(--hk-border-width-base)  solid var(--hk-color-brand-primary);
+  --hk-border-dark:      var(--hk-border-width-thin)  solid var(--hk-color-border-dark);
+  --hk-border-dashed:    var(--hk-border-width-base)  dashed var(--hk-color-border-default);
+
+  /* ==========================================================================
+     6. ELEVATION & SHADOWS
+     ========================================================================== */
+  --hk-shadow-0:   none;
+  --hk-shadow-1:   0 1px 3px  rgba(100, 40, 10, 0.07);
+  --hk-shadow-2:   0 2px 8px  rgba(100, 40, 10, 0.10);
+  --hk-shadow-3:   0 4px 16px rgba(100, 40, 10, 0.12);
+  --hk-shadow-4:   0 6px 24px rgba(100, 40, 10, 0.14);
+  --hk-shadow-5:   0 12px 40px rgba(100, 40, 10, 0.18);
+  --hk-shadow-6:   0 16px 48px rgba(100, 40, 10, 0.18);
+  --hk-shadow-7:   0 24px 64px rgba(100, 40, 10, 0.22);
+
+  --hk-shadow-card:           var(--hk-shadow-2);
+  --hk-shadow-card-hover:     var(--hk-shadow-5);
+  --hk-shadow-dropdown:       var(--hk-shadow-4);
+  --hk-shadow-modal:          var(--hk-shadow-7);
+  --hk-shadow-drawer:         0 -4px 48px rgba(100, 40, 10, 0.18);
+  --hk-shadow-toast:          0 8px 32px rgba(0, 0, 0, 0.30);
+  --hk-shadow-sticky-header:  0 1px 4px  rgba(100, 40, 10, 0.08);
+
+  --hk-shadow-brand-sm:       0 3px 10px  rgba(196, 75, 32, 0.30);
+  --hk-shadow-brand-md:       0 6px 20px  rgba(196, 75, 32, 0.40);
+  --hk-shadow-brand-lg:       0 10px 32px rgba(196, 75, 32, 0.50);
+  --hk-shadow-brand-xl:       0 14px 48px rgba(196, 75, 32, 0.60);
+
+  --hk-shadow-success:        0 4px 16px rgba(22, 163, 74, 0.35);
+  --hk-shadow-error:          0 4px 16px rgba(220, 38, 38, 0.35);
+
+  --hk-shadow-focus-brand:    0 0 0 3px var(--hk-color-brand-primary-subtle);
+  --hk-shadow-focus-error:    0 0 0 3px rgba(220, 38, 38, 0.12);
+
+  /* ==========================================================================
+     7. MOTION
+     ========================================================================== */
+  --hk-duration-instant:    0ms;
+  --hk-duration-fast:       100ms;
+  --hk-duration-base:       150ms;
+  --hk-duration-normal:     200ms;
+  --hk-duration-moderate:   250ms;
+  --hk-duration-slow:       350ms;
+  --hk-duration-deliberate: 450ms;
+  --hk-duration-relaxed:    600ms;
+
+  --hk-ease-linear:         linear;
+  --hk-ease-in:             cubic-bezier(0.4, 0, 1, 1);
+  --hk-ease-out:            cubic-bezier(0, 0, 0.2, 1);
+  --hk-ease-in-out:         cubic-bezier(0.4, 0, 0.2, 1);
+  --hk-ease-spring:         cubic-bezier(0.34, 1.56, 0.64, 1);
+  --hk-ease-bounce:         cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  --hk-transition-color:    color var(--hk-duration-normal) var(--hk-ease-out), background var(--hk-duration-normal) var(--hk-ease-out), border-color var(--hk-duration-normal) var(--hk-ease-out);
+  --hk-transition-transform: transform  var(--hk-duration-moderate) var(--hk-ease-spring);
+  --hk-transition-fade:       opacity   var(--hk-duration-normal)   var(--hk-ease-out);
+  --hk-transition-shadow:     box-shadow var(--hk-duration-moderate) var(--hk-ease-out);
+  --hk-transition-all:        all        var(--hk-duration-normal)   var(--hk-ease-out);
+
+  /* ==========================================================================
+     8. LAYOUT METRICS
+     ========================================================================== */
+  --hk-layout-header-height:      60px;
+  --hk-layout-header-height-slim: 52px;
+  --hk-layout-sidebar-width:     230px;
+  --hk-layout-sidebar-width-sm:  200px;
+  --hk-layout-drawer-width:      560px;
+  --hk-layout-drawer-width-sm:   100%;
+
+  --hk-z-below:        -1;
+  --hk-z-base:          0;
+  --hk-z-raised:       10;
+  --hk-z-dropdown:     50;
+  --hk-z-sticky:       80;
+  --hk-z-header:      100;
+  --hk-z-sidebar:     100;
+  --hk-z-drawer:      200;
+  --hk-z-overlay:     300;
+  --hk-z-modal:       310;
+  --hk-z-toast:       999;
+  --hk-z-tooltip:     1000;
+
+  /* ==========================================================================
+     9. COMPONENT SPECIFIC TOKENS
+     ========================================================================== */
+  /* Buttons */
+  --hk-btn-font-family:          var(--hk-font-display);
+  --hk-btn-font-weight:          var(--hk-weight-bold);
+  --hk-btn-font-size-sm:         var(--hk-text-sm);
+  --hk-btn-font-size-md:         var(--hk-text-base);
+  --hk-btn-font-size-lg:         var(--hk-text-lg);
+  --hk-btn-height-xs:            28px;
+  --hk-btn-height-sm:            32px;
+  --hk-btn-height-md:            40px;
+  --hk-btn-height-lg:            48px;
+  --hk-btn-height-xl:            56px;
+  --hk-btn-padding-xs:           var(--hk-inset-squish-sm);
+  --hk-btn-padding-sm:           3px 12px;
+  --hk-btn-padding-md:           var(--hk-inset-squish-md);
+  --hk-btn-padding-lg:           var(--hk-inset-squish-lg);
+  --hk-btn-radius:               var(--hk-radius-md);
+  --hk-btn-radius-pill:          var(--hk-radius-pill);
+  --hk-btn-primary-bg:           var(--hk-color-brand-primary);
+  --hk-btn-primary-bg-hover:     var(--hk-color-brand-primary-hover);
+  --hk-btn-primary-color:        var(--hk-palette-white);
+  --hk-btn-primary-shadow:       var(--hk-shadow-brand-sm);
+  --hk-btn-primary-shadow-hover: var(--hk-shadow-brand-md);
+  --hk-btn-secondary-bg:         var(--hk-color-bg-surface);
+  --hk-btn-secondary-color:      var(--hk-color-text-secondary);
+  --hk-btn-secondary-border:     var(--hk-border-base);
+  --hk-btn-ghost-bg:             var(--hk-palette-transparent);
+  --hk-btn-ghost-color:          var(--hk-color-text-muted);
+  --hk-btn-ghost-bg-hover:       var(--hk-color-bg-surface-sunken);
+  --hk-btn-danger-bg:            var(--hk-color-status-error-subtle);
+  --hk-btn-danger-color:         var(--hk-color-status-error);
+  --hk-btn-danger-border:        1.5px solid rgba(220, 38, 38, 0.20);
+  --hk-btn-danger-bg-hover:      var(--hk-color-status-error);
+  --hk-btn-danger-color-hover:   var(--hk-palette-white);
+
+  /* Form Inputs */
+  --hk-input-font-family:        var(--hk-font-body);
+  --hk-input-font-size:          var(--hk-text-base);
+  --hk-input-height-sm:          32px;
+  --hk-input-height-md:          38px;
+  --hk-input-height-lg:          44px;
+  --hk-input-padding-x:          var(--hk-space-3);
+  --hk-input-padding-y:          var(--hk-space-2-5);
+  --hk-input-radius:             var(--hk-radius-md);
+  --hk-input-border:             var(--hk-border-base);
+  --hk-input-bg:                 var(--hk-color-bg-surface-sunken);
+  --hk-input-bg-focus:           var(--hk-color-bg-surface);
+  --hk-input-color:              var(--hk-color-text-primary);
+  --hk-input-color-placeholder:  var(--hk-color-text-disabled);
+  --hk-input-border-focus:        var(--hk-color-border-focus);
+  --hk-input-shadow-focus:        var(--hk-shadow-focus-brand);
+  --hk-input-border-error:        var(--hk-color-status-error);
+  --hk-input-bg-error:            var(--hk-color-status-error-subtle);
+  --hk-input-border-valid:        var(--hk-color-status-success);
+  --hk-input-dark-bg:            rgba(255, 255, 255, 0.07);
+  --hk-input-dark-bg-focus:      rgba(255, 255, 255, 0.11);
+  --hk-input-dark-border:        rgba(255, 255, 255, 0.10);
+  --hk-input-dark-color:         var(--hk-palette-white);
+
+  /* Other components */
+  --hk-card-bg:                  var(--hk-color-bg-surface);
+  --hk-card-border:              var(--hk-border-default);
+  --hk-card-radius:              var(--hk-radius-xl);
+  --hk-card-shadow:              var(--hk-shadow-card);
+  --hk-card-shadow-hover:        var(--hk-shadow-card-hover);
+  --hk-card-padding:             var(--hk-inset-uniform-md);
+
+  --hk-badge-font-family:        var(--hk-font-display);
+  --hk-badge-font-size:          var(--hk-text-xs);
+  --hk-badge-font-weight:        var(--hk-weight-bold);
+  --hk-badge-padding:            2px 8px;
+  --hk-badge-radius:             var(--hk-radius-pill);
+  --hk-badge-letter-spacing:     var(--hk-tracking-wide);
+
+  --hk-modal-bg:                 var(--hk-color-bg-surface);
+  --hk-modal-radius:             var(--hk-radius-xl);
+  --hk-modal-shadow:             var(--hk-shadow-modal);
+  --hk-modal-overlay:            var(--hk-color-bg-overlay-heavy);
+  --hk-modal-max-width:          520px;
+
+  --hk-drawer-bg:                var(--hk-color-bg-surface);
+  --hk-drawer-shadow:            var(--hk-shadow-drawer);
+  --hk-drawer-overlay:           rgba(26, 10, 4, 0.50);
+  --hk-drawer-width:             var(--hk-layout-drawer-width);
+
+  --hk-toast-radius:             var(--hk-radius-lg);
+  --hk-toast-shadow:             var(--hk-shadow-toast);
+  --hk-toast-font-family:        var(--hk-font-display);
+  --hk-toast-font-size:          var(--hk-text-base);
+  --hk-toast-font-weight:        var(--hk-weight-semibold);
+  --hk-toast-padding:            11px 16px;
+
+  --hk-price-font-family:        var(--hk-font-display);
+  --hk-price-font-weight:        var(--hk-weight-black);
+  --hk-price-color:              var(--hk-color-brand-primary);
+  
+  --hk-img-radius-card:          var(--hk-radius-xl);
+  --hk-img-radius-thumb:         var(--hk-radius-md);
+  --hk-img-radius-avatar:        var(--hk-radius-circle);
+
+  /* ==========================================================================
+     10. LEGACY ALIASES (For compatibility with static HTML templates)
+     ========================================================================== */
+  --c-primary:          var(--hk-color-brand-primary);
+  --c-primary-dk:       var(--hk-color-brand-primary-hover);
+  --c-primary-dark:     var(--hk-color-brand-primary-hover);
+  --c-primary-lt:       var(--hk-color-brand-primary-subtle);
+  --c-primary-light:    var(--hk-color-brand-primary-subtle);
+  --c-primary-glow:     var(--hk-color-brand-primary-glow);
+  --c-secondary:        var(--hk-color-brand-secondary);
+  --c-secondary-dk:     var(--hk-color-brand-secondary-hover);
+  --c-secondary-lt:     var(--hk-color-brand-secondary-subtle);
+  --c-accent:           var(--hk-color-brand-accent);
+  --c-accent-red:       var(--hk-color-brand-accent);
+
+  --p:                  var(--hk-color-brand-primary);
+  --p-dk:               var(--hk-color-brand-primary-hover);
+  --p-lt:               var(--hk-color-brand-primary-subtle);
+  --p-glow:             var(--hk-color-brand-primary-glow);
+  --s:                  var(--hk-color-brand-secondary);
+  --s-lt:               var(--hk-color-brand-secondary-subtle);
+  --acc:                var(--hk-color-brand-accent);
+
+  --c-bg:               var(--hk-color-bg-page);
+  --c-bg-warm:          var(--hk-color-bg-page-warm);
+  --c-bg-dark:          var(--hk-color-bg-dark);
+  --c-bg-dark2:         var(--hk-color-bg-dark-raised);
+  --surface:            var(--hk-color-bg-surface);
+  --surface2:           var(--hk-color-bg-surface-raised);
+  --surface3:           var(--hk-color-bg-page-warm);
+  --c-white:            var(--hk-palette-white);
+
+  --c-text:             var(--hk-color-text-primary);
+  --c-text-mid:         var(--hk-color-text-secondary);
+  --c-text-muted:       var(--hk-color-text-muted);
+  --tx:                 var(--hk-color-text-primary);
+  --tx-m:               var(--hk-color-text-secondary);
+  --tx-mu:              var(--hk-color-text-muted);
+
+  --c-border:           var(--hk-color-border-default);
+  --c-border-focus:     var(--hk-color-border-focus);
+  --bd:                 var(--hk-color-border-default);
+  --bd-focus:           var(--hk-color-border-focus);
+
+  --c-success:          var(--hk-color-status-success);
+  --c-success-lt:       var(--hk-color-status-success-subtle);
+  --c-warn:             var(--hk-color-status-warning);
+  --c-warn-lt:          var(--hk-color-status-warning-subtle);
+  --err:                var(--hk-color-status-error);
+  --err-lt:             var(--hk-color-status-error-subtle);
+  --info:               var(--hk-color-status-info);
+  --info-lt:            var(--hk-color-status-info-subtle);
+
+  --shadow:             var(--hk-shadow-1);
+  --shadow-sm:          var(--hk-shadow-1);
+  --shadow-md:          var(--hk-shadow-3);
+  --shadow-lg:          var(--hk-shadow-5);
+  --shadow-xl:          var(--hk-shadow-7);
+  --shadow-warm:        var(--hk-shadow-2);
+  --shadow-warm-lg:     var(--hk-shadow-5);
+
+  --r-xs:               var(--hk-radius-xs);
+  --r-sm:               var(--hk-radius-sm);
+  --r-md:               var(--hk-radius-md);
+  --r-lg:               var(--hk-radius-lg);
+  --r-xl:               var(--hk-radius-xl);
+  --r-2xl:              var(--hk-radius-2xl);
+  --r-pill:             var(--hk-radius-pill);
+
+  --font-display:       var(--hk-font-display);
+  --font-body:          var(--hk-font-body);
+  --font-logo:          var(--hk-font-logo);
+
+  --ease-spring:        var(--hk-ease-spring);
+  --ease-out:           var(--hk-ease-out);
+}

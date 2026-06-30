@@ -1,0 +1,11 @@
+spring:
+  jpa:
+    show-sql: true  # Print SQL queries in the console
+    hibernate:
+      ddl-auto: update  # Create tables automatically
+    properties:
+      hibernate:
+        format_sql: true
+
+  thymeleaf:
+    cache: false  # Turn off caching for development to see changes immediately
