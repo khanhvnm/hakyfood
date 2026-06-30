@@ -4,14 +4,18 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.example.hakyfoodbackend.common.exception.AppException;
 import org.example.hakyfoodbackend.common.exception.ErrorCode;
+import org.example.hakyfoodbackend.infrastructure.jwt.JwtService;
 import org.example.hakyfoodbackend.modules.auth.dto.AuthFlowResponse;
 import org.example.hakyfoodbackend.modules.auth.dto.AuthSessionData;
 import org.example.hakyfoodbackend.modules.auth.dto.RegisterRequest;
 import org.example.hakyfoodbackend.modules.auth.dto.VerifyOtpRequest;
+import org.example.hakyfoodbackend.modules.auth.dto.VerifyOtpResult;
 import org.example.hakyfoodbackend.modules.auth.enums.AuthFlowState;
 import org.example.hakyfoodbackend.modules.auth.enums.VerificationPurpose;
+import org.example.hakyfoodbackend.modules.user.entity.User;
 import org.example.hakyfoodbackend.modules.user.service.UserService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.UUID;
 
@@ -24,6 +28,7 @@ public class AuthService {
     private final AuthFlowService authFlowService;
     private final OtpService otpService;
     private final AuthMailService authMailService;
+    private final JwtService jwtService;
 
     public AuthFlowResponse register(RegisterRequest request) {
         UUID userId = userService.createLocalUser(request.email(), request.password());
@@ -37,7 +42,8 @@ public class AuthService {
         return new AuthFlowResponse(flowId, AuthFlowState.VERIFY_OTP);
     }
 
-    public AuthFlowResponse verifyOtp(VerifyOtpRequest request) {
+    @Transactional
+    public VerifyOtpResult verifyOtp(VerifyOtpRequest request) {
         AuthSessionData sessionData = authFlowService.getSession(request.flowId());
 
         UUID userId = sessionData.userId();
@@ -49,7 +55,12 @@ public class AuthService {
             case VerificationPurpose.REGISTER:
                 userService.activateAccount(userId);
                 authFlowService.deleteSession(request.flowId());
-                return new AuthFlowResponse(null, AuthFlowState.SUCCESS);
+
+                User user = userService.getUserById(userId);
+                String accessToken = jwtService.generateAccessToken(user);
+                String refreshToken = jwtService.generateRefreshToken(user);
+
+                return new VerifyOtpResult(null, AuthFlowState.SUCCESS, accessToken, refreshToken);
             default:
                 log.error("Unknown verification purpose: {}", purpose);
                 throw new AppException(ErrorCode.OTP_VERIFICATION_FAILED);
