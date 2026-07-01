@@ -10,6 +10,9 @@ public enum ErrorCode {
 
     ACCOUNT_EXISTS(HttpStatus.BAD_REQUEST, "account.exists"),
     ACCOUNT_NOT_PENDING_VERIFY(HttpStatus.BAD_REQUEST, "account.not_pending_verify"),
+    ACCOUNT_NOT_ACTIVE(HttpStatus.FORBIDDEN, "account.not_active"),
+
+    INVALID_CREDENTIALS(HttpStatus.UNAUTHORIZED, "auth.invalid_credentials"),
 
     OTP_RESEND_TOO_FREQUENTLY(HttpStatus.BAD_REQUEST, "otp.resend_too_frequently"),
     OTP_NOT_FOUND(HttpStatus.BAD_REQUEST, "otp.not_found"),
