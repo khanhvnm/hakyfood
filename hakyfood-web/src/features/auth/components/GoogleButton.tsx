@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { googleLoginApi } from '../api/auth';
 import { toast } from 'sonner';
+import { useAuthStore } from '../store/useAuthStore';
 
 declare const google: any;
 
@@ -10,6 +11,7 @@ interface GoogleButtonProps {
 
 export const GoogleButton: React.FC<GoogleButtonProps> = ({ onSuccess }) => {
   const [isLoading, setIsLoading] = useState(false);
+  const { setAuth } = useAuthStore();
 
   useEffect(() => {
     // Đảm bảo thư viện Google client SDK đã được load
@@ -59,8 +61,8 @@ export const GoogleButton: React.FC<GoogleButtonProps> = ({ onSuccess }) => {
       const apiResponse = await googleLoginApi({ idToken: response.credential });
 
       if (apiResponse.success && apiResponse.data?.accessToken) {
-        // Lưu token vào localStorage
-        localStorage.setItem('accessToken', apiResponse.data.accessToken);
+        // Lưu token vào in-memory store (không dùng localStorage)
+        setAuth(apiResponse.data.accessToken);
         toast.success('🎉 Đăng nhập bằng Google thành công!');
         onSuccess();
       } else {
