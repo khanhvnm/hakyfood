@@ -53,13 +53,21 @@ function HomeComponent() {
         </button>
       </div>
 
-      {/* Liên kết nhanh sang trang đăng ký */}
-      <Link 
-        to="/register"
-        className="px-6 py-3 bg-hk-bg-dark text-hk-secondary hover:text-white font-bold rounded-xl border border-white/10 shadow-md hover:shadow-lg transition-all"
-      >
-        Đi tới trang Đăng ký (Register) →
-      </Link>
+      {/* Liên kết nhanh */}
+      <div className="flex flex-wrap gap-4 justify-center">
+        <Link 
+          to="/login"
+          className="px-6 py-3 bg-hk-primary hover:bg-hk-primary-hover text-white font-bold rounded-xl shadow-md hover:shadow-lg transition-all"
+        >
+          Đăng nhập (Login) →
+        </Link>
+        <Link 
+          to="/register"
+          className="px-6 py-3 bg-hk-bg-dark text-hk-secondary hover:text-white font-bold rounded-xl border border-white/10 shadow-md hover:shadow-lg transition-all"
+        >
+          Đăng ký (Register) →
+        </Link>
+      </div>
     </div>
   );
 }
