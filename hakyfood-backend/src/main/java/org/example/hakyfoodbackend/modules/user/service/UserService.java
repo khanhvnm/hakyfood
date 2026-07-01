@@ -87,7 +87,6 @@ public class UserService {
                     .avatarUrl(avatarUrl)
                     .authProvider(AuthProvider.GOOGLE)
                     .accountStatus(AccountStatus.ACTIVE)
-                    .hashedPassword(passwordEncoder.encode(java.util.UUID.randomUUID().toString()))
                     .build();
 
             Role customerRole = roleRepository.findByCode("CUSTOMER")
@@ -106,6 +105,19 @@ public class UserService {
             }
             return user;
         }
+    }
+
+    @Transactional
+    public void updateUserPassword(UUID userId, String rawPassword) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new AppException(ErrorCode.USER_NOT_FOUND));
+        user.updatePassword(passwordEncoder.encode(rawPassword));
+        userRepository.save(user);
+    }
+
+    public User getUserByEmail(String email) {
+        return userRepository.findByEmail(email)
+                .orElseThrow(() -> new AppException(ErrorCode.USER_NOT_FOUND));
     }
 
 }
