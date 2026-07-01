@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { verifyOtpApi } from '../api/auth';
 import type { VerifyOtpRequest } from '../types';
 import { toast } from 'sonner';
+import { useAuthStore } from '../store/useAuthStore';
 
 interface OTPFormProps {
   flowId: string;
   email: string;
-  onSuccess: () => void;
+  onSuccess: (flowId?: string) => void;
   onCancel: () => void;
 }
 
@@ -18,6 +19,8 @@ export const OTPForm: React.FC<OTPFormProps> = ({ flowId, email, onSuccess, onCa
   // Trạng thái đếm ngược gửi lại mã
   const [countdown, setCountdown] = useState(60);
   const [canResend, setCanResend] = useState(false);
+
+  const { setAuth } = useAuthStore();
 
   // Bộ đếm ngược 60 giây
   useEffect(() => {
@@ -45,12 +48,22 @@ export const OTPForm: React.FC<OTPFormProps> = ({ flowId, email, onSuccess, onCa
       const payload: VerifyOtpRequest = { flowId, code };
       const response = await verifyOtpApi(payload);
 
-      if (response.success && response.data?.nextState === 'SUCCESS') {
-        if (response.data.accessToken) {
-          localStorage.setItem('accessToken', response.data.accessToken);
+      if (response.success && response.data) {
+        if (response.data.nextState === 'SET_PASSWORD') {
+          // OTP verified for forgot-password flow, transition to set-password
+          toast.success('🎉 Xác thực OTP thành công! Hãy đặt mật khẩu mới.');
+          onSuccess(response.data.flowId || undefined);
+        } else if (response.data.nextState === 'SUCCESS') {
+          if (response.data.accessToken) {
+            setAuth(response.data.accessToken);
+          }
+          toast.success('🎉 Kích hoạt tài khoản thành công!');
+          onSuccess();
+        } else {
+          const error = response.message || 'Mã xác thực không chính xác.';
+          setErrorMsg(error);
+          toast.error(`⚠️ ${error}`);
         }
-        toast.success('🎉 Kích hoạt tài khoản thành công!');
-        onSuccess();
       } else {
         const error = response.message || 'Mã xác thực không chính xác.';
         setErrorMsg(error);
@@ -88,7 +101,7 @@ export const OTPForm: React.FC<OTPFormProps> = ({ flowId, email, onSuccess, onCa
         onClick={onCancel}
         className="text-xs text-hk-text-muted hover:text-white mb-6 flex items-center gap-1 cursor-pointer"
       >
-        ← Quay lại trang đăng ký
+        ← Quay lại
       </button>
 
       <div className="mb-6">
@@ -139,7 +152,7 @@ export const OTPForm: React.FC<OTPFormProps> = ({ flowId, email, onSuccess, onCa
           {isLoading ? (
             <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
           ) : (
-            'Xác nhận kích hoạt tài khoản →'
+            'Xác nhận mã OTP →'
           )}
         </button>
       </form>

@@ -5,6 +5,7 @@ import { OTPForm } from '@/features/auth';
 type VerifyOtpSearch = {
   flowId: string;
   email: string;
+  purpose?: string;
 };
 
 export const Route = createFileRoute('/_auth/verify-otp')({
@@ -13,6 +14,7 @@ export const Route = createFileRoute('/_auth/verify-otp')({
     return {
       flowId: (search.flowId as string) || '',
       email: (search.email as string) || '',
+      purpose: (search.purpose as string) || undefined,
     };
   },
   component: VerifyOtpPage,
@@ -20,18 +22,28 @@ export const Route = createFileRoute('/_auth/verify-otp')({
 
 function VerifyOtpPage() {
   const navigate = useNavigate();
-  // Lấy các tham số flowId và email từ URL một cách type-safe
-  const { flowId, email } = Route.useSearch();
+  // Lấy các tham số flowId, email và purpose từ URL một cách type-safe
+  const { flowId, email, purpose } = Route.useSearch();
 
-  const handleOtpSuccess = () => {
-    // Đăng ký và kích hoạt OTP thành công -> Điều hướng về trang thành công/login
-    alert('Kích hoạt tài khoản thành công! Bạn có thể đăng nhập ngay bây giờ.');
-    navigate({ to: '/' });
+  const handleOtpSuccess = (returnedFlowId?: string) => {
+    if (purpose === 'FORGOT_PASSWORD' && returnedFlowId) {
+      // Chuyển sang trang đặt mật khẩu mới
+      navigate({
+        to: '/set-password',
+        search: { flowId: returnedFlowId },
+      });
+    } else {
+      // Đăng ký và kích hoạt OTP thành công -> Điều hướng về trang chủ
+      navigate({ to: '/' });
+    }
   };
 
   const handleCancel = () => {
-    // Quay lại trang đăng ký
-    navigate({ to: '/register' });
+    if (purpose === 'FORGOT_PASSWORD') {
+      navigate({ to: '/login' });
+    } else {
+      navigate({ to: '/register' });
+    }
   };
 
   return (

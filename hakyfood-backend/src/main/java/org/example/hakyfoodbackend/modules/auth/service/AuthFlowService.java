@@ -60,4 +60,9 @@ public class AuthFlowService {
         stringRedisTemplate.delete(KEY_PREFIX + flowId);
     }
 
+    public void updateSessionNextState(String flowId, AuthFlowState nextState) {
+        String redisKey = KEY_PREFIX + flowId;
+        stringRedisTemplate.opsForHash().put(redisKey, HASH_KEY_NEXT_STATE, nextState.name().toLowerCase());
+    }
+
 }

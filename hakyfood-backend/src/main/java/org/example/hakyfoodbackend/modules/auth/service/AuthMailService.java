@@ -18,5 +18,12 @@ public class AuthMailService {
         mailService.sendMail(email, subject, content);
     }
 
+    @Async("emailExecutor")
+    public void sendForgotPasswordEmail(String email, String code) {
+        String subject = "Password Recovery - HakyFood";
+        String content = "Your password recovery code is: " + code;
+        mailService.sendMail(email, subject, content);
+    }
+
 
 }
