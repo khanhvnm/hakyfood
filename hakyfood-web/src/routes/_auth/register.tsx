@@ -27,7 +27,7 @@ function RegisterPage() {
   return (
     <RegisterForm
       onSuccess={handleRegisterSuccess}
-      onSwitchToLogin={() => console.log('Chuyển hướng sang trang Login')}
+      onSwitchToLogin={() => navigate({ to: '/login' })}
     />
   );
 }
