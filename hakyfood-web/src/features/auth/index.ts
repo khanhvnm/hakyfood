@@ -21,3 +21,6 @@ export type {
   VerifyOtpResponse,
   AuthFlowState 
 } from './types';
+
+// 4. Export JWT decode utilities
+export { hasPermission, hasRole } from './utils/jwt';
