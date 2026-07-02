@@ -4,6 +4,7 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
+import org.example.hakyfoodbackend.modules.user.entity.Permission;
 import org.example.hakyfoodbackend.modules.user.entity.Role;
 import org.example.hakyfoodbackend.modules.user.entity.User;
 import org.springframework.beans.factory.annotation.Value;
@@ -31,10 +32,17 @@ public class JwtService {
                 .map(Role::getCode)
                 .toList();
 
+        List<String> permissions = user.getRoles().stream()
+                .flatMap(role -> role.getPermissions().stream())
+                .map(Permission::getCode)
+                .distinct()
+                .toList();
+
         return Jwts.builder()
                 .subject(user.getId().toString())
                 .claim("email", user.getEmail())
                 .claim("roles", roles)
+                .claim("permissions", permissions)
                 .issuedAt(new Date())
                 .expiration(new Date(System.currentTimeMillis() + accessExpiration))
                 .signWith(getSecretKey(), Jwts.SIG.HS256)
