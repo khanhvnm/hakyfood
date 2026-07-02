@@ -1,73 +1,81 @@
 import { createFileRoute, Link } from '@tanstack/react-router';
-import { toast } from 'sonner'; // Import hàm kích hoạt toast
+import { ClientMenu } from '@/features/menu/components/ClientMenu';
+import { useCartStore } from '@/features/cart/store/useCartStore';
+import { ShoppingBag } from 'lucide-react';
 
 export const Route = createFileRoute('/')({
   component: HomeComponent,
 });
 
 function HomeComponent() {
-  // Các hàm kích hoạt từng loại Toast
-  const triggerSuccess = () => {
-    toast.success('🎉 Tạo tài khoản thành công! Hãy kiểm tra mã xác thực trong email.');
-  };
+  const totalItems = useCartStore((state) => state.getCartTotalItems());
+  const totalPrice = useCartStore((state) => state.getCartTotalPrice());
 
-  const triggerError = () => {
-    toast.error('⚠️ Mã OTP xác thực không chính xác. Vui lòng thử lại!');
-  };
-
-  const triggerInfo = () => {
-    toast.info('ℹ️ Đơn hàng của bạn đã được bếp HakyFood tiếp nhận.');
+  const formatPrice = (price: number) => {
+    return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(price);
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-6 bg-hk-bg-page text-hk-text-primary">
-      <h1 className="text-4xl font-hk-display text-hk-primary font-bold mb-2 text-center">
-        HakyFood — Ship Đồ Ăn Đêm Hà Nội
-      </h1>
-      
-      <p className="text-hk-text-secondary font-hk-body text-center max-w-md mb-8">
-        Hệ thống đang được thiết lập dưới sự hỗ trợ của Mentor. Hãy thử nghiệm các chức năng Toast bên dưới!
-      </p>
+    <div className="min-h-screen bg-hk-bg-page text-hk-text-primary flex flex-col font-hk-body">
+      {/* Navbar */}
+      <header className="sticky top-0 z-40 bg-hk-bg-surface border-b border-hk-border shadow-sm px-6 py-4 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <span className="font-hk-logo text-xl font-black text-hk-primary tracking-wide">
+            HAKYFOOD
+          </span>
+          <span className="hidden sm:inline-block text-[10px] bg-hk-bg-dark text-white font-bold px-2 py-0.5 rounded-full">
+            Đêm Hà Nội
+          </span>
+        </div>
 
-      {/* ================= BỘ NÚT KIỂM THỬ TOAST ================= */}
-      <div className="flex flex-wrap gap-4 justify-center mb-8">
-        <button
-          onClick={triggerSuccess}
-          className="px-5 py-2.5 bg-hk-status-success hover:bg-green-600 active:scale-95 text-white font-semibold rounded-xl shadow-lg transition-all cursor-pointer text-sm"
-        >
-          Test Success Toast
-        </button>
+        {/* Liên kết Auth */}
+        <div className="flex gap-3">
+          <Link
+            to="/login"
+            className="px-4 py-2 hover:text-hk-primary text-xs font-bold transition-all"
+          >
+            Đăng nhập
+          </Link>
+          <Link
+            to="/register"
+            className="px-4 py-2 bg-hk-primary hover:bg-hk-primary-hover active:scale-95 text-white text-xs font-bold rounded-xl shadow-sm transition-all"
+          >
+            Đăng ký
+          </Link>
+        </div>
+      </header>
 
-        <button
-          onClick={triggerError}
-          className="px-5 py-2.5 bg-hk-status-error hover:bg-red-600 active:scale-95 text-white font-semibold rounded-xl shadow-lg transition-all cursor-pointer text-sm"
-        >
-          Test Error Toast
-        </button>
+      {/* Hero Banner */}
+      <section className="bg-hk-bg-surface-sunken border-b border-hk-border py-12 px-6 text-center">
+        <h1 className="font-hk-display text-3xl sm:text-4xl font-extrabold text-hk-text-primary mb-2">
+          Giao Đồ Ăn Đêm Siêu Tốc
+        </h1>
+        <p className="font-hk-body text-xs sm:text-sm text-hk-text-secondary max-w-md mx-auto">
+          Món ăn nóng hổi, chuẩn vị bếp HakyFood, sẵn sàng phục vụ bạn xuyên đêm Hà Nội từ 18:00 - 04:00.
+        </p>
+      </section>
 
-        <button
-          onClick={triggerInfo}
-          className="px-5 py-2.5 bg-hk-primary hover:bg-hk-primary-hover active:scale-95 text-white font-semibold rounded-xl shadow-lg transition-all cursor-pointer text-sm"
-        >
-          Test Info Toast
-        </button>
+      {/* Cây thực đơn Client Menu */}
+      <div className="flex-grow">
+        <ClientMenu />
       </div>
 
-      {/* Liên kết nhanh */}
-      <div className="flex flex-wrap gap-4 justify-center">
-        <Link 
-          to="/login"
-          className="px-6 py-3 bg-hk-primary hover:bg-hk-primary-hover text-white font-bold rounded-xl shadow-md hover:shadow-lg transition-all"
-        >
-          Đăng nhập (Login) →
-        </Link>
-        <Link 
-          to="/register"
-          className="px-6 py-3 bg-hk-bg-dark text-hk-secondary hover:text-white font-bold rounded-xl border border-white/10 shadow-md hover:shadow-lg transition-all"
-        >
-          Đăng ký (Register) →
-        </Link>
-      </div>
+      {/* Nút Giỏ hàng nổi (Floating Cart) */}
+      {totalItems > 0 && (
+        <div className="fixed bottom-6 right-6 z-40 animate-bounce">
+          <button className="flex items-center gap-3 bg-hk-primary hover:bg-hk-primary-hover active:scale-95 text-white font-bold px-6 py-3.5 rounded-2xl shadow-xl transition-all cursor-pointer border border-white/10">
+            <div className="relative">
+              <ShoppingBag size={20} />
+              <span className="absolute -top-2.5 -right-2.5 bg-white text-hk-primary font-hk-display text-[10px] font-black w-5 h-5 flex items-center justify-center rounded-full shadow-sm border border-hk-primary">
+                {totalItems}
+              </span>
+            </div>
+            <span className="text-xs font-bold border-l border-white/20 pl-3">
+              {formatPrice(totalPrice)}
+            </span>
+          </button>
+        </div>
+      )}
     </div>
   );
 }

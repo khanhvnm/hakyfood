@@ -18,6 +18,9 @@ import { Route as AuthSetPasswordRouteImport } from './routes/_auth/set-password
 import { Route as AuthRegisterRouteImport } from './routes/_auth/register'
 import { Route as AuthLoginRouteImport } from './routes/_auth/login'
 import { Route as AuthForgotPasswordRouteImport } from './routes/_auth/forgot-password'
+import { Route as ProtectedAdminOptionsRouteImport } from './routes/_protected/admin/options'
+import { Route as ProtectedAdminFoodsRouteImport } from './routes/_protected/admin/foods'
+import { Route as ProtectedAdminCategoriesRouteImport } from './routes/_protected/admin/categories'
 
 const ProtectedRoute = ProtectedRouteImport.update({
   id: '/_protected',
@@ -62,6 +65,22 @@ const AuthForgotPasswordRoute = AuthForgotPasswordRouteImport.update({
   path: '/forgot-password',
   getParentRoute: () => AuthRoute,
 } as any)
+const ProtectedAdminOptionsRoute = ProtectedAdminOptionsRouteImport.update({
+  id: '/admin/options',
+  path: '/admin/options',
+  getParentRoute: () => ProtectedRoute,
+} as any)
+const ProtectedAdminFoodsRoute = ProtectedAdminFoodsRouteImport.update({
+  id: '/admin/foods',
+  path: '/admin/foods',
+  getParentRoute: () => ProtectedRoute,
+} as any)
+const ProtectedAdminCategoriesRoute =
+  ProtectedAdminCategoriesRouteImport.update({
+    id: '/admin/categories',
+    path: '/admin/categories',
+    getParentRoute: () => ProtectedRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -71,6 +90,9 @@ export interface FileRoutesByFullPath {
   '/set-password': typeof AuthSetPasswordRoute
   '/verify-otp': typeof AuthVerifyOtpRoute
   '/dashboard': typeof ProtectedDashboardRoute
+  '/admin/categories': typeof ProtectedAdminCategoriesRoute
+  '/admin/foods': typeof ProtectedAdminFoodsRoute
+  '/admin/options': typeof ProtectedAdminOptionsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -80,6 +102,9 @@ export interface FileRoutesByTo {
   '/set-password': typeof AuthSetPasswordRoute
   '/verify-otp': typeof AuthVerifyOtpRoute
   '/dashboard': typeof ProtectedDashboardRoute
+  '/admin/categories': typeof ProtectedAdminCategoriesRoute
+  '/admin/foods': typeof ProtectedAdminFoodsRoute
+  '/admin/options': typeof ProtectedAdminOptionsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -92,6 +117,9 @@ export interface FileRoutesById {
   '/_auth/set-password': typeof AuthSetPasswordRoute
   '/_auth/verify-otp': typeof AuthVerifyOtpRoute
   '/_protected/dashboard': typeof ProtectedDashboardRoute
+  '/_protected/admin/categories': typeof ProtectedAdminCategoriesRoute
+  '/_protected/admin/foods': typeof ProtectedAdminFoodsRoute
+  '/_protected/admin/options': typeof ProtectedAdminOptionsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -103,6 +131,9 @@ export interface FileRouteTypes {
     | '/set-password'
     | '/verify-otp'
     | '/dashboard'
+    | '/admin/categories'
+    | '/admin/foods'
+    | '/admin/options'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -112,6 +143,9 @@ export interface FileRouteTypes {
     | '/set-password'
     | '/verify-otp'
     | '/dashboard'
+    | '/admin/categories'
+    | '/admin/foods'
+    | '/admin/options'
   id:
     | '__root__'
     | '/'
@@ -123,6 +157,9 @@ export interface FileRouteTypes {
     | '/_auth/set-password'
     | '/_auth/verify-otp'
     | '/_protected/dashboard'
+    | '/_protected/admin/categories'
+    | '/_protected/admin/foods'
+    | '/_protected/admin/options'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -196,6 +233,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthForgotPasswordRouteImport
       parentRoute: typeof AuthRoute
     }
+    '/_protected/admin/options': {
+      id: '/_protected/admin/options'
+      path: '/admin/options'
+      fullPath: '/admin/options'
+      preLoaderRoute: typeof ProtectedAdminOptionsRouteImport
+      parentRoute: typeof ProtectedRoute
+    }
+    '/_protected/admin/foods': {
+      id: '/_protected/admin/foods'
+      path: '/admin/foods'
+      fullPath: '/admin/foods'
+      preLoaderRoute: typeof ProtectedAdminFoodsRouteImport
+      parentRoute: typeof ProtectedRoute
+    }
+    '/_protected/admin/categories': {
+      id: '/_protected/admin/categories'
+      path: '/admin/categories'
+      fullPath: '/admin/categories'
+      preLoaderRoute: typeof ProtectedAdminCategoriesRouteImport
+      parentRoute: typeof ProtectedRoute
+    }
   }
 }
 
@@ -219,10 +277,16 @@ const AuthRouteWithChildren = AuthRoute._addFileChildren(AuthRouteChildren)
 
 interface ProtectedRouteChildren {
   ProtectedDashboardRoute: typeof ProtectedDashboardRoute
+  ProtectedAdminCategoriesRoute: typeof ProtectedAdminCategoriesRoute
+  ProtectedAdminFoodsRoute: typeof ProtectedAdminFoodsRoute
+  ProtectedAdminOptionsRoute: typeof ProtectedAdminOptionsRoute
 }
 
 const ProtectedRouteChildren: ProtectedRouteChildren = {
   ProtectedDashboardRoute: ProtectedDashboardRoute,
+  ProtectedAdminCategoriesRoute: ProtectedAdminCategoriesRoute,
+  ProtectedAdminFoodsRoute: ProtectedAdminFoodsRoute,
+  ProtectedAdminOptionsRoute: ProtectedAdminOptionsRoute,
 }
 
 const ProtectedRouteWithChildren = ProtectedRoute._addFileChildren(
