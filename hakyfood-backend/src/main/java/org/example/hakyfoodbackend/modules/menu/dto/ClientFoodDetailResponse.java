@@ -12,6 +12,7 @@ public record ClientFoodDetailResponse(
         String slug,
         String description,
         String imageUrl,
+        List<String> detailImageUrls,
         BigDecimal basePrice,
         List<OptionGroupResponse> optionGroups
 ) {
@@ -23,12 +24,17 @@ public record ClientFoodDetailResponse(
                     .toList()
                 : List.of();
 
+        List<String> detailImages = entity.getDetailImageUrls() != null
+                ? List.copyOf(entity.getDetailImageUrls())
+                : List.of();
+
         return new ClientFoodDetailResponse(
                 entity.getId(),
                 entity.getName(),
                 entity.getSlug(),
                 entity.getDescription(),
                 entity.getImageUrl(),
+                detailImages,
                 entity.getBasePrice(),
                 groups
         );

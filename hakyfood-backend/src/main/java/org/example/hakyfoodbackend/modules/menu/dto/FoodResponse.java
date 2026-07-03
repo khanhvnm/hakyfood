@@ -14,6 +14,7 @@ public record FoodResponse(
         String slug,
         String description,
         String imageUrl,
+        List<String> detailImageUrls,
         BigDecimal basePrice,
         FoodStatus status,
         List<CategoryResponse> categories,
@@ -35,12 +36,17 @@ public record FoodResponse(
                     .toList()
                 : List.of();
 
+        List<String> detailImages = entity.getDetailImageUrls() != null
+                ? List.copyOf(entity.getDetailImageUrls())
+                : List.of();
+
         return new FoodResponse(
                 entity.getId(),
                 entity.getName(),
                 entity.getSlug(),
                 entity.getDescription(),
                 entity.getImageUrl(),
+                detailImages,
                 entity.getBasePrice(),
                 entity.getStatus(),
                 categoryResponses,

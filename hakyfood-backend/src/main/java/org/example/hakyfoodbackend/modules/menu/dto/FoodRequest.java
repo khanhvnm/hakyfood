@@ -7,6 +7,7 @@ import jakarta.validation.constraints.Size;
 import org.example.hakyfoodbackend.modules.menu.enums.FoodStatus;
 
 import java.math.BigDecimal;
+import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
@@ -21,6 +22,8 @@ public record FoodRequest(
         String description,
 
         String imageUrl,
+
+        List<String> detailImageUrls,
 
         @NotNull(message = "Giá cơ bản không được để trống")
         @Min(value = 0, message = "Giá cơ bản phải lớn hơn hoặc bằng 0")
