@@ -64,6 +64,7 @@ export interface FoodRequest {
   slug?: string;
   description?: string;
   imageUrl?: string;
+  detailImageUrls?: string[];
   basePrice: number;
   status?: FoodStatus;
   categoryIds?: string[];
@@ -76,6 +77,7 @@ export interface FoodResponse {
   slug: string;
   description?: string;
   imageUrl?: string;
+  detailImageUrls?: string[];
   basePrice: number;
   status: FoodStatus;
   categories: CategoryResponse[];
@@ -109,6 +111,7 @@ export interface ClientFoodDetailResponse {
   slug: string;
   description?: string;
   imageUrl?: string;
+  detailImageUrls?: string[];
   basePrice: number;
   optionGroups: OptionGroupResponse[];
 }

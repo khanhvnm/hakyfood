@@ -31,6 +31,7 @@ export function AdminFoods() {
   const [imageUrl, setImageUrl] = useState('');
   const [basePrice, setBasePrice] = useState<number>(0);
   const [status, setStatus] = useState<FoodStatus>('AVAILABLE');
+  const [detailImageUrls, setDetailImageUrls] = useState<string[]>([]);
   
   // State quản lý liên kết ID Category và OptionGroup
   const [selectedCategoryIds, setSelectedCategoryIds] = useState<string[]>([]);
@@ -49,6 +50,7 @@ export function AdminFoods() {
     setImageUrl('');
     setBasePrice(0);
     setStatus('AVAILABLE');
+    setDetailImageUrls([]);
     setSelectedCategoryIds([]);
     setSelectedOptionGroupIds([]);
     setIsModalOpen(true);
@@ -63,6 +65,7 @@ export function AdminFoods() {
     setImageUrl(food.imageUrl || '');
     setBasePrice(food.basePrice);
     setStatus(food.status);
+    setDetailImageUrls(food.detailImageUrls || []);
     setSelectedCategoryIds(food.categories.map((c) => c.id));
     setSelectedOptionGroupIds(food.optionGroups.map((og) => og.id));
     setIsModalOpen(true);
@@ -96,6 +99,7 @@ export function AdminFoods() {
       slug,
       description,
       imageUrl,
+      detailImageUrls,
       basePrice,
       status,
       categoryIds: selectedCategoryIds,
@@ -382,7 +386,6 @@ export function AdminFoods() {
                   />
                 </div>
               </div>
-
               {/* Trạng thái */}
               <div>
                 <label className="block text-xs font-bold text-hk-text-secondary mb-1">Trạng thái bán</label>
@@ -395,6 +398,108 @@ export function AdminFoods() {
                   <option value="OUT_OF_STOCK">Tạm hết hàng (OUT_OF_STOCK)</option>
                   <option value="INACTIVE">Tạm ẩn hiển thị (INACTIVE)</option>
                 </select>
+              </div>
+
+              {/* Danh sách ảnh phụ chi tiết */}
+              <div className="border border-hk-border rounded-2xl p-4 bg-hk-bg-surface-sunken flex flex-col gap-2">
+                <span className="block text-xs font-bold text-hk-text-primary mb-1">Ảnh phụ chi tiết (slide hiển thị)</span>
+                
+                {/* Form thêm ảnh phụ */}
+                <div className="flex gap-2">
+                  <input
+                    type="text"
+                    id="new-detail-image-input"
+                    placeholder="https://example.com/detail-image.jpg"
+                    className="flex-1 px-4 py-2 border border-hk-border rounded-xl text-xs focus:border-hk-primary focus:outline-none bg-white"
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter') {
+                        e.preventDefault();
+                        const input = e.currentTarget;
+                        const val = input.value.trim();
+                        if (val) {
+                          setDetailImageUrls((prev) => [...prev, val]);
+                          input.value = '';
+                        }
+                      }
+                    }}
+                  />
+                  <button
+                    type="button"
+                    onClick={() => {
+                      const input = document.getElementById('new-detail-image-input') as HTMLInputElement;
+                      const val = input?.value.trim();
+                      if (val) {
+                        setDetailImageUrls((prev) => [...prev, val]);
+                        input.value = '';
+                      }
+                    }}
+                    className="px-4 py-2 bg-hk-primary text-white text-xs font-bold rounded-xl cursor-pointer hover:bg-hk-primary-hover active:scale-95 transition-all shrink-0"
+                  >
+                    Thêm
+                  </button>
+                </div>
+
+                {/* Danh sách ảnh phụ hiện tại */}
+                {detailImageUrls.length > 0 ? (
+                  <div className="space-y-2 max-h-40 overflow-y-auto mt-2">
+                    {detailImageUrls.map((url, idx) => (
+                      <div key={idx} className="flex items-center justify-between gap-3 p-2 bg-hk-bg-surface rounded-xl border border-hk-border-subtle">
+                        <div className="flex items-center gap-2 overflow-hidden flex-1">
+                          <img src={url} alt={`detail-${idx}`} className="w-8 h-8 object-cover rounded" />
+                          <span className="text-[10px] text-hk-text-secondary truncate flex-1">{url}</span>
+                        </div>
+                        <div className="flex items-center gap-1 shrink-0">
+                          {/* Nút di chuyển lên */}
+                          <button
+                            type="button"
+                            disabled={idx === 0}
+                            onClick={() => {
+                              setDetailImageUrls((prev) => {
+                                const list = [...prev];
+                                const temp = list[idx];
+                                list[idx] = list[idx - 1];
+                                list[idx - 1] = temp;
+                                return list;
+                              });
+                            }}
+                            className="p-1 hover:bg-hk-bg-surface-sunken text-hk-text-secondary disabled:opacity-30 rounded cursor-pointer text-xs"
+                          >
+                            ▲
+                          </button>
+                          {/* Nút di chuyển xuống */}
+                          <button
+                            type="button"
+                            disabled={idx === detailImageUrls.length - 1}
+                            onClick={() => {
+                              setDetailImageUrls((prev) => {
+                                const list = [...prev];
+                                const temp = list[idx];
+                                list[idx] = list[idx + 1];
+                                list[idx + 1] = temp;
+                                return list;
+                              });
+                            }}
+                            className="p-1 hover:bg-hk-bg-surface-sunken text-hk-text-secondary disabled:opacity-30 rounded cursor-pointer text-xs"
+                          >
+                            ▼
+                          </button>
+                          {/* Nút xóa */}
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setDetailImageUrls((prev) => prev.filter((_, i) => i !== idx));
+                            }}
+                            className="p-1 text-hk-status-error hover:bg-red-50 rounded cursor-pointer"
+                          >
+                            <X size={12} />
+                          </button>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="font-hk-body text-[10px] text-hk-text-muted italic">Chưa có ảnh phụ nào.</p>
+                )}
               </div>
 
               {/* Liên kết danh mục (Grid checkbox) */}

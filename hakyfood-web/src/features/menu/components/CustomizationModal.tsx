@@ -18,19 +18,23 @@ export function CustomizationModal({ foodId, onClose }: CustomizationModalProps)
   // State lưu trữ các option items đã chọn theo từng Option Group ID
   const [selections, setSelections] = useState<Record<string, OptionItemResponse[]>>({});
   const [quantity, setQuantity] = useState(1);
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
 
   // Thiết lập lựa chọn mặc định khi dữ liệu tải xong
   useEffect(() => {
-    if (food && food.optionGroups) {
+    if (food) {
+      setActiveImageIndex(0);
       const initialSelections: Record<string, OptionItemResponse[]> = {};
-      food.optionGroups.forEach((group) => {
-        // Nếu là nhóm bắt buộc chọn và chỉ chọn 1, chọn mặc định phần tử đầu tiên
-        if (group.isRequired && group.maxChoices === 1 && group.optionItems.length > 0) {
-          initialSelections[group.id] = [group.optionItems[0]];
-        } else {
-          initialSelections[group.id] = [];
-        }
-      });
+      if (food.optionGroups) {
+        food.optionGroups.forEach((group) => {
+          // Nếu là nhóm bắt buộc chọn và chỉ chọn 1, chọn mặc định phần tử đầu tiên
+          if (group.isRequired && group.maxChoices === 1 && group.optionItems.length > 0) {
+            initialSelections[group.id] = [group.optionItems[0]];
+          } else {
+            initialSelections[group.id] = [];
+          }
+        });
+      }
       setSelections(initialSelections);
     }
   }, [food]);
@@ -163,13 +167,51 @@ export function CustomizationModal({ foodId, onClose }: CustomizationModalProps)
 
         {/* Banner Món ăn */}
         <div className="relative aspect-video w-full bg-hk-bg-surface-sunken">
-          {food.imageUrl ? (
-            <img src={food.imageUrl} alt={food.name} className="w-full h-full object-cover" />
-          ) : (
-            <div className="flex items-center justify-center w-full h-full text-hk-text-muted text-sm font-hk-body">
-              Không có hình ảnh
-            </div>
-          )}
+          {(() => {
+            const allImages = [food.imageUrl, ...(food.detailImageUrls || [])].filter(Boolean) as string[];
+            if (allImages.length === 0) {
+              return (
+                <div className="flex items-center justify-center w-full h-full text-hk-text-muted text-sm font-hk-body">
+                  Không có hình ảnh
+                </div>
+              );
+            }
+            return (
+              <>
+                <img src={allImages[activeImageIndex]} alt={food.name} className="w-full h-full object-cover transition-all duration-300" />
+                {allImages.length > 1 && (
+                  <>
+                    <button
+                      type="button"
+                      onClick={() => setActiveImageIndex((prev) => (prev === 0 ? allImages.length - 1 : prev - 1))}
+                      className="absolute left-3 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white w-7 h-7 flex items-center justify-center rounded-full cursor-pointer hover:scale-105 transition-all text-xs z-10"
+                    >
+                      ◀
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setActiveImageIndex((prev) => (prev === allImages.length - 1 ? 0 : prev + 1))}
+                      className="absolute right-3 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white w-7 h-7 flex items-center justify-center rounded-full cursor-pointer hover:scale-105 transition-all text-xs z-10"
+                    >
+                      ▶
+                    </button>
+                    <div className="absolute bottom-16 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+                      {allImages.map((_, i) => (
+                        <button
+                          key={i}
+                          type="button"
+                          onClick={() => setActiveImageIndex(i)}
+                          className={`w-1.5 h-1.5 rounded-full transition-all cursor-pointer ${
+                            i === activeImageIndex ? 'bg-hk-primary scale-125' : 'bg-white/60'
+                          }`}
+                        />
+                      ))}
+                    </div>
+                  </>
+                )}
+              </>
+            );
+          })()}
           {/* Tên món nằm trên banner */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6">
             <h3 className="font-hk-display text-2xl font-bold text-white mb-1">{food.name}</h3>
