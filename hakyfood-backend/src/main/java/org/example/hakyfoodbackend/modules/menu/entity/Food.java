@@ -6,7 +6,9 @@ import org.example.hakyfoodbackend.common.entity.BaseEntity;
 import org.example.hakyfoodbackend.modules.menu.enums.FoodStatus;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -43,6 +45,13 @@ public class Food extends BaseEntity {
     @Builder.Default
     private FoodStatus status = FoodStatus.AVAILABLE;
 
+    @ElementCollection(fetch = FetchType.LAZY)
+    @CollectionTable(name = "food_images", joinColumns = @JoinColumn(name = "food_id"))
+    @Column(name = "image_url")
+    @OrderColumn(name = "display_order")
+    @Builder.Default
+    private List<String> detailImageUrls = new ArrayList<>();
+
     // Quan hệ nhiều-nhiều với Category
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
@@ -73,5 +82,11 @@ public class Food extends BaseEntity {
         this.optionGroups = optionGroups != null
                 ? new HashSet<>(optionGroups)
                 : new HashSet<>();
+    }
+
+    public void setDetailImageUrls(List<String> detailImageUrls) {
+        this.detailImageUrls = detailImageUrls != null
+                ? new ArrayList<>(detailImageUrls)
+                : new ArrayList<>();
     }
 }
