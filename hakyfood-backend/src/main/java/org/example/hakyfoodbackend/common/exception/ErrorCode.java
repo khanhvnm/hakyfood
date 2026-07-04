@@ -33,6 +33,7 @@ public enum ErrorCode {
 
     OPTION_GROUP_NOT_FOUND(HttpStatus.NOT_FOUND, "option_group.not_found"),
     OPTION_GROUP_INVALID_CONSTRAINTS(HttpStatus.BAD_REQUEST, "option_group.invalid_constraints"),
+    OPTION_GROUP_SLUG_EXISTS(HttpStatus.BAD_REQUEST, "option_group.slug_exists"),
 
     FOOD_NOT_FOUND(HttpStatus.NOT_FOUND, "food.not_found"),
     FOOD_SLUG_EXISTS(HttpStatus.BAD_REQUEST, "food.slug_exists"),

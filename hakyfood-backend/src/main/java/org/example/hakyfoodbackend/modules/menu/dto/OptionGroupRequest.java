@@ -13,6 +13,9 @@ public record OptionGroupRequest(
         @Size(max = 100, message = "Tên nhóm tùy chọn tối đa 100 ký tự")
         String name,
 
+        @Size(max = 120, message = "Slug tối đa 120 ký tự")
+        String slug,
+
         @Size(max = 255, message = "Mô tả tối đa 255 ký tự")
         String description,
 

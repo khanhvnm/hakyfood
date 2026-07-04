@@ -20,6 +20,7 @@ export function AdminOptions() {
 
   // State của form
   const [name, setName] = useState('');
+  const [slug, setSlug] = useState('');
   const [description, setDescription] = useState('');
   const [isRequired, setIsRequired] = useState(false);
   const [minChoices, setMinChoices] = useState(0);
@@ -32,6 +33,7 @@ export function AdminOptions() {
   const handleStartEdit = (group: OptionGroupResponse) => {
     setEditingId(group.id);
     setName(group.name);
+    setSlug(group.slug || '');
     setDescription(group.description || '');
     setIsRequired(group.isRequired);
     setMinChoices(group.minChoices);
@@ -53,6 +55,7 @@ export function AdminOptions() {
   const handleResetForm = () => {
     setEditingId(null);
     setName('');
+    setSlug('');
     setDescription('');
     setIsRequired(false);
     setMinChoices(0);
@@ -106,6 +109,7 @@ export function AdminOptions() {
 
     const requestData = {
       name,
+      slug,
       description,
       isRequired,
       minChoices,
@@ -182,6 +186,9 @@ export function AdminOptions() {
                           )}
                         </h4>
                         <p className="text-[10px] text-hk-text-muted mt-1">{group.description || 'Không có mô tả.'}</p>
+                        <span className="inline-block text-[9px] font-semibold font-mono text-hk-text-secondary bg-hk-bg-surface-sunken px-1.5 py-0.5 rounded border border-hk-border mt-1.5">
+                          slug: {group.slug}
+                        </span>
                       </div>
 
                       <div className="flex gap-2">
@@ -234,6 +241,18 @@ export function AdminOptions() {
                   placeholder="Ví dụ: Lượng đá, Topping..."
                   value={name}
                   onChange={(e) => setName(e.target.value)}
+                  className="w-full px-4 py-2 border border-hk-border rounded-xl text-xs focus:border-hk-primary focus:outline-none"
+                />
+              </div>
+
+              {/* Slug định danh */}
+              <div>
+                <label className="block text-xs font-bold text-hk-text-secondary mb-1">Slug định danh (Slug)</label>
+                <input
+                  type="text"
+                  placeholder="Ví dụ: ice-level, toppings"
+                  value={slug}
+                  onChange={(e) => setSlug(e.target.value)}
                   className="w-full px-4 py-2 border border-hk-border rounded-xl text-xs focus:border-hk-primary focus:outline-none"
                 />
               </div>

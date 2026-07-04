@@ -22,6 +22,10 @@ public class OptionGroup extends BaseEntity {
     private String name;
 
     @Setter
+    @Column(nullable = false, unique = true)
+    private String slug;
+
+    @Setter
     private String description;
 
     @Setter

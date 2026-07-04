@@ -42,6 +42,7 @@ export interface OptionItemResponse {
 
 export interface OptionGroupRequest {
   name: string;
+  slug?: string;
   description?: string;
   isRequired?: boolean;
   minChoices?: number;
@@ -52,6 +53,7 @@ export interface OptionGroupRequest {
 export interface OptionGroupResponse {
   id: string;
   name: string;
+  slug: string;
   description?: string;
   isRequired: boolean;
   minChoices: number;

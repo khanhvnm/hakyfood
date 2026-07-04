@@ -28,8 +28,17 @@ public class OptionGroupService {
     public OptionGroupResponse createOptionGroup(OptionGroupRequest request) {
         validateConstraints(request.isRequired(), request.minChoices(), request.maxChoices());
 
+        String slug = (request.slug() != null && !request.slug().isBlank())
+                ? request.slug()
+                : org.example.hakyfoodbackend.common.util.SlugUtil.toSlug(request.name());
+
+        if (optionGroupRepository.existsBySlug(slug)) {
+            throw new AppException(ErrorCode.OPTION_GROUP_SLUG_EXISTS);
+        }
+
         OptionGroup optionGroup = OptionGroup.builder()
                 .name(request.name())
+                .slug(slug)
                 .description(request.description())
                 .isRequired(request.isRequired() != null ? request.isRequired() : false)
                 .minChoices(request.minChoices() != null ? request.minChoices() : 0)
@@ -61,7 +70,16 @@ public class OptionGroupService {
         OptionGroup optionGroup = optionGroupRepository.findById(id)
                 .orElseThrow(() -> new AppException(ErrorCode.OPTION_GROUP_NOT_FOUND));
 
+        String newSlug = (request.slug() != null && !request.slug().isBlank())
+                ? request.slug()
+                : org.example.hakyfoodbackend.common.util.SlugUtil.toSlug(request.name());
+
+        if (!newSlug.equals(optionGroup.getSlug()) && optionGroupRepository.existsBySlug(newSlug)) {
+            throw new AppException(ErrorCode.OPTION_GROUP_SLUG_EXISTS);
+        }
+
         optionGroup.setName(request.name());
+        optionGroup.setSlug(newSlug);
         optionGroup.setDescription(request.description());
         optionGroup.setIsRequired(request.isRequired() != null ? request.isRequired() : false);
         optionGroup.setMinChoices(request.minChoices() != null ? request.minChoices() : 0);

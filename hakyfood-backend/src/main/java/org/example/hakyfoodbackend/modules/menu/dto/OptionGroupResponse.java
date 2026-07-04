@@ -8,6 +8,7 @@ import java.util.UUID;
 public record OptionGroupResponse(
         UUID id,
         String name,
+        String slug,
         String description,
         Boolean isRequired,
         Integer minChoices,
@@ -26,6 +27,7 @@ public record OptionGroupResponse(
         return new OptionGroupResponse(
                 entity.getId(),
                 entity.getName(),
+                entity.getSlug(),
                 entity.getDescription(),
                 entity.getIsRequired(),
                 entity.getMinChoices(),
