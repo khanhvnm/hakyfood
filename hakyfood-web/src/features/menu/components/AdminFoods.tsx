@@ -29,6 +29,7 @@ export function AdminFoods() {
   const [slug, setSlug] = useState('');
   const [description, setDescription] = useState('');
   const [imageUrl, setImageUrl] = useState('');
+  const [videoUrl, setVideoUrl] = useState('');
   const [basePrice, setBasePrice] = useState<number>(0);
   const [status, setStatus] = useState<FoodStatus>('AVAILABLE');
   const [detailImageUrls, setDetailImageUrls] = useState<string[]>([]);
@@ -48,6 +49,7 @@ export function AdminFoods() {
     setSlug('');
     setDescription('');
     setImageUrl('');
+    setVideoUrl('');
     setBasePrice(0);
     setStatus('AVAILABLE');
     setDetailImageUrls([]);
@@ -63,6 +65,7 @@ export function AdminFoods() {
     setSlug(food.slug);
     setDescription(food.description || '');
     setImageUrl(food.imageUrl || '');
+    setVideoUrl(food.videoUrl || '');
     setBasePrice(food.basePrice);
     setStatus(food.status);
     setDetailImageUrls(food.detailImageUrls || []);
@@ -99,6 +102,7 @@ export function AdminFoods() {
       slug,
       description,
       imageUrl,
+      videoUrl,
       detailImageUrls,
       basePrice,
       status,
@@ -386,6 +390,19 @@ export function AdminFoods() {
                   />
                 </div>
               </div>
+
+              {/* URL Video giới thiệu */}
+              <div>
+                <label className="block text-xs font-bold text-hk-text-secondary mb-1">URL Video giới thiệu (tùy chọn)</label>
+                <input
+                  type="text"
+                  placeholder="https://example.com/promo-video.mp4"
+                  value={videoUrl}
+                  onChange={(e) => setVideoUrl(e.target.value)}
+                  className="w-full px-4 py-2 border border-hk-border rounded-xl text-xs focus:border-hk-primary focus:outline-none"
+                />
+              </div>
+
               {/* Trạng thái */}
               <div>
                 <label className="block text-xs font-bold text-hk-text-secondary mb-1">Trạng thái bán</label>
