@@ -49,6 +49,7 @@ public class FoodService {
                 .slug(slug)
                 .description(request.description())
                 .imageUrl(request.imageUrl())
+                .videoUrl(request.videoUrl())
                 .detailImageUrls(request.detailImageUrls())
                 .basePrice(request.basePrice())
                 .status(request.status() != null ? request.status() : FoodStatus.AVAILABLE)
@@ -82,6 +83,7 @@ public class FoodService {
         food.setSlug(newSlug);
         food.setDescription(request.description());
         food.setImageUrl(request.imageUrl());
+        food.setVideoUrl(request.videoUrl());
         food.setDetailImageUrls(request.detailImageUrls());
         food.setBasePrice(request.basePrice());
         

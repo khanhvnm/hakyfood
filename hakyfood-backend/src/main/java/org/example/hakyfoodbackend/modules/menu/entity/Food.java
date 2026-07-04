@@ -36,6 +36,10 @@ public class Food extends BaseEntity {
     private String imageUrl;
 
     @Setter
+    @Column(name = "video_url")
+    private String videoUrl;
+
+    @Setter
     @Column(name = "base_price", nullable = false, precision = 12, scale = 2)
     private BigDecimal basePrice;
 

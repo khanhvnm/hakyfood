@@ -12,6 +12,7 @@ public record ClientFoodDetailResponse(
         String slug,
         String description,
         String imageUrl,
+        String videoUrl,
         List<String> detailImageUrls,
         BigDecimal basePrice,
         List<OptionGroupResponse> optionGroups
@@ -34,6 +35,7 @@ public record ClientFoodDetailResponse(
                 entity.getSlug(),
                 entity.getDescription(),
                 entity.getImageUrl(),
+                entity.getVideoUrl(),
                 detailImages,
                 entity.getBasePrice(),
                 groups

@@ -23,6 +23,8 @@ public record FoodRequest(
 
         String imageUrl,
 
+        String videoUrl,
+
         List<String> detailImageUrls,
 
         @NotNull(message = "Giá cơ bản không được để trống")
