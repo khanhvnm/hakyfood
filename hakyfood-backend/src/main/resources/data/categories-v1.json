@@ -1,0 +1,167 @@
+[
+  {
+    "name": "Cơm",
+    "slug": "com",
+    "iconUrl": null,
+    "displayOrder": 1,
+    "children": [
+      {
+        "name": "Cơm Gà",
+        "slug": "com-ga",
+        "iconUrl": null,
+        "displayOrder": 1,
+        "children": null
+      },
+      {
+        "name": "Cơm Thịt Heo",
+        "slug": "com-thit-heo",
+        "iconUrl": null,
+        "displayOrder": 2,
+        "children": null
+      },
+      {
+        "name": "Cơm Sườn",
+        "slug": "com-suon",
+        "iconUrl": null,
+        "displayOrder": 3,
+        "children": null
+      },
+      {
+        "name": "Cơm Bò",
+        "slug": "com-bo",
+        "iconUrl": null,
+        "displayOrder": 4,
+        "children": null
+      },
+      {
+        "name": "Cơm Rang",
+        "slug": "com-rang",
+        "iconUrl": null,
+        "displayOrder": 5,
+        "children": null
+      }
+    ]
+  },
+  {
+    "name": "Xôi",
+    "slug": "xoi",
+    "iconUrl": null,
+    "displayOrder": 2,
+    "children": null
+  },
+  {
+    "name": "Mì & Miến",
+    "slug": "mi-mien",
+    "iconUrl": null,
+    "displayOrder": 3,
+    "children": [
+      {
+        "name": "Mì Trộn",
+        "slug": "mi-tron",
+        "iconUrl": null,
+        "displayOrder": 1,
+        "children": null
+      },
+      {
+        "name": "Mì Xào",
+        "slug": "mi-xao",
+        "iconUrl": null,
+        "displayOrder": 2,
+        "children": null
+      },
+      {
+        "name": "Mì Ý",
+        "slug": "mi-y",
+        "iconUrl": null,
+        "displayOrder": 3,
+        "children": null
+      },
+      {
+        "name": "Miến Xào",
+        "slug": "mien-xao",
+        "iconUrl": null,
+        "displayOrder": 4,
+        "children": null
+      }
+    ]
+  },
+  {
+    "name": "Đồ Ăn Vặt",
+    "slug": "do-an-vat",
+    "iconUrl": null,
+    "displayOrder": 4,
+    "children": null
+  },
+  {
+    "name": "Đồ Nhậu",
+    "slug": "do-nhau",
+    "iconUrl": null,
+    "displayOrder": 5,
+    "children": [
+      {
+        "name": "Chân gà",
+        "slug": "chan-ga",
+        "iconUrl": null,
+        "displayOrder": 1,
+        "children": null
+      },
+      {
+        "name": "Gà Chiên",
+        "slug": "ga-chien",
+        "iconUrl": null,
+        "displayOrder": 2,
+        "children": null
+      },
+      {
+        "name": "Sụn Gà",
+        "slug": "sun-ga",
+        "iconUrl": null,
+        "displayOrder": 3,
+        "children": null
+      },
+      {
+        "name": "Trứng Non",
+        "slug": "trung-non",
+        "iconUrl": null,
+        "displayOrder": 4,
+        "children": null
+      }
+    ]
+  },
+  {
+    "name": "Đồ Uống",
+    "slug": "do-uong",
+    "iconUrl": null,
+    "displayOrder": 6,
+    "children": [
+      {
+        "name": "Trà Sữa",
+        "slug": "tra-sua",
+        "iconUrl": null,
+        "displayOrder": 1,
+        "children": null
+      },
+      {
+        "name": "Trà Hoa Quả",
+        "slug": "tra-hoa-qua",
+        "iconUrl": null,
+        "displayOrder": 2,
+        "children": null
+      },
+      {
+        "name": "Sữa Chua",
+        "slug": "sua-chua",
+        "iconUrl": null,
+        "displayOrder": 3,
+        "children": null
+      },
+      {
+        "name": "Yakult",
+        "slug": "yakult",
+        "iconUrl": null,
+        "displayOrder": 4,
+        "children": null
+      }
+    ]
+  }
+]

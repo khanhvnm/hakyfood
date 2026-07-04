@@ -1,0 +1,95 @@
+[
+  {
+    "name": "Chọn cỡ ly",
+    "slug": "chon-co-ly",
+    "description": "Kích thước ly đồ uống",
+    "isRequired": true,
+    "minChoices": 1,
+    "maxChoices": 1,
+    "optionItems": [
+      { "name": "Size M", "additionalPrice": 0, "displayOrder": 1, "status": "AVAILABLE" },
+      { "name": "Size L", "additionalPrice": 5000, "displayOrder": 2, "status": "AVAILABLE" }
+    ]
+  },
+  {
+    "name": "Mức độ ngọt",
+    "slug": "muc-do-ngot",
+    "description": "Lượng đường tùy chỉnh",
+    "isRequired": true,
+    "minChoices": 1,
+    "maxChoices": 1,
+    "optionItems": [
+      { "name": "100% đường", "additionalPrice": 0, "displayOrder": 1, "status": "AVAILABLE" },
+      { "name": "70% đường", "additionalPrice": 0, "displayOrder": 2, "status": "AVAILABLE" },
+      { "name": "50% đường", "additionalPrice": 0, "displayOrder": 3, "status": "AVAILABLE" },
+      { "name": "Không đường", "additionalPrice": 0, "displayOrder": 4, "status": "AVAILABLE" }
+    ]
+  },
+  {
+    "name": "Mức độ đá",
+    "slug": "muc-do-da",
+    "description": "Lượng đá tùy chỉnh",
+    "isRequired": true,
+    "minChoices": 1,
+    "maxChoices": 1,
+    "optionItems": [
+      { "name": "100% đá", "additionalPrice": 0, "displayOrder": 1, "status": "AVAILABLE" },
+      { "name": "70% đá", "additionalPrice": 0, "displayOrder": 2, "status": "AVAILABLE" },
+      { "name": "50% đá", "additionalPrice": 0, "displayOrder": 3, "status": "AVAILABLE" },
+      { "name": "Không đá", "additionalPrice": 0, "displayOrder": 4, "status": "AVAILABLE" }
+    ]
+  },
+  {
+    "name": "Thêm Topping",
+    "slug": "them-topping",
+    "description": "Các loại topping ăn kèm",
+    "isRequired": false,
+    "minChoices": 0,
+    "maxChoices": 4,
+    "optionItems": [
+      { "name": "Trân châu đen", "additionalPrice": 5000, "displayOrder": 1, "status": "AVAILABLE" },
+      { "name": "Trân châu trắng", "additionalPrice": 8000, "displayOrder": 2, "status": "AVAILABLE" },
+      { "name": "Thạch nha đam", "additionalPrice": 8000, "displayOrder": 3, "status": "AVAILABLE" },
+      { "name": "Pudding trứng", "additionalPrice": 10000, "displayOrder": 4, "status": "AVAILABLE" }
+    ]
+  },
+  {
+    "name": "Tùy chọn thêm cơm",
+    "slug": "tuy-chon-them-com",
+    "description": "Lượng cơm tùy chỉnh",
+    "isRequired": true,
+    "minChoices": 1,
+    "maxChoices": 1,
+    "optionItems": [
+      { "name": "Cơm thường", "additionalPrice": 0, "displayOrder": 1, "status": "AVAILABLE" },
+      { "name": "Cơm ít", "additionalPrice": 0, "displayOrder": 2, "status": "AVAILABLE" },
+      { "name": "Cơm thêm", "additionalPrice": 10000, "displayOrder": 3, "status": "AVAILABLE" }
+    ]
+  },
+  {
+    "name": "Thêm Trứng",
+    "slug": "them-trung",
+    "description": "Thêm trứng ăn kèm",
+    "isRequired": false,
+    "minChoices": 0,
+    "maxChoices": 2,
+    "optionItems": [
+      { "name": "Trứng ốp la", "additionalPrice": 5000, "displayOrder": 1, "status": "AVAILABLE" },
+      { "name": "Trứng kho", "additionalPrice": 5000, "displayOrder": 2, "status": "AVAILABLE" },
+      { "name": "Trứng luộc", "additionalPrice": 5000, "displayOrder": 3, "status": "AVAILABLE" }
+    ]
+  },
+  {
+    "name": "Mức độ cay",
+    "slug": "muc-do-cay",
+    "description": "Độ cay của món ăn",
+    "isRequired": true,
+    "minChoices": 1,
+    "maxChoices": 1,
+    "optionItems": [
+      { "name": "Cay nhiều", "additionalPrice": 0, "displayOrder": 1, "status": "AVAILABLE" },
+      { "name": "Cay vừa", "additionalPrice": 0, "displayOrder": 2, "status": "AVAILABLE" },
+      { "name": "Không cay", "additionalPrice": 0, "displayOrder": 3, "status": "AVAILABLE" }
+    ]
+  }
+]
