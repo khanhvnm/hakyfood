@@ -1,9 +1,9 @@
-import { createFileRoute, Link } from '@tanstack/react-router';
+import { createFileRoute } from '@tanstack/react-router';
 import { ClientMenu } from '@/features/menu/components/ClientMenu';
 import { useCartStore } from '@/features/cart/store/useCartStore';
 import { ShoppingBag } from 'lucide-react';
 
-export const Route = createFileRoute('/')({
+export const Route = createFileRoute('/_public/')({
   component: HomeComponent,
 });
 
@@ -16,35 +16,7 @@ function HomeComponent() {
   };
 
   return (
-    <div className="min-h-screen bg-hk-bg-page text-hk-text-primary flex flex-col font-hk-body">
-      {/* Navbar */}
-      <header className="sticky top-0 z-40 bg-hk-bg-surface border-b border-hk-border shadow-sm px-6 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <span className="font-hk-logo text-xl font-black text-hk-primary tracking-wide">
-            HAKYFOOD
-          </span>
-          <span className="hidden sm:inline-block text-[10px] bg-hk-bg-dark text-white font-bold px-2 py-0.5 rounded-full">
-            Đêm Hà Nội
-          </span>
-        </div>
-
-        {/* Liên kết Auth */}
-        <div className="flex gap-3">
-          <Link
-            to="/login"
-            className="px-4 py-2 hover:text-hk-primary text-xs font-bold transition-all"
-          >
-            Đăng nhập
-          </Link>
-          <Link
-            to="/register"
-            className="px-4 py-2 bg-hk-primary hover:bg-hk-primary-hover active:scale-95 text-white text-xs font-bold rounded-xl shadow-sm transition-all"
-          >
-            Đăng ký
-          </Link>
-        </div>
-      </header>
-
+    <>
       {/* Hero Banner */}
       <section className="bg-hk-bg-surface-sunken border-b border-hk-border py-12 px-6 text-center">
         <h1 className="font-hk-display text-3xl sm:text-4xl font-extrabold text-hk-text-primary mb-2">
@@ -76,6 +48,6 @@ function HomeComponent() {
           </button>
         </div>
       )}
-    </div>
+    </>
   );
 }
