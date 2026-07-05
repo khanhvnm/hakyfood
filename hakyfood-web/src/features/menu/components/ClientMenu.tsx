@@ -107,7 +107,7 @@ export function ClientMenu() {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row gap-8 w-full max-w-7xl mx-auto px-4 py-8">
+    <div className="flex flex-col lg:flex-row gap-8 w-full max-w-[1200px] mx-auto px-4 py-8">
       {/* 1. SIDEBAR DANH MỤC TRÁI (Sticky) */}
       <aside className="w-full lg:w-64 flex-shrink-0 lg:sticky lg:top-24 h-auto lg:h-[calc(100vh-120px)] overflow-y-auto bg-hk-bg-surface border border-hk-border-subtle p-4 rounded-2xl shadow-sm space-y-2">
         <h4 className="font-hk-display text-sm font-bold text-hk-text-primary px-4 pb-2 border-b border-hk-border">

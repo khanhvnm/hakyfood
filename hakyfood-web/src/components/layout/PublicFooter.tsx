@@ -4,7 +4,7 @@ export function PublicFooter() {
   return (
     <footer className="bg-hk-bg-dark text-white/80 font-hk-body">
       {/* Main Footer Content */}
-      <div className="max-w-6xl mx-auto px-6 py-12">
+      <div className="max-w-[1200px] mx-auto px-6 py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
 
           {/* Column 1: Brand */}
@@ -81,7 +81,7 @@ export function PublicFooter() {
 
       {/* Bottom Bar */}
       <div className="border-t border-white/5">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+        <div className="max-w-[1200px] mx-auto px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className="text-[10px] text-white/30">
             © 2026 HakyFood. Đặt đồ ăn đêm Hà Nội.
           </p>

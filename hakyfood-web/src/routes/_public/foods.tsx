@@ -78,7 +78,7 @@ function FoodsSearchPage() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8">
+    <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-8">
       {/* Page Header */}
       <div className="mb-8">
         <h1 className="font-hk-display text-2xl sm:text-3xl font-extrabold text-hk-text-primary">

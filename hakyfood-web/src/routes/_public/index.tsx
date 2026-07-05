@@ -18,13 +18,15 @@ function HomeComponent() {
   return (
     <>
       {/* Hero Banner */}
-      <section className="bg-hk-bg-surface-sunken border-b border-hk-border py-12 px-6 text-center">
-        <h1 className="font-hk-display text-3xl sm:text-4xl font-extrabold text-hk-text-primary mb-2">
-          Giao Đồ Ăn Đêm Siêu Tốc
-        </h1>
-        <p className="font-hk-body text-xs sm:text-sm text-hk-text-secondary max-w-md mx-auto">
-          Món ăn nóng hổi, chuẩn vị bếp HakyFood, sẵn sàng phục vụ bạn xuyên đêm Hà Nội từ 18:00 - 04:00.
-        </p>
+      <section className="bg-hk-bg-surface-sunken border-b border-hk-border py-12 px-6">
+        <div className="max-w-[1200px] mx-auto text-center">
+          <h1 className="font-hk-display text-3xl sm:text-4xl font-extrabold text-hk-text-primary mb-2">
+            Giao Đồ Ăn Đêm Siêu Tốc
+          </h1>
+          <p className="font-hk-body text-xs sm:text-sm text-hk-text-secondary max-w-md mx-auto">
+            Món ăn nóng hổi, chuẩn vị bếp HakyFood, sẵn sàng phục vụ bạn xuyên đêm Hà Nội từ 18:00 - 04:00.
+          </p>
+        </div>
       </section>
 
       {/* Cây thực đơn Client Menu */}
