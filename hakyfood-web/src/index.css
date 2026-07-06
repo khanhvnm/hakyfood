@@ -11,6 +11,8 @@
   --color-hk-secondary: var(--hk-color-brand-secondary);
   --color-hk-secondary-hover: var(--hk-color-brand-secondary-hover);
   --color-hk-secondary-subtle: var(--hk-color-brand-secondary-subtle);
+  
+  --color-hk-accent: var(--hk-color-brand-accent);
 
   --color-hk-bg-page: var(--hk-color-bg-page);
   --color-hk-bg-warm: var(--hk-color-bg-page-warm);
@@ -25,6 +27,7 @@
   --color-hk-text-secondary: var(--hk-color-text-secondary);
   --color-hk-text-muted: var(--hk-color-text-muted);
   --color-hk-text-disabled: var(--hk-color-text-disabled);
+  --color-hk-text-inverse: var(--hk-color-text-inverse);
 
   --color-hk-border: var(--hk-color-border-default);
   --color-hk-border-subtle: var(--hk-color-border-subtle);

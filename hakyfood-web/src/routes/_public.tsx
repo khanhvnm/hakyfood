@@ -12,8 +12,8 @@ function PublicLayout() {
       {/* Header dùng chung cho mọi trang public */}
       <PublicHeader />
 
-      {/* Nội dung thay đổi động tùy theo URL */}
-      <main className="flex-grow">
+      {/* Nội dung thay đổi động tùy theo URL, bù khoảng trống cho header fixed */}
+      <main className="flex-grow pt-[76px]">
         <Outlet />
       </main>
 
