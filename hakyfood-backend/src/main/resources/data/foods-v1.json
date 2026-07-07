@@ -1,0 +1,1947 @@
+[
+  {
+    "name": "Cơm Gà Nướng Mật Ong",
+    "slug": "com-ga-nuong-mat-ong",
+    "description": "Gà nướng mật ong da hơi xém thơm, lớp thịt bên trong mềm mọng, ăn kèm cơm nóng.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 30000,
+    "categories": [
+      "com",
+      "com-ga"
+    ],
+    "optionGroups": [
+      "tuy-chon-them-com",
+      "them-trung"
+    ]
+  },
+  {
+    "name": "Cơm Gà Cà Ri Nhật Bản",
+    "slug": "com-ga-ca-ri-nhat-ban",
+    "description": "Gà chiên xù giòn ngoài mềm trong, ăn cùng sốt cà ri Nhật sánh nhẹ đậm vị, chan với cơm nóng.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1493770348161-369560ae357d?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 35000,
+    "categories": [
+      "com",
+      "com-ga"
+    ],
+    "optionGroups": [
+      "tuy-chon-them-com",
+      "them-trung"
+    ]
+  },
+  {
+    "name": "Cơm Gà Xào Sả Ớt",
+    "slug": "com-ga-xao-sa-ot",
+    "description": "Gà xào săn mềm thấm vị, dậy mùi sả thơm nồng, cay nhẹ từ ớt, ăn cùng cơm nóng.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 40000,
+    "categories": [
+      "com",
+      "com-ga"
+    ],
+    "optionGroups": [
+      "tuy-chon-them-com",
+      "them-trung"
+    ]
+  },
+  {
+    "name": "Cơm Gà Rang Gừng Lá Chanh",
+    "slug": "com-ga-rang-gung-la-chanh",
+    "description": "Gà rang cùng gừng ấm và lá chanh thơm lừng, thịt mềm ngọt, thấm vị đậm đà.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 45000,
+    "categories": [
+      "com",
+      "com-ga"
+    ],
+    "optionGroups": [
+      "tuy-chon-them-com",
+      "them-trung"
+    ]
+  },
+  {
+    "name": "Cơm Thịt Nướng Hàn Quốc",
+    "slug": "com-thit-nuong-han-quoc",
+    "description": "Thịt heo ướp đậm vị kiểu Hàn, nướng thơm dậy mùi, ăn cùng cơm nóng no bụng.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1493770348161-369560ae357d?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 50000,
+    "categories": [
+      "com",
+      "com-thit-heo"
+    ],
+    "optionGroups": [
+      "tuy-chon-them-com",
+      "them-trung"
+    ]
+  },
+  {
+    "name": "Cơm Thịt Ba Chỉ Tóp Mỡ Sốt Cà Chua",
+    "slug": "com-thit-ba-chi-top-mo-sot-ca-chua",
+    "description": "Tóp mỡ giòn béo không ngấy, áo sốt cà chua chua ngọt đậm đà, ăn cùng cơm nóng dẻo.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 55000,
+    "categories": [
+      "com",
+      "com-thit-heo"
+    ],
+    "optionGroups": [
+      "tuy-chon-them-com",
+      "them-trung"
+    ]
+  },
+  {
+    "name": "Cơm Thịt Heo Xào Hành Tây",
+    "slug": "com-thit-heo-xao-hanh-tay",
+    "description": "Thịt heo xào cùng hành tây thơm ngọt tự nhiên, đậm vị mà không nhạt nhẽo.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1493770348161-369560ae357d?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 60000,
+    "categories": [
+      "com",
+      "com-thit-heo"
+    ],
+    "optionGroups": [
+      "tuy-chon-them-com",
+      "them-trung"
+    ]
+  },
+  {
+    "name": "Cơm Chân Giò Hầm Hàn Quốc",
+    "slug": "com-chan-gio-ham-han-quoc",
+    "description": "Chân giò hầm mềm rục, béo thơm, thấm sốt hầm kiểu Hàn, ăn kèm kim chi chua cay.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 65000,
+    "categories": [
+      "com",
+      "com-thit-heo"
+    ],
+    "optionGroups": [
+      "tuy-chon-them-com",
+      "them-trung"
+    ]
+  },
+  {
+    "name": "Cơm Thịt Rang Cháy Tỏi Lá Chanh",
+    "slug": "com-thit-rang-chay-toi-la-chanh",
+    "description": "Thịt rang cháy xém thơm nức, phủ tỏi phi vàng giòn, thoảng hương lá chanh the nhẹ.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 70000,
+    "categories": [
+      "com",
+      "com-thit-heo"
+    ],
+    "optionGroups": [
+      "tuy-chon-them-com",
+      "them-trung"
+    ]
+  },
+  {
+    "name": "Cơm Thịt Rang Cháy Cạnh",
+    "slug": "com-thit-rang-chay-canh",
+    "description": "Thịt rang xém cạnh thơm lừng, mặn ngọt vừa miệng, ăn cùng cơm nóng dẻo.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 75000,
+    "categories": [
+      "com",
+      "com-thit-heo"
+    ],
+    "optionGroups": [
+      "tuy-chon-them-com",
+      "them-trung"
+    ]
+  },
+  {
+    "name": "Cơm Sườn Chiên Mắm Tỏi",
+    "slug": "com-suon-chien-mam-toi",
+    "description": "Sườn chiên vàng, áo mắm tỏi thơm lừng, ăn kèm cơm nóng.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 80000,
+    "categories": [
+      "com",
+      "com-suon"
+    ],
+    "optionGroups": [
+      "tuy-chon-them-com",
+      "them-trung"
+    ]
+  },
+  {
+    "name": "Cơm Sườn Sốt Chua Ngọt",
+    "slug": "com-suon-sot-chua-ngot",
+    "description": "Sườn mềm thơm, áo sốt chua ngọt sánh mịn, ăn kèm cơm trắng dẻo và rau củ thanh mát.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 85000,
+    "categories": [
+      "com",
+      "com-suon"
+    ],
+    "optionGroups": [
+      "tuy-chon-them-com",
+      "them-trung"
+    ]
+  },
+  {
+    "name": "Cơm Bò Sốt Tiêu Đen",
+    "slug": "com-bo-sot-tieu-den",
+    "description": "Thịt bò mềm thấm sốt, đậm đà quyện cùng mùi tiêu đen thơm nồng đặc trưng.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 90000,
+    "categories": [
+      "com",
+      "com-bo"
+    ],
+    "optionGroups": [
+      "tuy-chon-them-com",
+      "them-trung"
+    ]
+  },
+  {
+    "name": "Cơm Rang Đông Phương",
+    "slug": "com-rang-dong-phuong",
+    "description": "Cơm rang đậm đà, hạt tơi vàng óng, dễ ăn – món best-seller của quán.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1493770348161-369560ae357d?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 95000,
+    "categories": [
+      "com",
+      "com-rang"
+    ],
+    "optionGroups": [
+      "tuy-chon-them-com",
+      "them-trung"
+    ]
+  },
+  {
+    "name": "Cơm Rang Hawaii",
+    "slug": "com-rang-hawaii",
+    "description": "Cơm rang cùng tôm tươi, dứa chua ngọt nhẹ và lạp xưởng đậm vị, vị mặn - ngọt - chua cân bằng, ăn không ngấy.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 30000,
+    "categories": [
+      "com",
+      "com-rang"
+    ],
+    "optionGroups": [
+      "tuy-chon-them-com",
+      "them-trung"
+    ]
+  },
+  {
+    "name": "Cơm Rang Hoàng Gia",
+    "slug": "com-rang-hoang-gia",
+    "description": "Cơm rang tơi béo kết hợp pate, lạp xưởng, xúc xích và rau củ tươi, đậm đà đủ vị.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 35000,
+    "categories": [
+      "com",
+      "com-rang"
+    ],
+    "optionGroups": [
+      "tuy-chon-them-com",
+      "them-trung"
+    ]
+  },
+  {
+    "name": "Cơm Rang Chiến Thần",
+    "slug": "com-rang-chien-than",
+    "description": "Cơm rang tơi hạt, topping lạp xưởng Kiên Giang thơm, phủ chà bông và sốt đậm đà, thêm hành phi giòn.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1493770348161-369560ae357d?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 40000,
+    "categories": [
+      "com",
+      "com-rang"
+    ],
+    "optionGroups": [
+      "tuy-chon-them-com",
+      "them-trung"
+    ]
+  },
+  {
+    "name": "Cơm Đậu Hũ Thịt Băm Sốt Cà Chua",
+    "slug": "com-dau-hu-thit-bam-sot-ca-chua",
+    "description": "Đậu hũ chiên vàng hòa cùng sốt cà chua và thịt băm thơm béo, món cơm giản dị mà đậm vị.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 45000,
+    "categories": [
+      "com"
+    ],
+    "optionGroups": [
+      "tuy-chon-them-com",
+      "them-trung"
+    ]
+  },
+  {
+    "name": "Cơm Cháy Chà Bông",
+    "slug": "com-chay-cha-bong",
+    "description": "Cơm cháy giòn rụm vàng ươm, phủ chà bông tơi mềm đậm đà vị mặn ngọt.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1493770348161-369560ae357d?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 65000,
+    "categories": [
+      "com"
+    ],
+    "optionGroups": [
+      "tuy-chon-them-com",
+      "them-trung"
+    ]
+  },
+  {
+    "name": "Xôi Mặn Sài Gòn",
+    "slug": "xoi-man-sai-gon",
+    "description": "Xôi đầy đủ topping kiểu Sài Gòn: trứng cút, pate mỡ hành, giăm bông, chà bông, xá xíu, lạp xưởng, chả nướng và đồ chua.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 65000,
+    "categories": [
+      "xoi"
+    ],
+    "optionGroups": [
+      "tuy-chon-them-com"
+    ]
+  },
+  {
+    "name": "Xôi Sườn Cay",
+    "slug": "xoi-suon-cay",
+    "description": "Xôi ăn kèm sườn cay đậm vị, nóng hổi.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 70000,
+    "categories": [
+      "xoi"
+    ],
+    "optionGroups": [
+      "tuy-chon-them-com"
+    ]
+  },
+  {
+    "name": "Xôi Xá Xíu",
+    "slug": "xoi-xa-xiu",
+    "description": "Xôi ăn kèm xá xíu, pate, trứng cút và đồ chua, đậm đà vừa miệng.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 60000,
+    "categories": [
+      "xoi"
+    ],
+    "optionGroups": [
+      "tuy-chon-them-com"
+    ]
+  },
+  {
+    "name": "Mì Trộn Hồ Lô Viên Á",
+    "slug": "mi-tron-ho-lo-vien-a",
+    "description": "Mì dai trộn cùng viên á hồ lô béo thơm, cắn vào giòn sật, rưới tương ớt cay nhẹ.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 70000,
+    "categories": [
+      "mi-mien",
+      "mi-tron"
+    ],
+    "optionGroups": [
+      "them-trung"
+    ]
+  },
+  {
+    "name": "Mì Trộn Lườn Ngỗng Sốt Bắc Kinh",
+    "slug": "mi-tron-luon-ngong-sot-bac-kinh",
+    "description": "Lườn ngỗng mềm thơm đậm vị, mì trộn thấm sốt Bắc Kinh sánh mịn, mặn ngọt hài hòa, cay nhẹ.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 75000,
+    "categories": [
+      "mi-mien",
+      "mi-tron"
+    ],
+    "optionGroups": [
+      "them-trung"
+    ]
+  },
+  {
+    "name": "Mì Trộn Xúc Xích",
+    "slug": "mi-tron-xuc-xich",
+    "description": "Mì dai trộn sốt đậm đà cùng xúc xích thơm béo.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 80000,
+    "categories": [
+      "mi-mien",
+      "mi-tron"
+    ],
+    "optionGroups": [
+      "them-trung"
+    ]
+  },
+  {
+    "name": "Mì Trộn Bò",
+    "slug": "mi-tron-bo",
+    "description": "Mì dai trộn cùng bò xào mềm thơm, sốt đậm đà, ăn kèm rau củ tươi và hành lá.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1493770348161-369560ae357d?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 85000,
+    "categories": [
+      "mi-mien",
+      "mi-tron"
+    ],
+    "optionGroups": [
+      "them-trung"
+    ]
+  },
+  {
+    "name": "Mì Xào Bò",
+    "slug": "mi-xao-bo",
+    "description": "Mì xào vàng sợi cùng bò mềm ngọt và rau xanh tươi, đậm vị thơm ngon.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 90000,
+    "categories": [
+      "mi-mien",
+      "mi-xao"
+    ],
+    "optionGroups": [
+      "them-trung"
+    ]
+  },
+  {
+    "name": "Mì Xào Hoàng Kim",
+    "slug": "mi-xao-hoang-kim",
+    "description": "Mì vàng óng xào nóng hổi thấm sốt đậm đà, cùng bò mềm ngọt, trứng non béo bùi và rau củ giòn thơm.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 95000,
+    "categories": [
+      "mi-mien",
+      "mi-xao"
+    ],
+    "optionGroups": [
+      "them-trung"
+    ]
+  },
+  {
+    "name": "Mì Xào Hải Sản",
+    "slug": "mi-xao-hai-san",
+    "description": "Mì xào lửa lớn cùng tôm và mực tươi, sợi mì giữ độ dai, hải sản chín vừa quyện trong sốt đậm đà.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1493770348161-369560ae357d?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 30000,
+    "categories": [
+      "mi-mien",
+      "mi-xao"
+    ],
+    "optionGroups": [
+      "them-trung"
+    ]
+  },
+  {
+    "name": "Mì Ý Carbonara",
+    "slug": "mi-y-carbonara",
+    "description": "Mì Ý áo sốt kem béo mịn kiểu carbonara, đậm đà thơm béo.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 35000,
+    "categories": [
+      "mi-mien",
+      "mi-y"
+    ],
+    "optionGroups": [
+      "them-trung"
+    ]
+  },
+  {
+    "name": "Mì Ý Sốt Bò Băm",
+    "slug": "mi-y-sot-bo-bam",
+    "description": "Mì Ý sợi dai mềm quyện sốt bò băm nấu từ cà chua chín mọng, đậm đà mà không ngấy.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1493770348161-369560ae357d?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 40000,
+    "categories": [
+      "mi-mien",
+      "mi-y"
+    ],
+    "optionGroups": [
+      "them-trung"
+    ]
+  },
+  {
+    "name": "Mì Ý Sốt Kem Nấm Xúc Xích",
+    "slug": "mi-y-sot-kem-nam-xuc-xich",
+    "description": "Mì Ý áo sốt kem nấm béo nhẹ thơm mùi nấm, thêm xúc xích cắt lát đậm vị.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 45000,
+    "categories": [
+      "mi-mien",
+      "mi-y"
+    ],
+    "optionGroups": [
+      "them-trung"
+    ]
+  },
+  {
+    "name": "Miến Xào Bò Thập Cẩm",
+    "slug": "mien-xao-bo-thap-cam",
+    "description": "Miến dai xào cùng bò mềm, thêm rau và nấm, đậm vị, ăn ấm bụng.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 50000,
+    "categories": [
+      "mi-mien",
+      "mien-xao"
+    ],
+    "optionGroups": [
+      "them-trung"
+    ]
+  },
+  {
+    "name": "Miến Xào Hàn Quốc",
+    "slug": "mien-xao-han-quoc",
+    "description": "Miến dai mềm xào cùng bò thơm ngọt, trứng non bùi béo, rau củ giòn ngọt, thấm sốt đậm đà kiểu Hàn.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 55000,
+    "categories": [
+      "mi-mien",
+      "mien-xao"
+    ],
+    "optionGroups": [
+      "them-trung"
+    ]
+  },
+  {
+    "name": "Miến Xào Hải Sản",
+    "slug": "mien-xao-hai-san",
+    "description": "Miến dai xào cùng mực giòn ngọt, tôm tươi chắc thịt, trứng béo nhẹ và rau củ giòn mát.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 60000,
+    "categories": [
+      "mi-mien",
+      "mien-xao"
+    ],
+    "optionGroups": [
+      "them-trung"
+    ]
+  },
+  {
+    "name": "Khoai Tây Chiên Truyền Thống",
+    "slug": "khoai-tay-chien-truyen-thong",
+    "description": "Khoai tây tươi chiên vàng giòn, ít dầu, đậm vị khoai tự nhiên.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 40000,
+    "categories": [
+      "do-an-vat"
+    ],
+    "optionGroups": [
+      "muc-do-cay"
+    ]
+  },
+  {
+    "name": "Khoai Tây Chiên Lắc Phô Mai",
+    "slug": "khoai-tay-chien-lac-pho-mai",
+    "description": "Khoai tây chiên giòn ngoài mềm trong, phủ lớp phô mai thơm béo ngậy.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 45000,
+    "categories": [
+      "do-an-vat"
+    ],
+    "optionGroups": [
+      "muc-do-cay"
+    ]
+  },
+  {
+    "name": "Xúc Xích",
+    "slug": "xuc-xich",
+    "description": "Xúc xích chiên đậm vị, ăn vặt hay ăn kèm đều hợp.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1493770348161-369560ae357d?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 10000,
+    "categories": [
+      "do-an-vat"
+    ],
+    "optionGroups": [
+      "muc-do-cay"
+    ]
+  },
+  {
+    "name": "Salad",
+    "slug": "salad",
+    "description": "Salad rau củ tươi mát, béo nhẹ, chua thanh, mặn vừa, ăn nhẹ bụng mà không ngấy.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 80000,
+    "categories": [
+      "do-an-vat"
+    ],
+    "optionGroups": [
+      "muc-do-cay"
+    ]
+  },
+  {
+    "name": "Chân Gà Rang Muối",
+    "slug": "chan-ga-rang-muoi",
+    "description": "Chân gà rang giòn, áo muối rang mặn thơm lừng, giòn sần sật.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 65000,
+    "categories": [
+      "do-nhau",
+      "chan-ga"
+    ],
+    "optionGroups": [
+      "muc-do-cay"
+    ]
+  },
+  {
+    "name": "Chân Gà Sốt Thái Xoài Xanh",
+    "slug": "chan-ga-sot-thai-xoai-xanh",
+    "description": "Chân gà giòn sật trộn sốt Thái chua cay đậm vị, ăn kèm xoài xanh giòn.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1493770348161-369560ae357d?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 85000,
+    "categories": [
+      "do-nhau",
+      "chan-ga"
+    ],
+    "optionGroups": [
+      "muc-do-cay"
+    ]
+  },
+  {
+    "name": "Chân Gà Chiên Mắm",
+    "slug": "chan-ga-chien-mam",
+    "description": "Chân gà chiên áo mắm tỏi đậm đà, giòn thơm.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 65000,
+    "categories": [
+      "do-nhau",
+      "chan-ga"
+    ],
+    "optionGroups": [
+      "muc-do-cay"
+    ]
+  },
+  {
+    "name": "Chân Gà Cháy Tỏi",
+    "slug": "chan-ga-chay-toi",
+    "description": "Chân gà cháy tỏi thơm nức, giòn dai, đậm vị.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1493770348161-369560ae357d?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 65000,
+    "categories": [
+      "do-nhau",
+      "chan-ga"
+    ],
+    "optionGroups": [
+      "muc-do-cay"
+    ]
+  },
+  {
+    "name": "Gà Chiên Giòn",
+    "slug": "ga-chien-gion",
+    "description": "Gà chiên da vàng ruộm giòn rụm bên ngoài, thịt mềm ngọt bên trong.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 35000,
+    "categories": [
+      "do-nhau",
+      "ga-chien"
+    ],
+    "optionGroups": [
+      "muc-do-cay"
+    ]
+  },
+  {
+    "name": "Gà Chiên Giòn Lắc Phô Mai",
+    "slug": "ga-chien-gion-lac-pho-mai",
+    "description": "Gà chiên giòn phủ lớp phô mai béo mặn, thơm nức mũi.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 40000,
+    "categories": [
+      "do-nhau",
+      "ga-chien"
+    ],
+    "optionGroups": [
+      "muc-do-cay"
+    ]
+  },
+  {
+    "name": "Gà Viên Chiên Giòn",
+    "slug": "ga-vien-chien-gion",
+    "description": "Viên gà chiên giòn rụm, béo thơm, ăn vặt hợp mọi lúc.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 55000,
+    "categories": [
+      "do-nhau",
+      "ga-chien"
+    ],
+    "optionGroups": [
+      "muc-do-cay"
+    ]
+  },
+  {
+    "name": "Gà Viên Chiên Giòn Lắc Phô Mai",
+    "slug": "ga-vien-chien-gion-lac-pho-mai",
+    "description": "Viên gà chiên giòn lắc cùng phô mai béo thơm, giòn rụm.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 65000,
+    "categories": [
+      "do-nhau",
+      "ga-chien"
+    ],
+    "optionGroups": [
+      "muc-do-cay"
+    ]
+  },
+  {
+    "name": "Sụn Gà Rang Muối",
+    "slug": "sun-ga-rang-muoi",
+    "description": "Sụn gà rang muối giòn rụm, mặn thơm vừa miệng.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 80000,
+    "categories": [
+      "do-nhau",
+      "sun-ga"
+    ],
+    "optionGroups": [
+      "muc-do-cay"
+    ]
+  },
+  {
+    "name": "Sụn Gà Chiên Mắm",
+    "slug": "sun-ga-chien-mam",
+    "description": "Sụn gà chiên áo mắm tỏi đậm đà, giòn sần sật.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 80000,
+    "categories": [
+      "do-nhau",
+      "sun-ga"
+    ],
+    "optionGroups": [
+      "muc-do-cay"
+    ]
+  },
+  {
+    "name": "Sụn Gà Cháy Tỏi Sa Tế",
+    "slug": "sun-ga-chay-toi-sa-te",
+    "description": "Sụn gà cháy tỏi hòa cùng sa tế cay nhẹ, thơm nức mũi.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1493770348161-369560ae357d?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 80000,
+    "categories": [
+      "do-nhau",
+      "sun-ga"
+    ],
+    "optionGroups": [
+      "muc-do-cay"
+    ]
+  },
+  {
+    "name": "Sụn Gà Hoàng Kim",
+    "slug": "sun-ga-hoang-kim",
+    "description": "Sụn gà chiên giòn phủ lớp sốt hoàng kim béo thơm đậm đà.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 90000,
+    "categories": [
+      "do-nhau",
+      "sun-ga"
+    ],
+    "optionGroups": [
+      "muc-do-cay"
+    ]
+  },
+  {
+    "name": "Trứng Non Sốt Me Bơ",
+    "slug": "trung-non-sot-me-bo",
+    "description": "Trứng non béo bùi hòa sốt me bơ chua ngọt nhẹ, đậm đà.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 70000,
+    "categories": [
+      "do-nhau",
+      "trung-non"
+    ],
+    "optionGroups": [
+      "muc-do-cay"
+    ]
+  },
+  {
+    "name": "Trứng Non Cháy Tỏi Sa Tế",
+    "slug": "trung-non-chay-toi-sa-te",
+    "description": "Trứng non cháy tỏi thơm mùi tỏi phi, cay nhẹ từ sa tế.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1493770348161-369560ae357d?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 70000,
+    "categories": [
+      "do-nhau",
+      "trung-non"
+    ],
+    "optionGroups": [
+      "muc-do-cay"
+    ]
+  },
+  {
+    "name": "Trứng Non Cháy Tiêu",
+    "slug": "trung-non-chay-tieu",
+    "description": "Trứng non cháy tiêu đậm vị, thơm nồng, rõ ràng.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 70000,
+    "categories": [
+      "do-nhau",
+      "trung-non"
+    ],
+    "optionGroups": [
+      "muc-do-cay"
+    ]
+  },
+  {
+    "name": "Thịt Nướng Hàn Quốc",
+    "slug": "thit-nuong-han-quoc",
+    "description": "Thịt nướng kiểu Hàn ướp đậm vị, thơm dậy mùi, phần vừa ăn một mình.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1493770348161-369560ae357d?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 90000,
+    "categories": [
+      "do-nhau"
+    ],
+    "optionGroups": [
+      "muc-do-cay"
+    ]
+  },
+  {
+    "name": "Set Thịt Nướng Hàn Quốc",
+    "slug": "set-thit-nuong-han-quoc",
+    "description": "Set thịt nướng Hàn Quốc phần đầy đặn, phù hợp ăn cùng nhóm bạn.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 150000,
+    "categories": [
+      "do-nhau"
+    ],
+    "optionGroups": [
+      "muc-do-cay"
+    ]
+  },
+  {
+    "name": "Set Cuộn Chân Giò Hàn Quốc",
+    "slug": "set-cuon-chan-gio-han-quoc",
+    "description": "Chân giò cuộn hầm kiểu Hàn, phần đầy đặn hợp ăn nhóm.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 300000,
+    "categories": [
+      "do-nhau"
+    ],
+    "optionGroups": [
+      "muc-do-cay"
+    ]
+  },
+  {
+    "name": "Nầm Heo Ướp Me",
+    "slug": "nam-heo-uop-me",
+    "description": "Nầm giòn dai sần sật, thấm đẫm sốt me chua ngọt, ăn kèm đậu bắp trung hòa hương vị.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 35000,
+    "categories": [
+      "do-nhau"
+    ],
+    "optionGroups": [
+      "muc-do-cay"
+    ]
+  },
+  {
+    "name": "Nầm Heo Ướp Chao",
+    "slug": "nam-heo-uop-chao",
+    "description": "Nầm heo ướp chao béo thơm, đậm đà đưa cay.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 80000,
+    "categories": [
+      "do-nhau"
+    ],
+    "optionGroups": [
+      "muc-do-cay"
+    ]
+  },
+  {
+    "name": "Nầm Heo Ướp Sa Tế",
+    "slug": "nam-heo-uop-sa-te",
+    "description": "Nầm heo ướp sa tế cay nhẹ, thơm nồng, giòn sần sật.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 80000,
+    "categories": [
+      "do-nhau"
+    ],
+    "optionGroups": [
+      "muc-do-cay"
+    ]
+  },
+  {
+    "name": "Gà Ủ Muối",
+    "slug": "ga-u-muoi",
+    "description": "Gà ủ muối mềm ngọt tự nhiên, da vàng óng, ăn kèm muối tiêu chanh chua cay.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 50000,
+    "categories": [
+      "do-nhau"
+    ],
+    "optionGroups": [
+      "muc-do-cay"
+    ]
+  },
+  {
+    "name": "Chim Câu Quay Muối Tiêu Chanh",
+    "slug": "chim-cau-quay-muoi-tieu-chanh",
+    "description": "Chim câu quay da giòn rụm, thịt mềm ngọt tự nhiên, chấm muối tiêu chanh.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1493770348161-369560ae357d?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 55000,
+    "categories": [
+      "do-nhau"
+    ],
+    "optionGroups": [
+      "muc-do-cay"
+    ]
+  },
+  {
+    "name": "Phồng Tôm Xúc Chim Câu",
+    "slug": "phong-tom-xuc-chim-cau",
+    "description": "Phồng tôm giòn rụm ăn cùng chim câu đậm đà, nhâm nhi siêu bắt miệng.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 160000,
+    "categories": [
+      "do-nhau"
+    ],
+    "optionGroups": [
+      "muc-do-cay"
+    ]
+  },
+  {
+    "name": "Phồng Tôm Chấm Pate",
+    "slug": "phong-tom-cham-pate",
+    "description": "Phồng tôm giòn rụm chấm pate béo nhẹ, món ăn chơi gây nghiện.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 60000,
+    "categories": [
+      "do-nhau"
+    ],
+    "optionGroups": [
+      "muc-do-cay"
+    ]
+  },
+  {
+    "name": "Bánh Bao Bò Sốt Tiêu Đen",
+    "slug": "banh-bao-bo-sot-tieu-den",
+    "description": "Bánh bao vỏ mềm chấm cùng thịt bò sốt tiêu đen đậm vị, thơm nồng nhẹ.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1493770348161-369560ae357d?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 70000,
+    "categories": [
+      "do-nhau"
+    ],
+    "optionGroups": [
+      "muc-do-cay"
+    ]
+  },
+  {
+    "name": "Bánh Bao Chiên Chấm Sữa",
+    "slug": "banh-bao-chien-cham-sua",
+    "description": "Bánh bao chiên giòn nhẹ bên ngoài, mềm bên trong, chấm sữa béo ngọt.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 75000,
+    "categories": [
+      "do-nhau"
+    ],
+    "optionGroups": [
+      "muc-do-cay"
+    ]
+  },
+  {
+    "name": "Nem Chua Rán",
+    "slug": "nem-chua-ran",
+    "description": "Nem chiên vàng giòn bên ngoài, mềm dẻo thơm nhẹ bên trong, ăn kèm tương ớt nhà làm.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1493770348161-369560ae357d?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 35000,
+    "categories": [
+      "do-nhau"
+    ],
+    "optionGroups": [
+      "muc-do-cay"
+    ]
+  },
+  {
+    "name": "Nem Chua Lá Ổi",
+    "slug": "nem-chua-la-oi",
+    "description": "Nem chua cuốn lá ổi, hương chua nhẹ đặc trưng.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 45000,
+    "categories": [
+      "do-nhau"
+    ],
+    "optionGroups": [
+      "muc-do-cay"
+    ]
+  },
+  {
+    "name": "Nem Bùi Lá Sung",
+    "slug": "nem-bui-la-sung",
+    "description": "Nem bùi cuốn lá sung, vị bùi béo hài hòa.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 50000,
+    "categories": [
+      "do-nhau"
+    ],
+    "optionGroups": [
+      "muc-do-cay"
+    ]
+  },
+  {
+    "name": "Nem Tai Lá Sung",
+    "slug": "nem-tai-la-sung",
+    "description": "Nem tai giòn sần sật cuốn lá sung, thơm đặc trưng.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 55000,
+    "categories": [
+      "do-nhau"
+    ],
+    "optionGroups": [
+      "muc-do-cay"
+    ]
+  },
+  {
+    "name": "Nem Lụi",
+    "slug": "nem-lui",
+    "description": "Nem lụi nướng thơm, đậm vị, ăn kèm nước chấm riêng.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 20000,
+    "categories": [
+      "do-nhau"
+    ],
+    "optionGroups": [
+      "muc-do-cay"
+    ]
+  },
+  {
+    "name": "Tré Trộn Bình Định",
+    "slug": "tre-tron-binh-dinh",
+    "description": "Tré dai giòn sần sật trộn rau và gia vị chua cay mặn ngọt, vị Bình Định thơm bùi nhẹ nhàng.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 35000,
+    "categories": [
+      "do-nhau"
+    ],
+    "optionGroups": [
+      "muc-do-cay"
+    ]
+  },
+  {
+    "name": "Tré Trộn Huế",
+    "slug": "tre-tron-hue",
+    "description": "Tré trộn kiểu Huế cay nồng đậm vị, dai giòn sần sật.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 40000,
+    "categories": [
+      "do-nhau"
+    ],
+    "optionGroups": [
+      "muc-do-cay"
+    ]
+  },
+  {
+    "name": "Tré Trộn Sài Gòn",
+    "slug": "tre-tron-sai-gon",
+    "description": "Tré trộn đầy đủ nguyên liệu kiểu Sài Gòn: dưa leo, xoài, cóc, chả bò, nem chua, nem bì, nước trộn đậm đà.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1493770348161-369560ae357d?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 45000,
+    "categories": [
+      "do-nhau"
+    ],
+    "optionGroups": [
+      "muc-do-cay"
+    ]
+  },
+  {
+    "name": "Tóp Mỡ Rim Mắm Tỏi",
+    "slug": "top-mo-rim-mam-toi",
+    "description": "Tóp mỡ giòn rụm áo mắm tỏi đậm đà, mặn ngọt, càng nhai càng bùi.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 150000,
+    "categories": [
+      "do-nhau"
+    ],
+    "optionGroups": [
+      "muc-do-cay"
+    ]
+  },
+  {
+    "name": "Khô Bò Xé Sợi",
+    "slug": "kho-bo-xe-soi",
+    "description": "Khô bò xé sợi dai, đậm vị, món nhậu quen thuộc.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 100000,
+    "categories": [
+      "do-nhau"
+    ],
+    "optionGroups": [
+      "muc-do-cay"
+    ]
+  },
+  {
+    "name": "Khô Gà Bơ Tỏi",
+    "slug": "kho-ga-bo-toi",
+    "description": "Gà xé sợi dai mềm áo bơ tỏi thơm lừng, mặn ngọt cay nhẹ.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1493770348161-369560ae357d?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 95000,
+    "categories": [
+      "do-nhau"
+    ],
+    "optionGroups": [
+      "muc-do-cay"
+    ]
+  },
+  {
+    "name": "Lạp Xưởng Hà Khẩu",
+    "slug": "lap-xuong-ha-khau",
+    "description": "Lạp xưởng Hà Khẩu nướng thơm, ăn kèm ớt bột.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 20000,
+    "categories": [
+      "do-nhau"
+    ],
+    "optionGroups": [
+      "muc-do-cay"
+    ]
+  },
+  {
+    "name": "Trà Sữa Cốm",
+    "slug": "tra-sua-com",
+    "description": "Trà sữa thanh dịu không ngọt gắt, kết hợp cốm tươi dẻo thơm mùi lúa non.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1493770348161-369560ae357d?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 70000,
+    "categories": [
+      "do-uong",
+      "tra-sua"
+    ],
+    "optionGroups": [
+      "chon-co-ly",
+      "muc-do-ngot",
+      "muc-do-da",
+      "them-topping"
+    ]
+  },
+  {
+    "name": "Trà Ô Long Nhài Sữa",
+    "slug": "tra-o-long-nhai-sua",
+    "description": "Trà ô long nhài thơm dịu hòa cùng sữa béo nhẹ, thêm trân châu trắng dai giòn.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 75000,
+    "categories": [
+      "do-uong",
+      "tra-sua"
+    ],
+    "optionGroups": [
+      "chon-co-ly",
+      "muc-do-ngot",
+      "muc-do-da",
+      "them-topping"
+    ]
+  },
+  {
+    "name": "Trà Chanh",
+    "slug": "tra-chanh",
+    "description": "Trà chanh mát lạnh, thanh nhẹ, giải ngấy.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 80000,
+    "categories": [
+      "do-uong",
+      "tra-hoa-qua"
+    ],
+    "optionGroups": [
+      "chon-co-ly",
+      "muc-do-ngot",
+      "muc-do-da",
+      "them-topping"
+    ]
+  },
+  {
+    "name": "Trà Xoài Đào",
+    "slug": "tra-xoai-dao",
+    "description": "Trà mát lạnh vị xoài chín hòa cùng đào dịu ngọt, kèm topping xoài tươi và thạch hoa quả.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 85000,
+    "categories": [
+      "do-uong",
+      "tra-hoa-qua"
+    ],
+    "optionGroups": [
+      "chon-co-ly",
+      "muc-do-ngot",
+      "muc-do-da",
+      "them-topping"
+    ]
+  },
+  {
+    "name": "Trà Xoài Chanh Leo",
+    "slug": "tra-xoai-chanh-leo",
+    "description": "Trà thanh nhẹ hòa vị chua ngọt tự nhiên từ xoài và chanh leo, kèm thạch hoa quả giòn mát.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 90000,
+    "categories": [
+      "do-uong",
+      "tra-hoa-qua"
+    ],
+    "optionGroups": [
+      "chon-co-ly",
+      "muc-do-ngot",
+      "muc-do-da",
+      "them-topping"
+    ]
+  },
+  {
+    "name": "Trà Mãng Cầu",
+    "slug": "tra-mang-cau",
+    "description": "Trà mãng cầu mát lạnh, giải nhiệt, thơm ngon.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 95000,
+    "categories": [
+      "do-uong",
+      "tra-hoa-qua"
+    ],
+    "optionGroups": [
+      "chon-co-ly",
+      "muc-do-ngot",
+      "muc-do-da",
+      "them-topping"
+    ]
+  },
+  {
+    "name": "Trà Lựu Tỷ",
+    "slug": "tra-luu-ty",
+    "description": "Trà lựu đỏ au chua ngọt thanh mát, kèm trân châu trắng dẻo dai.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 30000,
+    "categories": [
+      "do-uong",
+      "tra-hoa-qua"
+    ],
+    "optionGroups": [
+      "chon-co-ly",
+      "muc-do-ngot",
+      "muc-do-da",
+      "them-topping"
+    ]
+  },
+  {
+    "name": "Trà Ô Long Nhài Cốm",
+    "slug": "tra-o-long-nhai-com",
+    "description": "Trà ô long ủ chuẩn vị hậu ngọt nhẹ, hương nhài thoang thoảng, thêm cốm non bùi thơm.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1493770348161-369560ae357d?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 35000,
+    "categories": [
+      "do-uong",
+      "tra-hoa-qua"
+    ],
+    "optionGroups": [
+      "chon-co-ly",
+      "muc-do-ngot",
+      "muc-do-da",
+      "them-topping"
+    ]
+  },
+  {
+    "name": "Sữa Chua Xoài",
+    "slug": "sua-chua-xoai",
+    "description": "Sữa chua uống vị xoài mát lạnh, chua ngọt cân vị.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 35000,
+    "categories": [
+      "do-uong",
+      "sua-chua"
+    ],
+    "optionGroups": [
+      "chon-co-ly",
+      "muc-do-ngot",
+      "muc-do-da",
+      "them-topping"
+    ]
+  },
+  {
+    "name": "Sữa Chua Đào",
+    "slug": "sua-chua-dao",
+    "description": "Sữa chua uống vị đào mát nhẹ, không ngấy.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 35000,
+    "categories": [
+      "do-uong",
+      "sua-chua"
+    ],
+    "optionGroups": [
+      "chon-co-ly",
+      "muc-do-ngot",
+      "muc-do-da",
+      "them-topping"
+    ]
+  },
+  {
+    "name": "Sữa Chua Dâu",
+    "slug": "sua-chua-dau",
+    "description": "Sữa chua uống vị dâu chua ngọt hài hòa.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1493770348161-369560ae357d?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 35000,
+    "categories": [
+      "do-uong",
+      "sua-chua"
+    ],
+    "optionGroups": [
+      "chon-co-ly",
+      "muc-do-ngot",
+      "muc-do-da",
+      "them-topping"
+    ]
+  },
+  {
+    "name": "Sữa Chua Chanh Dây",
+    "slug": "sua-chua-chanh-day",
+    "description": "Sữa chua uống vị chanh dây chua thanh mát lạnh.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 35000,
+    "categories": [
+      "do-uong",
+      "sua-chua"
+    ],
+    "optionGroups": [
+      "chon-co-ly",
+      "muc-do-ngot",
+      "muc-do-da",
+      "them-topping"
+    ]
+  },
+  {
+    "name": "Sữa Chua Uống Vị Dâu",
+    "slug": "sua-chua-uong-vi-dau",
+    "description": "Sữa chua uống vị dâu ngọt mịn, mix cùng thạch hoa quả giòn dai vui miệng.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1493770348161-369560ae357d?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 60000,
+    "categories": [
+      "do-uong",
+      "sua-chua"
+    ],
+    "optionGroups": [
+      "chon-co-ly",
+      "muc-do-ngot",
+      "muc-do-da",
+      "them-topping"
+    ]
+  },
+  {
+    "name": "Yakult Dâu",
+    "slug": "yakult-dau",
+    "description": "Yakult vị dâu chua nhẹ, mát lạnh dễ chịu, thêm trân châu trắng giòn.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 65000,
+    "categories": [
+      "do-uong",
+      "yakult"
+    ],
+    "optionGroups": [
+      "chon-co-ly",
+      "muc-do-ngot",
+      "muc-do-da",
+      "them-topping"
+    ]
+  },
+  {
+    "name": "Yakult Đào Trân Châu Trắng",
+    "slug": "yakult-dao-tran-chau-trang",
+    "description": "Yakult kết hợp đào thơm ngọt, thêm trân châu trắng dai giòn sần sật.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 70000,
+    "categories": [
+      "do-uong",
+      "yakult"
+    ],
+    "optionGroups": [
+      "chon-co-ly",
+      "muc-do-ngot",
+      "muc-do-da",
+      "them-topping"
+    ]
+  },
+  {
+    "name": "Nước Lệ Chi Vải Lê",
+    "slug": "nuoc-le-chi-vai-le",
+    "description": "Nước vải lê thơm nhẹ ngọt thanh, kèm trân châu trắng dai giòn.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 75000,
+    "categories": [
+      "do-uong"
+    ],
+    "optionGroups": [
+      "chon-co-ly",
+      "muc-do-ngot",
+      "muc-do-da",
+      "them-topping"
+    ]
+  },
+  {
+    "name": "Chanh Leo Lắc Sữa",
+    "slug": "chanh-leo-lac-sua",
+    "description": "Chanh leo lắc cùng sữa béo nhẹ, chua ngọt thanh mát, kèm trân châu trắng.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 80000,
+    "categories": [
+      "do-uong"
+    ],
+    "optionGroups": [
+      "chon-co-ly",
+      "muc-do-ngot",
+      "muc-do-da",
+      "them-topping"
+    ]
+  },
+  {
+    "name": "Tắc Lắc Sữa",
+    "slug": "tac-lac-sua",
+    "description": "Tắc tươi lắc cùng sữa béo nhẹ, kèm trân châu trắng vui miệng.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 85000,
+    "categories": [
+      "do-uong"
+    ],
+    "optionGroups": [
+      "chon-co-ly",
+      "muc-do-ngot",
+      "muc-do-da",
+      "them-topping"
+    ]
+  },
+  {
+    "name": "Sâm Dứa Sữa Thạch Củ Năng",
+    "slug": "sam-dua-sua-thach-cu-nang",
+    "description": "Sâm dứa sữa mát lạnh béo nhẹ, ăn kèm thạch củ năng giòn dai, giải ngấy.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 90000,
+    "categories": [
+      "do-uong"
+    ],
+    "optionGroups": [
+      "chon-co-ly",
+      "muc-do-ngot",
+      "muc-do-da",
+      "them-topping"
+    ]
+  },
+  {
+    "name": "Dưa Hấu Tráng Miệng",
+    "slug": "dua-hau-trang-mieng",
+    "description": "Dưa hấu đỏ mọng mát lạnh, ngọt thanh, tráng miệng sau bữa chính.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1493770348161-369560ae357d?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 95000,
+    "categories": [
+      "do-uong"
+    ],
+    "optionGroups": [
+      "chon-co-ly",
+      "muc-do-ngot",
+      "muc-do-da",
+      "them-topping"
+    ]
+  },
+  {
+    "name": "Roi Đỏ Chấm Muối Ô Mai",
+    "slug": "roi-do-cham-muoi-o-mai",
+    "description": "Roi đỏ giòn mát ngọt thanh tự nhiên, chấm cùng muối ô mai chua mặn.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 30000,
+    "categories": [
+      "do-uong"
+    ],
+    "optionGroups": [
+      "chon-co-ly",
+      "muc-do-ngot",
+      "muc-do-da",
+      "them-topping"
+    ]
+  },
+  {
+    "name": "Tiramisu Nhà Làm",
+    "slug": "tiramisu-nha-lam",
+    "description": "Tiramisu nhà làm lớp kem mịn béo nhẹ, mềm tan, ngọt vừa không gắt, có vị truyền thống và caramel.",
+    "primaryImageUrl": "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&q=80&w=600",
+    "videoUrl": null,
+    "detailImageUrls": [
+      "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&q=80&w=600"
+    ],
+    "basePrice": 35000,
+    "categories": [
+      "do-uong"
+    ],
+    "optionGroups": [
+      "chon-co-ly",
+      "muc-do-ngot",
+      "muc-do-da",
+      "them-topping"
+    ]
+  }
+]

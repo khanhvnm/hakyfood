@@ -39,8 +39,8 @@ public class RbacDatabaseInitializer implements CommandLineRunner {
         List<PermissionInfo> permissionInfos = List.of(
                 new PermissionInfo("role.manage", "Manage Roles", "Quyền quản lý vai trò trong hệ thống"),
                 new PermissionInfo("permission.manage", "Manage Permissions", "Quyền quản lý quyền hạn trong hệ thống"),
-                new PermissionInfo("category.manage", "Manage Category", "Quyền quản lý danh mục món ăn"),
-                new PermissionInfo("food.manage", "Manage Food", "Quyền quản lý các món ăn")
+                new PermissionInfo("menu.category", "Manage Category", "Quyền quản lý danh mục món ăn"),
+                new PermissionInfo("menu.food", "Manage Food", "Quyền quản lý các món ăn")
         );
 
         Map<String, Permission> permissionMap = permissionRepository.findAll()
@@ -86,7 +86,7 @@ public class RbacDatabaseInitializer implements CommandLineRunner {
                         "Chủ cửa hàng",
                         "Chủ cửa hàng",
                         true,
-                        Set.of("category.manage", "food.manage")
+                        Set.of("menu.category", "menu.food")
                 ),
                 new RoleInfo(
                         "CUSTOMER",

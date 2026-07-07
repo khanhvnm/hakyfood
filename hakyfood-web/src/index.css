@@ -11,6 +11,8 @@
   --color-hk-secondary: var(--hk-color-brand-secondary);
   --color-hk-secondary-hover: var(--hk-color-brand-secondary-hover);
   --color-hk-secondary-subtle: var(--hk-color-brand-secondary-subtle);
+  
+  --color-hk-accent: var(--hk-color-brand-accent);
 
   --color-hk-bg-page: var(--hk-color-bg-page);
   --color-hk-bg-warm: var(--hk-color-bg-page-warm);
@@ -25,6 +27,7 @@
   --color-hk-text-secondary: var(--hk-color-text-secondary);
   --color-hk-text-muted: var(--hk-color-text-muted);
   --color-hk-text-disabled: var(--hk-color-text-disabled);
+  --color-hk-text-inverse: var(--hk-color-text-inverse);
 
   --color-hk-border: var(--hk-color-border-default);
   --color-hk-border-subtle: var(--hk-color-border-subtle);
@@ -33,6 +36,28 @@
   --font-hk-display: var(--hk-font-display);
   --font-hk-body: var(--hk-font-body);
   --font-hk-logo: var(--hk-font-logo);
+
+  /* Định nghĩa lại thang cỡ chữ mặc định của Tailwind để to rõ hơn */
+  --text-2xs: 0.6875rem;  /* 11px */
+  --text-xs: 0.75rem;     /* 12px */
+  --text-sm: 0.8125rem;   /* 13px */
+  --text-base: 0.875rem;  /* 14px */
+  --text-lg: 1.0625rem;   /* 17px */
+  --text-xl: 1.1875rem;   /* 19px */
+  --text-2xl: 1.3125rem;  /* 21px */
+  --text-3xl: 1.5625rem;  /* 25px */
+  --text-4xl: 1.9375rem;  /* 31px */
+  --text-5xl: 2.3125rem;  /* 37px */
+  --text-6xl: 3.0625rem;  /* 49px */
+  --text-7xl: 3.8125rem;  /* 61px */
+}
+
+@utility container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 1200px;
 }
 
 @layer base {
@@ -40,5 +65,6 @@
     background-color: var(--hk-color-bg-page);
     color: var(--hk-color-text-primary);
     font-family: var(--hk-font-body);
+    font-size: var(--hk-text-base); /* Mặc định là 14px */
   }
 }
