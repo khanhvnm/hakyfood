@@ -23,7 +23,7 @@ export function PublicHeader() {
   const isOpen = checkStoreStatus();
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-hk-bg-dark text-hk-text-inverse">
+    <header className="fixed top-0 left-0 right-0 bg-hk-bg-dark text-hk-text-inverse z-50">
       <div className="max-w-300 mx-auto w-full">
         <div className="flex justify-between items-center py-2">
           <div className="flex items-center">
