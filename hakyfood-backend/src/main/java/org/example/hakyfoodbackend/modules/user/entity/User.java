@@ -3,13 +3,6 @@ package org.example.hakyfoodbackend.modules.user.entity;
 import jakarta.persistence.*;
 import lombok.*;
 import org.example.hakyfoodbackend.common.entity.BaseEntity;
-import org.example.hakyfoodbackend.common.exception.AppException;
-import org.example.hakyfoodbackend.common.exception.ErrorCode;
-import org.example.hakyfoodbackend.modules.user.enums.AccountStatus;
-import org.example.hakyfoodbackend.modules.user.enums.AuthProvider;
-
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -19,11 +12,10 @@ import java.util.Set;
 @Builder
 public class User extends BaseEntity {
 
-    @Column(nullable = false, unique = true)
-    private String email;
-
-    @Column(name = "hashed_password", nullable = true)
-    private String hashedPassword;
+    @OneToOne(fetch = FetchType.LAZY)
+    @MapsId
+    @JoinColumn(name = "id")
+    private Account account;
 
     @Column(unique = true)
     private String phone;
@@ -34,35 +26,10 @@ public class User extends BaseEntity {
     @Column(name = "avatar_url")
     private String avatarUrl;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "auth_provider", nullable = false)
-    @Builder.Default
-    private AuthProvider authProvider = AuthProvider.LOCAL;
-
-    @Enumerated(EnumType.STRING)
-    @Column(name = "account_status", nullable = false)
-    @Builder.Default
-    private AccountStatus accountStatus = AccountStatus.PENDING_VERIFY;
-
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(
-            name = "user_roles",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "role_id")
-    )
-    @Builder.Default
-    private Set<Role> roles = new HashSet<>();
-
-    public void updatePassword(String newHashedPassword) {
-        this.hashedPassword = newHashedPassword;
-    }
-
-    public void activateAccount() {
-        if (this.accountStatus != AccountStatus.PENDING_VERIFY) {
-            throw new AppException(ErrorCode.ACCOUNT_NOT_PENDING_VERIFY);
-        }
-        this.accountStatus = AccountStatus.ACTIVE;
+    public void updateProfile(String fullName, String phone, String avatarUrl) {
+        this.fullName = fullName;
+        this.phone = phone;
+        this.avatarUrl = avatarUrl;
     }
 
 }
-

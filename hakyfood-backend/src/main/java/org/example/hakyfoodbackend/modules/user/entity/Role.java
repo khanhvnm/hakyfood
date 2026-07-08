@@ -40,7 +40,7 @@ public class Role extends BaseEntity {
 
     @ManyToMany(mappedBy = "roles")
     @Builder.Default
-    private Set<User> users = new HashSet<>();
+    private Set<Account> accounts = new HashSet<>();
 
     public Role(String code) {
         this.code = code;
