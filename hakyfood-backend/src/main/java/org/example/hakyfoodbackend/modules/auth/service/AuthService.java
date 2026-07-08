@@ -17,9 +17,9 @@ import org.example.hakyfoodbackend.modules.auth.enums.AuthFlowState;
 import org.example.hakyfoodbackend.modules.auth.enums.VerificationPurpose;
 import org.example.hakyfoodbackend.modules.auth.dto.GoogleLoginRequest;
 import org.example.hakyfoodbackend.infrastructure.google.GoogleTokenVerifierService;
-import org.example.hakyfoodbackend.modules.user.entity.User;
+import org.example.hakyfoodbackend.modules.user.entity.Account;
 import org.example.hakyfoodbackend.modules.user.enums.AccountStatus;
-import org.example.hakyfoodbackend.modules.user.service.UserService;
+import org.example.hakyfoodbackend.modules.user.service.AccountService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -31,7 +31,7 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class AuthService {
 
-    private final UserService userService;
+    private final AccountService accountService;
     private final AuthFlowService authFlowService;
     private final OtpService otpService;
     private final AuthMailService authMailService;
@@ -40,11 +40,11 @@ public class AuthService {
     private final PasswordEncoder passwordEncoder;
 
     public AuthFlowResponse register(RegisterRequest request) {
-        UUID userId = userService.createLocalUser(request.email(), request.password());
+        UUID accountId = accountService.createLocalAccount(request.email(), request.password());
 
-        String flowId = authFlowService.createSession(userId, VerificationPurpose.REGISTER, AuthFlowState.VERIFY_OTP);
+        String flowId = authFlowService.createSession(accountId, VerificationPurpose.REGISTER, AuthFlowState.VERIFY_OTP);
 
-        String code = otpService.generateAndSaveOtp(userId, VerificationPurpose.REGISTER);
+        String code = otpService.generateAndSaveOtp(accountId, VerificationPurpose.REGISTER);
 
         authMailService.sendVerificationEmail(request.email(), code);
 
@@ -55,19 +55,19 @@ public class AuthService {
     public VerifyOtpResult verifyOtp(VerifyOtpRequest request) {
         AuthSessionData sessionData = authFlowService.getSession(request.flowId());
 
-        UUID userId = sessionData.userId();
+        UUID accountId = sessionData.userId();
         VerificationPurpose purpose = sessionData.purpose();
 
-        otpService.verifyOtp(userId, purpose, request.code());
+        otpService.verifyOtp(accountId, purpose, request.code());
 
         switch (purpose) {
             case VerificationPurpose.REGISTER:
-                userService.activateAccount(userId);
+                accountService.activateAccount(accountId);
                 authFlowService.deleteSession(request.flowId());
 
-                User user = userService.getUserById(userId);
-                String accessToken = jwtService.generateAccessToken(user);
-                String refreshToken = jwtService.generateRefreshToken(user);
+                Account account = accountService.getAccountById(accountId);
+                String accessToken = jwtService.generateAccessToken(account);
+                String refreshToken = jwtService.generateRefreshToken(account);
 
                 return new VerifyOtpResult(null, AuthFlowState.SUCCESS, accessToken, refreshToken);
 
@@ -91,64 +91,64 @@ public class AuthService {
         String name = (String) payload.get("name");
         String picture = (String) payload.get("picture");
 
-        User user = userService.getOrCreateGoogleUser(email, name, picture);
+        Account account = accountService.getOrCreateGoogleAccount(email, name, picture);
 
-        String accessToken = jwtService.generateAccessToken(user);
-        String refreshToken = jwtService.generateRefreshToken(user);
+        String accessToken = jwtService.generateAccessToken(account);
+        String refreshToken = jwtService.generateRefreshToken(account);
 
         return new VerifyOtpResult(null, AuthFlowState.SUCCESS, accessToken, refreshToken);
     }
 
     /**
      * Local login: validates email/password, checks account status, issues tokens.
-     * Returns generic INVALID_CREDENTIALS for both missing user and wrong password
+     * Returns generic INVALID_CREDENTIALS for both missing account and wrong password
      * to avoid leaking account existence information.
      */
     @Transactional
     public VerifyOtpResult login(LoginRequest request) {
-        User user;
+        Account account;
         try {
-            user = userService.getUserByEmail(request.email());
+            account = accountService.getAccountByEmail(request.email());
         } catch (AppException e) {
-            // User not found - throw generic credentials error
+            // Account not found - throw generic credentials error
             throw new AppException(ErrorCode.INVALID_CREDENTIALS);
         }
 
-        if (user.getAccountStatus() != AccountStatus.ACTIVE) {
+        if (account.getAccountStatus() != AccountStatus.ACTIVE) {
             throw new AppException(ErrorCode.ACCOUNT_NOT_ACTIVE);
         }
 
         // Google-only accounts (no password set) fail with generic error
-        if (user.getHashedPassword() == null || !passwordEncoder.matches(request.password(), user.getHashedPassword())) {
+        if (account.getHashedPassword() == null || !passwordEncoder.matches(request.password(), account.getHashedPassword())) {
             throw new AppException(ErrorCode.INVALID_CREDENTIALS);
         }
 
-        String accessToken = jwtService.generateAccessToken(user);
-        String refreshToken = jwtService.generateRefreshToken(user);
+        String accessToken = jwtService.generateAccessToken(account);
+        String refreshToken = jwtService.generateRefreshToken(account);
 
         return new VerifyOtpResult(null, AuthFlowState.SUCCESS, accessToken, refreshToken);
     }
 
     /**
      * Initiates forgot password / password extension flow:
-     * Creates a flow session and sends OTP to the user's email.
+     * Creates a flow session and sends OTP to the account's email.
      */
     @Transactional
     public AuthFlowResponse initiateForgotPassword(ForgotPasswordRequest request) {
-        User user;
+        Account account;
         try {
-            user = userService.getUserByEmail(request.email());
+            account = accountService.getAccountByEmail(request.email());
         } catch (AppException e) {
-            throw new AppException(ErrorCode.USER_NOT_FOUND);
+            throw new AppException(ErrorCode.ACCOUNT_NOT_FOUND);
         }
 
-        if (user.getAccountStatus() != AccountStatus.ACTIVE) {
+        if (account.getAccountStatus() != AccountStatus.ACTIVE) {
             throw new AppException(ErrorCode.ACCOUNT_NOT_ACTIVE);
         }
 
-        String flowId = authFlowService.createSession(user.getId(), VerificationPurpose.FORGOT_PASSWORD, AuthFlowState.VERIFY_OTP);
+        String flowId = authFlowService.createSession(account.getId(), VerificationPurpose.FORGOT_PASSWORD, AuthFlowState.VERIFY_OTP);
 
-        String code = otpService.generateAndSaveOtp(user.getId(), VerificationPurpose.FORGOT_PASSWORD);
+        String code = otpService.generateAndSaveOtp(account.getId(), VerificationPurpose.FORGOT_PASSWORD);
 
         authMailService.sendForgotPasswordEmail(request.email(), code);
 
@@ -156,7 +156,7 @@ public class AuthService {
     }
 
     /**
-     * Resets the user's password after OTP verification.
+     * Resets the account's password after OTP verification.
      * Validates the flow session is in SET_PASSWORD state, updates the password,
      * cleans up the session, and returns tokens.
      */
@@ -168,15 +168,15 @@ public class AuthService {
             throw new AppException(ErrorCode.OTP_VERIFICATION_FAILED);
         }
 
-        UUID userId = sessionData.userId();
+        UUID accountId = sessionData.userId();
 
-        userService.updateUserPassword(userId, request.newPassword());
+        accountService.updateAccountPassword(accountId, request.newPassword());
 
         authFlowService.deleteSession(request.flowId());
 
-        User user = userService.getUserById(userId);
-        String accessToken = jwtService.generateAccessToken(user);
-        String refreshToken = jwtService.generateRefreshToken(user);
+        Account account = accountService.getAccountById(accountId);
+        String accessToken = jwtService.generateAccessToken(account);
+        String refreshToken = jwtService.generateRefreshToken(account);
 
         return new VerifyOtpResult(null, AuthFlowState.SUCCESS, accessToken, refreshToken);
     }
@@ -191,15 +191,15 @@ public class AuthService {
             throw new AppException(ErrorCode.UNAUTHORIZED);
         }
 
-        String userId = jwtService.getSubject(refreshToken);
-        User user = userService.getUserById(UUID.fromString(userId));
+        String accountId = jwtService.getSubject(refreshToken);
+        Account account = accountService.getAccountById(UUID.fromString(accountId));
 
-        if (user.getAccountStatus() != AccountStatus.ACTIVE) {
+        if (account.getAccountStatus() != AccountStatus.ACTIVE) {
             throw new AppException(ErrorCode.ACCOUNT_NOT_ACTIVE);
         }
 
-        String newAccessToken = jwtService.generateAccessToken(user);
-        String newRefreshToken = jwtService.generateRefreshToken(user);
+        String newAccessToken = jwtService.generateAccessToken(account);
+        String newRefreshToken = jwtService.generateRefreshToken(account);
 
         return new VerifyOtpResult(null, AuthFlowState.SUCCESS, newAccessToken, newRefreshToken);
     }
