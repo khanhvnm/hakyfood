@@ -11,6 +11,7 @@ public enum ErrorCode {
     ACCOUNT_EXISTS(HttpStatus.BAD_REQUEST, "account.exists"),
     ACCOUNT_NOT_PENDING_VERIFY(HttpStatus.BAD_REQUEST, "account.not_pending_verify"),
     ACCOUNT_NOT_ACTIVE(HttpStatus.FORBIDDEN, "account.not_active"),
+    ACCOUNT_NOT_FOUND(HttpStatus.NOT_FOUND, "account.not_found"),
 
     INVALID_CREDENTIALS(HttpStatus.UNAUTHORIZED, "auth.invalid_credentials"),
 
