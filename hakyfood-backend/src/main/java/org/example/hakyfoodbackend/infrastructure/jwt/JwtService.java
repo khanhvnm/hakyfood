@@ -4,8 +4,8 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
+import org.example.hakyfoodbackend.modules.user.entity.Account;
 import org.example.hakyfoodbackend.modules.user.entity.Role;
-import org.example.hakyfoodbackend.modules.user.entity.User;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -26,14 +26,14 @@ public class JwtService {
     @Value("${app.jwt.refresh-expiration}")
     private long refreshExpiration;
 
-    public String generateAccessToken(User user) {
-        List<String> roles = user.getRoles().stream()
+    public String generateAccessToken(Account account) {
+        List<String> roles = account.getRoles().stream()
                 .map(Role::getCode)
                 .toList();
 
         return Jwts.builder()
-                .subject(user.getId().toString())
-                .claim("email", user.getEmail())
+                .subject(account.getId().toString())
+                .claim("email", account.getEmail())
                 .claim("roles", roles)
                 .issuedAt(new Date())
                 .expiration(new Date(System.currentTimeMillis() + accessExpiration))
@@ -41,9 +41,9 @@ public class JwtService {
                 .compact();
     }
 
-    public String generateRefreshToken(User user) {
+    public String generateRefreshToken(Account account) {
         return Jwts.builder()
-                .subject(user.getId().toString())
+                .subject(account.getId().toString())
                 .issuedAt(new Date())
                 .expiration(new Date(System.currentTimeMillis() + refreshExpiration))
                 .signWith(getSecretKey(), Jwts.SIG.HS256)
@@ -82,4 +82,3 @@ public class JwtService {
     }
 
 }
-
