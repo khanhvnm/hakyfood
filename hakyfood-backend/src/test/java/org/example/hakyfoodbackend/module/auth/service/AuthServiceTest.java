@@ -11,10 +11,10 @@ import org.example.hakyfoodbackend.modules.auth.service.AuthMailService;
 import org.example.hakyfoodbackend.modules.auth.service.AuthService;
 import org.example.hakyfoodbackend.modules.auth.service.OtpService;
 import org.example.hakyfoodbackend.infrastructure.google.GoogleTokenVerifierService;
-import org.example.hakyfoodbackend.modules.user.entity.User;
+import org.example.hakyfoodbackend.modules.user.entity.Account;
 import org.example.hakyfoodbackend.modules.user.enums.AccountStatus;
 import org.example.hakyfoodbackend.modules.user.enums.AuthProvider;
-import org.example.hakyfoodbackend.modules.user.service.UserService;
+import org.example.hakyfoodbackend.modules.user.service.AccountService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -32,7 +32,7 @@ import static org.mockito.Mockito.*;
 public class AuthServiceTest {
 
     @Mock
-    private UserService userService;
+    private AccountService accountService;
 
     @Mock
     private AuthFlowService authFlowService;
@@ -60,13 +60,13 @@ public class AuthServiceTest {
     @Test
     void shouldRegisterSuccessfully() {
         RegisterRequest request = new RegisterRequest("user@test.com", "123456");
-        UUID userId = UUID.randomUUID();
+        UUID accountId = UUID.randomUUID();
         String flowId = UUID.randomUUID().toString();
         String code = "123456";
 
-        when(userService.createLocalUser(request.email(), request.password())).thenReturn(userId);
-        when(authFlowService.createSession(userId, VerificationPurpose.REGISTER, AuthFlowState.VERIFY_OTP)).thenReturn(flowId);
-        when(otpService.generateAndSaveOtp(userId, VerificationPurpose.REGISTER)).thenReturn(code);
+        when(accountService.createLocalAccount(request.email(), request.password())).thenReturn(accountId);
+        when(authFlowService.createSession(accountId, VerificationPurpose.REGISTER, AuthFlowState.VERIFY_OTP)).thenReturn(flowId);
+        when(otpService.generateAndSaveOtp(accountId, VerificationPurpose.REGISTER)).thenReturn(code);
         doNothing().when(authMailService).sendVerificationEmail(request.email(), code);
 
         AuthFlowResponse response = authService.register(request);
@@ -74,9 +74,9 @@ public class AuthServiceTest {
         assertEquals(flowId, response.flowId());
         assertEquals(AuthFlowState.VERIFY_OTP, response.nextState());
 
-        verify(userService).createLocalUser(request.email(), request.password());
-        verify(authFlowService).createSession(userId, VerificationPurpose.REGISTER, AuthFlowState.VERIFY_OTP);
-        verify(otpService).generateAndSaveOtp(userId, VerificationPurpose.REGISTER);
+        verify(accountService).createLocalAccount(request.email(), request.password());
+        verify(authFlowService).createSession(accountId, VerificationPurpose.REGISTER, AuthFlowState.VERIFY_OTP);
+        verify(otpService).generateAndSaveOtp(accountId, VerificationPurpose.REGISTER);
         verify(authMailService).sendVerificationEmail(request.email(), code);
     }
 
@@ -86,17 +86,17 @@ public class AuthServiceTest {
     void shouldVerifyOtpSuccessfullyForRegister() {
         // Arrange
         VerifyOtpRequest request = new VerifyOtpRequest("some-flow-id", "123456");
-        UUID userId = UUID.randomUUID();
-        AuthSessionData sessionData = new AuthSessionData(userId, VerificationPurpose.REGISTER);
-        User user = User.builder().email("user@test.com").roles(new HashSet<>()).build();
+        UUID accountId = UUID.randomUUID();
+        AuthSessionData sessionData = new AuthSessionData(accountId, VerificationPurpose.REGISTER);
+        Account account = Account.builder().email("user@test.com").roles(new HashSet<>()).build();
 
         when(authFlowService.getSession(request.flowId())).thenReturn(sessionData);
-        doNothing().when(otpService).verifyOtp(userId, VerificationPurpose.REGISTER, request.code());
-        doNothing().when(userService).activateAccount(userId);
+        doNothing().when(otpService).verifyOtp(accountId, VerificationPurpose.REGISTER, request.code());
+        doNothing().when(accountService).activateAccount(accountId);
         doNothing().when(authFlowService).deleteSession(request.flowId());
-        when(userService.getUserById(userId)).thenReturn(user);
-        when(jwtService.generateAccessToken(user)).thenReturn("accessToken");
-        when(jwtService.generateRefreshToken(user)).thenReturn("refreshToken");
+        when(accountService.getAccountById(accountId)).thenReturn(account);
+        when(jwtService.generateAccessToken(account)).thenReturn("accessToken");
+        when(jwtService.generateRefreshToken(account)).thenReturn("refreshToken");
 
         // Act
         VerifyOtpResult result = authService.verifyOtp(request);
@@ -108,12 +108,12 @@ public class AuthServiceTest {
         assertEquals("refreshToken", result.refreshToken());
 
         verify(authFlowService).getSession(request.flowId());
-        verify(otpService).verifyOtp(userId, VerificationPurpose.REGISTER, request.code());
-        verify(userService).activateAccount(userId);
+        verify(otpService).verifyOtp(accountId, VerificationPurpose.REGISTER, request.code());
+        verify(accountService).activateAccount(accountId);
         verify(authFlowService).deleteSession(request.flowId());
-        verify(userService).getUserById(userId);
-        verify(jwtService).generateAccessToken(user);
-        verify(jwtService).generateRefreshToken(user);
+        verify(accountService).getAccountById(accountId);
+        verify(jwtService).generateAccessToken(account);
+        verify(jwtService).generateRefreshToken(account);
     }
 
     @Test
@@ -121,11 +121,11 @@ public class AuthServiceTest {
         // Arrange
         String flowId = "forgot-flow-id";
         VerifyOtpRequest request = new VerifyOtpRequest(flowId, "654321");
-        UUID userId = UUID.randomUUID();
-        AuthSessionData sessionData = new AuthSessionData(userId, VerificationPurpose.FORGOT_PASSWORD);
+        UUID accountId = UUID.randomUUID();
+        AuthSessionData sessionData = new AuthSessionData(accountId, VerificationPurpose.FORGOT_PASSWORD);
 
         when(authFlowService.getSession(flowId)).thenReturn(sessionData);
-        doNothing().when(otpService).verifyOtp(userId, VerificationPurpose.FORGOT_PASSWORD, request.code());
+        doNothing().when(otpService).verifyOtp(accountId, VerificationPurpose.FORGOT_PASSWORD, request.code());
         doNothing().when(authFlowService).updateSessionNextState(flowId, AuthFlowState.SET_PASSWORD);
 
         // Act
@@ -138,9 +138,9 @@ public class AuthServiceTest {
         assertNull(result.refreshToken());
 
         verify(authFlowService).getSession(flowId);
-        verify(otpService).verifyOtp(userId, VerificationPurpose.FORGOT_PASSWORD, request.code());
+        verify(otpService).verifyOtp(accountId, VerificationPurpose.FORGOT_PASSWORD, request.code());
         verify(authFlowService).updateSessionNextState(flowId, AuthFlowState.SET_PASSWORD);
-        verify(userService, never()).activateAccount(any());
+        verify(accountService, never()).activateAccount(any());
     }
 
     @Test
@@ -159,19 +159,19 @@ public class AuthServiceTest {
 
         verify(authFlowService).getSession(request.flowId());
         verifyNoInteractions(otpService);
-        verifyNoInteractions(userService);
+        verifyNoInteractions(accountService);
     }
 
     @Test
     void shouldThrowExceptionAndNotActivateWhenOtpVerificationFails() {
         // Arrange
-        UUID userId = UUID.randomUUID();
-        AuthSessionData sessionData = new AuthSessionData(userId, VerificationPurpose.REGISTER);
+        UUID accountId = UUID.randomUUID();
+        AuthSessionData sessionData = new AuthSessionData(accountId, VerificationPurpose.REGISTER);
         VerifyOtpRequest request = new VerifyOtpRequest("flow-id", "wrong-code");
 
         when(authFlowService.getSession(request.flowId())).thenReturn(sessionData);
         doThrow(new AppException(ErrorCode.OTP_INCORRECT))
-                .when(otpService).verifyOtp(userId, VerificationPurpose.REGISTER, request.code());
+                .when(otpService).verifyOtp(accountId, VerificationPurpose.REGISTER, request.code());
 
         // Act & Assert
         AppException exception = assertThrows(AppException.class,
@@ -180,8 +180,8 @@ public class AuthServiceTest {
         assertEquals(ErrorCode.OTP_INCORRECT, exception.getErrorCode());
 
         verify(authFlowService).getSession(request.flowId());
-        verify(otpService).verifyOtp(userId, VerificationPurpose.REGISTER, request.code());
-        verify(userService, never()).activateAccount(any());
+        verify(otpService).verifyOtp(accountId, VerificationPurpose.REGISTER, request.code());
+        verify(accountService, never()).activateAccount(any());
         verify(authFlowService, never()).deleteSession(anyString());
     }
 
@@ -197,12 +197,12 @@ public class AuthServiceTest {
         payload.set("name", "Google User");
         payload.set("picture", "http://avatar.url");
 
-        User user = User.builder().email("google-user@test.com").roles(new HashSet<>()).build();
+        Account account = Account.builder().email("google-user@test.com").roles(new HashSet<>()).build();
 
         when(googleTokenVerifierService.verify("google-id-token")).thenReturn(payload);
-        when(userService.getOrCreateGoogleUser("google-user@test.com", "Google User", "http://avatar.url")).thenReturn(user);
-        when(jwtService.generateAccessToken(user)).thenReturn("accessToken");
-        when(jwtService.generateRefreshToken(user)).thenReturn("refreshToken");
+        when(accountService.getOrCreateGoogleAccount("google-user@test.com", "Google User", "http://avatar.url")).thenReturn(account);
+        when(jwtService.generateAccessToken(account)).thenReturn("accessToken");
+        when(jwtService.generateRefreshToken(account)).thenReturn("refreshToken");
 
         // Act
         VerifyOtpResult result = authService.verifyGoogleTokenAndLogin(request);
@@ -214,9 +214,9 @@ public class AuthServiceTest {
         assertEquals("refreshToken", result.refreshToken());
 
         verify(googleTokenVerifierService).verify("google-id-token");
-        verify(userService).getOrCreateGoogleUser("google-user@test.com", "Google User", "http://avatar.url");
-        verify(jwtService).generateAccessToken(user);
-        verify(jwtService).generateRefreshToken(user);
+        verify(accountService).getOrCreateGoogleAccount("google-user@test.com", "Google User", "http://avatar.url");
+        verify(jwtService).generateAccessToken(account);
+        verify(jwtService).generateRefreshToken(account);
     }
 
     // =================== LOCAL LOGIN TESTS ===================
@@ -225,17 +225,17 @@ public class AuthServiceTest {
     void shouldLoginSuccessfullyWithEmailAndPassword() {
         // Arrange
         LoginRequest request = new LoginRequest("user@test.com", "password123");
-        User user = User.builder()
+        Account account = Account.builder()
                 .email("user@test.com")
                 .hashedPassword("hashed-password")
                 .accountStatus(AccountStatus.ACTIVE)
                 .roles(new HashSet<>())
                 .build();
 
-        when(userService.getUserByEmail("user@test.com")).thenReturn(user);
+        when(accountService.getAccountByEmail("user@test.com")).thenReturn(account);
         when(passwordEncoder.matches("password123", "hashed-password")).thenReturn(true);
-        when(jwtService.generateAccessToken(user)).thenReturn("accessToken");
-        when(jwtService.generateRefreshToken(user)).thenReturn("refreshToken");
+        when(jwtService.generateAccessToken(account)).thenReturn("accessToken");
+        when(jwtService.generateRefreshToken(account)).thenReturn("refreshToken");
 
         // Act
         VerifyOtpResult result = authService.login(request);
@@ -246,7 +246,7 @@ public class AuthServiceTest {
         assertEquals("accessToken", result.accessToken());
         assertEquals("refreshToken", result.refreshToken());
 
-        verify(userService).getUserByEmail("user@test.com");
+        verify(accountService).getAccountByEmail("user@test.com");
         verify(passwordEncoder).matches("password123", "hashed-password");
     }
 
@@ -255,7 +255,7 @@ public class AuthServiceTest {
         // Arrange
         LoginRequest request = new LoginRequest("unknown@test.com", "password123");
 
-        when(userService.getUserByEmail("unknown@test.com"))
+        when(accountService.getAccountByEmail("unknown@test.com"))
                 .thenThrow(new AppException(ErrorCode.USER_NOT_FOUND));
 
         // Act & Assert
@@ -269,13 +269,13 @@ public class AuthServiceTest {
     void shouldThrowAccountNotActiveWhenStatusIsPending() {
         // Arrange
         LoginRequest request = new LoginRequest("user@test.com", "password123");
-        User user = User.builder()
+        Account account = Account.builder()
                 .email("user@test.com")
                 .accountStatus(AccountStatus.PENDING_VERIFY)
                 .roles(new HashSet<>())
                 .build();
 
-        when(userService.getUserByEmail("user@test.com")).thenReturn(user);
+        when(accountService.getAccountByEmail("user@test.com")).thenReturn(account);
 
         // Act & Assert
         AppException exception = assertThrows(AppException.class,
@@ -288,14 +288,14 @@ public class AuthServiceTest {
     void shouldThrowInvalidCredentialsWhenPasswordIsWrong() {
         // Arrange
         LoginRequest request = new LoginRequest("user@test.com", "wrong-password");
-        User user = User.builder()
+        Account account = Account.builder()
                 .email("user@test.com")
                 .hashedPassword("hashed-password")
                 .accountStatus(AccountStatus.ACTIVE)
                 .roles(new HashSet<>())
                 .build();
 
-        when(userService.getUserByEmail("user@test.com")).thenReturn(user);
+        when(accountService.getAccountByEmail("user@test.com")).thenReturn(account);
         when(passwordEncoder.matches("wrong-password", "hashed-password")).thenReturn(false);
 
         // Act & Assert
@@ -309,7 +309,7 @@ public class AuthServiceTest {
     void shouldThrowInvalidCredentialsWhenGoogleAccountHasNoPassword() {
         // Arrange: Google-only account with null password
         LoginRequest request = new LoginRequest("google@test.com", "password123");
-        User user = User.builder()
+        Account account = Account.builder()
                 .email("google@test.com")
                 .hashedPassword(null) // Google account has no password
                 .authProvider(AuthProvider.GOOGLE)
@@ -317,7 +317,7 @@ public class AuthServiceTest {
                 .roles(new HashSet<>())
                 .build();
 
-        when(userService.getUserByEmail("google@test.com")).thenReturn(user);
+        when(accountService.getAccountByEmail("google@test.com")).thenReturn(account);
 
         // Act & Assert
         AppException exception = assertThrows(AppException.class,
@@ -332,8 +332,7 @@ public class AuthServiceTest {
     void shouldInitiateForgotPasswordSuccessfully() {
         // Arrange
         ForgotPasswordRequest request = new ForgotPasswordRequest("user@test.com");
-        UUID userId = UUID.randomUUID();
-        User user = User.builder()
+        Account account = Account.builder()
                 .email("user@test.com")
                 .accountStatus(AccountStatus.ACTIVE)
                 .roles(new HashSet<>())
@@ -341,7 +340,7 @@ public class AuthServiceTest {
         String flowId = "flow-123";
         String code = "654321";
 
-        when(userService.getUserByEmail("user@test.com")).thenReturn(user);
+        when(accountService.getAccountByEmail("user@test.com")).thenReturn(account);
         when(authFlowService.createSession(any(), eq(VerificationPurpose.FORGOT_PASSWORD), eq(AuthFlowState.VERIFY_OTP)))
                 .thenReturn(flowId);
         when(otpService.generateAndSaveOtp(any(), eq(VerificationPurpose.FORGOT_PASSWORD))).thenReturn(code);
@@ -364,16 +363,16 @@ public class AuthServiceTest {
         // Arrange
         String flowId = "reset-flow-id";
         ResetPasswordRequest request = new ResetPasswordRequest(flowId, "newPassword123");
-        UUID userId = UUID.randomUUID();
-        AuthSessionData sessionData = new AuthSessionData(userId, VerificationPurpose.FORGOT_PASSWORD);
-        User user = User.builder().email("user@test.com").roles(new HashSet<>()).build();
+        UUID accountId = UUID.randomUUID();
+        AuthSessionData sessionData = new AuthSessionData(accountId, VerificationPurpose.FORGOT_PASSWORD);
+        Account account = Account.builder().email("user@test.com").roles(new HashSet<>()).build();
 
         when(authFlowService.getSession(flowId)).thenReturn(sessionData);
-        doNothing().when(userService).updateUserPassword(userId, "newPassword123");
+        doNothing().when(accountService).updateAccountPassword(accountId, "newPassword123");
         doNothing().when(authFlowService).deleteSession(flowId);
-        when(userService.getUserById(userId)).thenReturn(user);
-        when(jwtService.generateAccessToken(user)).thenReturn("newAccessToken");
-        when(jwtService.generateRefreshToken(user)).thenReturn("newRefreshToken");
+        when(accountService.getAccountById(accountId)).thenReturn(account);
+        when(jwtService.generateAccessToken(account)).thenReturn("newAccessToken");
+        when(jwtService.generateRefreshToken(account)).thenReturn("newRefreshToken");
 
         // Act
         VerifyOtpResult result = authService.resetPassword(request);
@@ -384,7 +383,7 @@ public class AuthServiceTest {
         assertEquals("newAccessToken", result.accessToken());
         assertEquals("newRefreshToken", result.refreshToken());
 
-        verify(userService).updateUserPassword(userId, "newPassword123");
+        verify(accountService).updateAccountPassword(accountId, "newPassword123");
         verify(authFlowService).deleteSession(flowId);
     }
 
@@ -393,18 +392,18 @@ public class AuthServiceTest {
     @Test
     void shouldRefreshTokenSuccessfully() {
         // Arrange
-        UUID userId = UUID.randomUUID();
-        User user = User.builder()
+        UUID accountId = UUID.randomUUID();
+        Account account = Account.builder()
                 .email("user@test.com")
                 .accountStatus(AccountStatus.ACTIVE)
                 .roles(new HashSet<>())
                 .build();
 
         when(jwtService.isValidToken("valid-refresh-token")).thenReturn(true);
-        when(jwtService.getSubject("valid-refresh-token")).thenReturn(userId.toString());
-        when(userService.getUserById(userId)).thenReturn(user);
-        when(jwtService.generateAccessToken(user)).thenReturn("newAccessToken");
-        when(jwtService.generateRefreshToken(user)).thenReturn("newRefreshToken");
+        when(jwtService.getSubject("valid-refresh-token")).thenReturn(accountId.toString());
+        when(accountService.getAccountById(accountId)).thenReturn(account);
+        when(jwtService.generateAccessToken(account)).thenReturn("newAccessToken");
+        when(jwtService.generateRefreshToken(account)).thenReturn("newRefreshToken");
 
         // Act
         VerifyOtpResult result = authService.refreshToken("valid-refresh-token");
